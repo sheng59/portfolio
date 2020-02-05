@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+	<title>個人作品</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--匯入jQuery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script>
+	var elements = ["ItemPage1", "ItemPage2", "ItemPage3", "ItemPage4",
+									"ItemPage5", "ItemPage6", "ItemPage7", "ItemPage8"];
+	var titles = ["SideTitle1", "SideTitle2", "SideTitle3", "SideTitle4",
+								"SideTitle5", "SideTitle6", "SideTitle7", "SideTitle8"];
+	
+	var clicked = 0;
+	var items = 0;
+	// 頁面切換
+	function openWeb(evt, webName) {
+		var i, tabcontent, tablinks;
+		
+		tabcontent = document.getElementsByClassName("TabContent");
+		for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+		}
+		tablinks = document.getElementsByClassName("TabLinks");
+		for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].className = tablinks[i].className.replace(" active", "");
+		}
+		document.getElementById(webName).style.display = "block";
+		evt.currentTarget.className += " active";
+		
+		if (webName == "Menu3") clicked = 1;
+		else clicked = 0;
+		// When the page refreshed, it reset variables.
+		items = 0;
+		setTextColor(0);
+		scrollTo(0, 0);
+		// When the page refreshed, it stops playing. 
+		stopVideo();
+	}
+	
+	function setTextColor(n) {
+		for (i = 0; i < 8; i++) {
+			if (i == n) {
+				document.getElementById(titles[i]).style.color = "#0D47A1";
+				document.getElementById(titles[i]).style.fontWeight = "bold";
+			}
+			else {
+				document.getElementById(titles[i]).style.color = "#818181";
+				document.getElementById(titles[i]).style.fontWeight = "normal";
+			}
+		}
+	}
+	
+	function getTitleTop(n) {
+		var pos = 0; 
+		
+		for (i = 0; i < 8; i++) {
+			if (i == n)
+				// 浮動位置 = 標題位置 - 螢幕高度/2
+				pos = document.getElementById(elements[i]).offsetTop - ($(window).height()/2);
+		}
+		return pos;
+	}
+	
+	$(document).ready(function() {
+		// 初始頁面
+		document.getElementById("Home").style.display = "block";
+		document.getElementById("HomeTitle").className += " active";
+		// 滾動改變文字顏色
+		$(".sidenav a").hover(function() {
+					if (this.id != titles[items]) {
+						$(this).css("color", "black");
+						$(this).css("background-color", "#ddd");
+					}
+				}, function() {
+					if (this.id != titles[items]) {
+						$(this).css("color", "#818181");
+						$(this).css("background-color", "white");
+					}
+		});
+
+		$(window).scroll(function() {
+			var scrollBottom = $(document).height() - $(window).height() - $(window).scrollTop();
+		
+			if (clicked)
+			{
+				if ($(window).scrollTop() >= getTitleTop(0) && $(window).scrollTop() < getTitleTop(1)) items = 0;
+				else if ($(window).scrollTop() >= getTitleTop(1) && $(window).scrollTop() < getTitleTop(2)) items = 1;
+				else if ($(window).scrollTop() >= getTitleTop(2) && $(window).scrollTop() < getTitleTop(3)) items = 2;
+				else if ($(window).scrollTop() >= getTitleTop(3) && $(window).scrollTop() < getTitleTop(4)) items = 3;
+				else if ($(window).scrollTop() >= getTitleTop(4) && $(window).scrollTop() < getTitleTop(5)) items = 4;
+				else if ($(window).scrollTop() >= getTitleTop(5) && $(window).scrollTop() < getTitleTop(6)) items = 5;
+				else if ($(window).scrollTop() >= getTitleTop(6) && scrollBottom > 10) items = 6;
+				else if (scrollBottom == 0) items = 7;
+				setTextColor(items);
+			}
+		});
+		// 畫面滾動特效
+		$(".sidenav a").on('click', function(event) {
+			if (this.hash != "") {
+				event.preventDefault();
+				
+				var hash = this.hash;
+				
+				$('html, body').animate({
+					scrollTop: $(hash).offset().top
+				}, 800, function() {
+					window.location.hash = hash;
+				});
+			}
+		});
+	});
+	
+	</script>
+	<script>
+	// This code loads the IFrame Player API code asynchronously.
+	var tag = document.createElement('script');
+
+	tag.src = "https://www.youtube.com/iframe_api";
+	var firstScriptTag = document.getElementsByTagName('script')[0];
+	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+	
+	// This function creates an <iframe> (and YouTube player)
+  // after the API code downloads.
+	var player1, player2;
+	
+	function onYouTubeIframeAPIReady() {
+		player1 = new YT.Player('player1', {
+			width: '100%',
+			videoId: '3S2XnMDlqDQ'
+		});
+		
+		player2 = new YT.Player('player2', {
+			width: '100%',
+			videoId: '5I1ZZScRLPg'
+		});
+	}
+	
+	function stopVideo() {
+		player1.stopVideo();
+		player2.stopVideo();
+	}
+	
+	</script>
+	<style>
+	body {
+		margin: 0;
+		font-family: 'Open Sans', 微軟正黑體;
+		background-color: white;
+		color: black;
+		scroll-behavior: smooth;
+	}
+	h3 { 
+		font-weight: bold;
+		color: #0D47A1;
+	}
+	
+	#Menu2 h4, li { line-height: 1; font-size: 16px; }
+	#Menu3 h3[id^="ItemPage"] { padding-top: 70px; }
+	
+	.title1 { margin-bottom: -10px; }
+	.content1 { text-align: justify; font-size: 16px; line-height: 2; }
+	.content2 { text-align: justify; font-size: 16px; line-height: 2; margin-left: 32px; }
+	.tab1 { border-top: 1px solid #bbb; border-bottom: 1px solid #bbb; background: #e2e2e2; }
+	.tab1 tr,td { padding: 10px; }
+	.tab2 { border-top: 1px solid #bbb; font-size: 16px; }
+	.tab-text { border-bottom: 1px solid #bbb; width: 200px; padding: 10px 0; }
+	.image1 { width: 100%; }
+
+	.tabs {
+		overflow: hidden;
+		border-bottom: 1px solid #ccc;
+		background-color: white;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 3;
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+	}
+	
+	.tabs button {
+		background-color: inherit;
+		float: right;
+		border: none;
+		outline: none;
+		cursor: pointer;
+		padding: 20px 16px;
+		transition: 0.4s;
+		font-size: 17px;
+		color: black;
+		font-family: 'Open Sans', 微軟正黑體;
+	}
+	
+	.tabs span {
+		background-color: inherit;
+		float: left;
+		padding: 14px 40px;
+		font-size: 24px;
+		color: black;
+		letter-spacing: 10px;
+	}
+	
+	.tabs button:hover {
+		color: #0D47A1;
+		font-size: 24px;
+		font-weight: bold;
+	}
+	
+	.tabs button.active {
+		color: #0D47A1;
+		font-weight: bold;
+	}
+	
+	.TabContent {
+		display: none;
+		-webkit-animation: fadeEffect 1.5s;
+		animation: fadeEffect 1.5s;
+	}
+	
+	@-webkit-keyframes fadeEffect {
+		from {opacity: 0;}
+		to {opacity: 1;}
+	}
+	
+	@keyframes fadeEffect {
+		from {opacity: 0;}
+		to {opacity: 1;}
+	}
+
+	body div[id^="Menu"] {
+		display: none;
+		padding: 70px 280px 0 280px;
+		z-index: 1;
+	}
+
+	.sidenav {
+		height: 100%;
+		width: 260px;
+		position: fixed;
+		top: 50px;
+		left: 0;
+		background-color: white;
+		overflow-x: hidden;
+		padding-top: 150px;
+		border-right: 1px solid #aaa;
+		z-index: 2;
+	}
+
+	.sidenav a {
+		padding: 5px 8px 5px 40px;
+		text-decoration: none;
+		font-size: 16px;
+		color: #0D47A1;
+		display: block;
+		transition: 0.4s;
+	}
+	
+	</style>
+</head>
+<body>
+
+<div class="tabs">
+	<div style="padding-right: 44px; vertical-align: middle">
+		<span>大學時期作品</span>
+		<button class="TabLinks" onclick="openWeb(event, 'Menu4')">Holtek</button>
+		<button class="TabLinks" onclick="openWeb(event, 'Menu3')">8051</button>
+		<button class="TabLinks" onclick="openWeb(event, 'Menu2')">競賽作品</button>
+		<button class="TabLinks" onclick="openWeb(event, 'Menu1')">專題製作</button>
+		<button id="HomeTitle" class="TabLinks" onclick="openWeb(event, 'Home')">首頁</button>
+	</div>
+</div>
+
+<!--Home-->
+<div id="Home" class="TabContent">
+	<img src="HomeBg.jpg" style="position: fixed" width="100%" height="100%">
+</div>
+<!--專題製作頁面-->
+<div id="Menu1" class="TabContent">
+
+	<center><h2>智慧手機連網控制家電應用</h2></center>
+	<center><p>
+		指導老師：馬立山 老師</br>
+		建國科技大學  電子工程系</br>
+	</p></center>
+	
+	<h3>簡介</h3>
+	<p class="content1">
+	&emsp;&emsp;我們運用App Inventor 2自製一款手機App，搭配ATmega2560控制家電及感測器
+	，以及使用樹莓派裝載Motion來控制網路攝影機，同時串接雲端資料及使用雲端
+	服務平台上的社群連結功能，讓使用者可用App進行遠端監控居家、遠端控制家電
+	、查閱家人位置、限制行走範圍等功能，並且在當日早上或家人離家過遠時會立即
+	收到社群推播的訊息(如天氣預報、家人過遠警告等訊息)。</p>
+	
+	<h3>功能</h3>
+	<li class="content1">透過手機App進行遠端控制家電、遠端視訊</li>
+	<li class="content1">透過手機App進行設定就可限制家人行走範圍，當家人脫離範圍時則會立即通知使用者</li>
+	<li class="content1">開啟App可隨時查閱家人位置及鄰近路況</li>
+	<li class="content1">推播即時天氣預報至使用者手機</li>
+	
+	<h3>使用技術</h3>
+	<table width="500px" cellspacing="0" cellpadding="0" style="border-top: 1px solid #bbb; font-size:16px">
+		<tr class="tab-text">
+			<td class="tab-text">App設計</td>
+			<td class="tab-text">App Inventor 2</td>
+		</tr>
+		<tr class="tab-text">
+			<td class="tab-text">居家監控核心</td>
+			<td class="tab-text">Atmega2560</td>
+		</tr>
+		<tr class="tab-text">
+			<td class="tab-text">遠端視訊核心</td>
+			<td class="tab-text">樹莓派</td>
+		</tr>
+		<tr class="tab-text">
+			<td class="tab-text">雲端服務平台</td>
+			<td class="tab-text">ThingSpeak、IFTTT、TinyDB</td>
+		</tr>
+	</table>
+	
+	<h3>成品</h3>
+	<center><img src="house.jpg" height="100%" width="100%">整體系統架構圖</center>
+
+	<h4 style="padding-top: 16px">App操作畫面:</h4>
+	<table class="tab1" width="100%" height="100%" cellspacing="0" cellpadding="0">
+		<tr>
+			<td><center><img class="image1" src="p1-1.jpg"></center></td>
+			<td><center><img class="image1" src="p1-2.jpg"></center></td>
+			<td><center><img class="image1" src="p1-3.jpg"></center></td>
+		</tr>
+		<tr>
+			<td><center><img class="image1" src="p1-4.jpg"></center></td>
+			<td><center><img class="image1" src="p1-5.jpg"></center></td>
+			<td><center><img class="image1" src="p1-6.jpg"></center></td>
+		</tr>
+	</table>
+	<h4 style="padding-top: 16px">遠端監控操作影片:</h4>
+	<div id="player1"></div>
+
+</div>
+<!--競賽作品頁面-->
+<div id="Menu2"  class="TabContent">
+<center><h2>智慧電子朝拜系統一媽祖e起來</h2></center>
+	<center><p>
+		全國微電腦應用系統設計創作競賽</br>
+		信號處理與通訊類  <span style="color: red; font-weight: bold">佳作</span></br>
+	</p></center>
+	
+	<h3>設計作品之目的</h3>
+	<p class="content1">
+	&emsp;&emsp;因近年來物聯網、雲端、人工智慧與擴增實境技術迅速發展，
+	如何將相關技術結合傳統民俗文化，使舊有的民俗活動有嶄新的
+	體驗，並加深信徒與媽祖間的關係。本作品利用上述技術，建置
+	一個「智慧電子朝拜系統」，共含四個場景，同時設計一款媽祖
+	App提供信徒使用。</p>
+	
+	<h3>作品功能</h3>
+
+	<p>本次作品建置了一個「智慧電子朝拜系統」，共含四個場景。具有以下功能：</p>
+	<h4 class="title1">(1)出巡朝拜系統</h4>
+	<p class="content2">1.出巡朝拜系統</br>
+	&emsp;&emsp;透過神轎上的溫濕度感測器與GPS定位，
+	系統會提醒信徒神轎將抵達位置，此時可利
+	用App進行社工留言。若信徒留言情緒較為負
+	面，會給予適當的幫助，反之，會給予祝福的
+	話。在媽祖遶境中，系統會依據當地的溫濕度
+	通知遶境中的信徒要補充水分。</p>
+	<p class="content2">2.媽祖AR朝拜系統</br>
+	&emsp;&emsp;當神轎抵達定點後，可使用手機掃瞄神轎，
+	並在手機顯示出3D媽祖影像，在3D媽祖神像前可
+	進行擲筊、抽籤、解籤等動作，象徵信徒在神明
+	前進行祈福問卜，並且受到神明的指點迷津。</p>
+	
+	<h4 class="title1">(2)千里眼/順風耳系統</h4>
+	<p class="content2">1.千里眼</br>
+	&emsp;&emsp;廟口螢幕上播放媽祖遶境的直播影片。</p>
+	<p class="content2">2.順風耳</br>
+	&emsp;&emsp;在廟口螢幕上播放媽祖FB粉絲頁的留言。</p>
+	
+	<h4 class="title1">(3)遠端繞境系統</h4>
+	<p class="content2">信徒可利用VR眼鏡、手機、腳踏車等物品來增加遠端繞境的臨場感。</p>
+	<h4 class="title1">(4)遠端朝拜系統</h4>
+	<p class="content2">信徒可利用VR眼鏡來體驗遠端朝拜，亦可利用社工關懷之App問籤。</p>
+	
+	<h3>成品</h3>
+	<center><img src="mazu.jpg" width="100%" height="100%" >系統架構圖</center>
+	<center><div style="padding-top: 16px">
+		<table width="100%" height="100%" cellspacing="0" cellpadding="0">
+			<tr>
+				<td rowspan="2"><center><img src="p2-3.jpg" width="100%"></br>媽祖App主畫面</center></td>
+				<td><center><img src="p2-2.jpg" width="100%" height="270px"></br>遠端繞境畫面</center></td>
+			</tr>
+			<tr>
+				<td><center><img src="p2-1.jpg" width="100%" height="270px"></br>抬轎繞境畫面</center></td>
+			</tr>
+		</table>
+	</div></center>
+	<h4 style="padding-top: 16px">作品操作影片:</h4>
+	<div id="player2"></div>
+</div>
+<!--8051 Page-->
+<div id="Menu3"  class="TabContent">
+<!--Side Nav-->
+	<div class="sidenav">
+		<a id="SideTitle1" href="#ItemPage1">開發環境</a>
+		<a id="SideTitle2" href="#ItemPage2">4x4鍵盤控制RGB顏色</a>
+		<a id="SideTitle3" href="#ItemPage3">上傳溫濕度到雲端</a>
+		<a id="SideTitle4" href="#ItemPage4">PWM調光</a>
+		<a id="SideTitle5" href="#ItemPage5">溫度警報器</a>
+		<a id="SideTitle6" href="#ItemPage6">讀取溫濕度值</a>
+		<a id="SideTitle7" href="#ItemPage7">3路PWM輸出</a>
+		<a id="SideTitle8" href="#ItemPage8">PID控制器</a>
+	</div>
+	<!--Content-->
+	<h3 id="ItemPage1">開發工具</h3>
+	<div>
+		<div style="float: right">
+			<img src="8051開發板實體圖.jpg" width="247px" height="185px" style="border-radius: 20px">
+		</div>
+		<table class="tab2">
+			<tr class="tab-text"><td class="tab-text">程式語言</td> <td class="tab-text">C</td>
+			</tr>
+			<tr class="tab-text"><td class="tab-text">單晶片</td> <td class="tab-text">AT89S52</td></tr>
+			<tr class="tab-text"><td class="tab-text">IDE</td> <td class="tab-text">Keil C</td></tr>
+			<tr class="tab-text"><td class="tab-text">PCB繪圖軟體</td> <td class="tab-text">Altium Designer</td></tr>
+		</table>
+	</div>
+
+	<h4 style="padding-top: 10px">8051開發板電路圖</h4>
+	<img src="8051開發板電路圖.jpg" width="100%" height="100%">
+	<!--8051 Project-->
+	<h3 id="ItemPage2">4x4鍵盤控制RGB顏色</h3>
+	<hr style="border: 1px solid #757575"/>
+	<p></p>
+	<h4>電路圖</h4>
+	<img src="4x4鍵盤控制RGB顏色.jpg" width="100%" height="100%">
+	<h4>程式碼</h4>
+	<script src="https://gist.github.com/TaiwanSheng/befa736ba35af532bfcea12ffaa74e72.js"></script>
+	
+	<h3 id="ItemPage3">上傳溫濕度到雲端</h3>
+	<hr style="border: 1px solid #757575"/>
+	<h4>電路圖</h4>
+	<img src="ESP8266.jpg" width="100%" height="100%">
+	<h4>程式碼</h4>
+	<script src="https://gist.github.com/TaiwanSheng/0a88bb17d474a011cdf6f82937c51dcf.js"></script>
+	
+	<h3 id="ItemPage4">PWM調光</h3>
+	<hr style="border: 1px solid #757575"/>
+	<h4>電路圖</h4>
+	<img src="PWM.jpg" width="100%" height="100%">
+	<h4>程式碼</h4>
+	<script src="https://gist.github.com/TaiwanSheng/5b28bc063e0c2ce91371eae7a8989b56.js"></script>
+	
+	<h3 id="ItemPage5">溫度警報器</h3>
+	<hr style="border: 1px solid #757575"/>
+	<h4>電路圖</h4>
+	<img src="Alarm.jpg" width="100%" height="100%">
+	<h4>程式碼</h4>
+	<script src="https://gist.github.com/TaiwanSheng/a9c70f4bde16cbed7ac91e2a5775032c.js"></script>
+	
+	<h3 id="ItemPage6">讀取溫濕度值</h3>
+	<hr style="border: 1px solid #757575"/>
+	<h4>程式碼</h4>
+	<script src="https://gist.github.com/TaiwanSheng/d9ee42bd480ba0a233465757db1e5212.js"></script>
+	
+	<h3 id="ItemPage7">3路PWM輸出</h3>
+	<hr style="border: 1px solid #757575"/>
+	<h4>程式碼</h4>
+	<script src="https://gist.github.com/TaiwanSheng/006357cf62e50c04359fffa96210fa98.js"></script>
+	
+	<h3 id="ItemPage8">PID控制器</h3>
+	<hr style="border: 1px solid #757575"/>
+</div>
+<!--Holtek Page-->
+<div id="Menu4"  class="TabContent">
+	
+</div>
+
+</body>
+</html>
