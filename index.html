@@ -7,109 +7,63 @@
 	<!--匯入jQuery-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script>
-	var elements = ["ItemPage1", "ItemPage2", "ItemPage3", "ItemPage4",
-									"ItemPage5", "ItemPage6", "ItemPage7", "ItemPage8"];
 	var titles = ["SideTitle1", "SideTitle2", "SideTitle3", "SideTitle4",
 								"SideTitle5", "SideTitle6", "SideTitle7", "SideTitle8"];
-	
-	var clicked = 0;
-	var items = 0;
+
 	// 頁面切換
-	function openWeb(evt, webName) {
+	function openWebtab(evt, webName) {
 		var i, tabcontent, tablinks;
 		
-		tabcontent = document.getElementsByClassName("TabContent");
+		tabcontent = document.getElementsByClassName("tab-content");
 		for (i = 0; i < tabcontent.length; i++) {
 			tabcontent[i].style.display = "none";
 		}
-		tablinks = document.getElementsByClassName("TabLinks");
+		tablinks = document.getElementsByClassName("tab-links");
 		for (i = 0; i < tablinks.length; i++) {
 			tablinks[i].className = tablinks[i].className.replace(" active", "");
 		}
 		document.getElementById(webName).style.display = "block";
 		evt.currentTarget.className += " active";
 		
-		if (webName == "Menu3") clicked = 1;
-		else clicked = 0;
 		// When the page refreshed, it reset variables.
-		items = 0;
-		setTextColor(0);
 		scrollTo(0, 0);
 		// When the page refreshed, it stops playing. 
 		stopVideo();
 	}
 	
-	function setTextColor(n) {
-		for (i = 0; i < 8; i++) {
-			if (i == n) {
-				document.getElementById(titles[i]).style.color = "#0D47A1";
-				document.getElementById(titles[i]).style.fontWeight = "bold";
-			}
-			else {
-				document.getElementById(titles[i]).style.color = "#818181";
-				document.getElementById(titles[i]).style.fontWeight = "normal";
-			}
-		}
-	}
-	
-	function getTitleTop(n) {
-		var pos = 0; 
+	function openWebside(evt, webName) {
+		var i, sidecontent, sidelinks;
 		
-		for (i = 0; i < 8; i++) {
-			if (i == n)
-				// 浮動位置 = 標題位置 - 螢幕高度/2
-				pos = document.getElementById(elements[i]).offsetTop - ($(window).height()/2);
+		sidecontent = document.getElementsByClassName("sidenav-content");
+		for (i = 0; i < sidecontent.length; i++) {
+			sidecontent[i].style.display = "none";
 		}
-		return pos;
+		sidelinks = document.getElementsByClassName("sidenav-links");
+		for (i = 0; i < sidelinks.length; i++) {
+			sidelinks[i].className = sidelinks[i].className.replace(" active", "");
+		}
+		document.getElementById(webName).style.display = "block";
+		evt.currentTarget.className += " active";
+		
+		// When the page refreshed, it reset variables.
+		scrollTo(0, 0);
 	}
 	
 	$(document).ready(function() {
-		// 初始頁面
+		var i;
+		// tabnav
 		document.getElementById("Home").style.display = "block";
 		document.getElementById("HomeTitle").className += " active";
-		// 滾動改變文字顏色
-		$(".sidenav a").hover(function() {
-					if (this.id != titles[items]) {
-						$(this).css("color", "black");
-						$(this).css("background-color", "#ddd");
-					}
-				}, function() {
-					if (this.id != titles[items]) {
-						$(this).css("color", "#818181");
-						$(this).css("background-color", "white");
-					}
-		});
-
-		$(window).scroll(function() {
-			var scrollBottom = $(document).height() - $(window).height() - $(window).scrollTop();
+		// sidenav
+		document.getElementById("ToolPage").style.display = "block";
+		document.getElementById("SideTitle1").className += " active";
 		
-			if (clicked)
-			{
-				if ($(window).scrollTop() >= getTitleTop(0) && $(window).scrollTop() < getTitleTop(1)) items = 0;
-				else if ($(window).scrollTop() >= getTitleTop(1) && $(window).scrollTop() < getTitleTop(2)) items = 1;
-				else if ($(window).scrollTop() >= getTitleTop(2) && $(window).scrollTop() < getTitleTop(3)) items = 2;
-				else if ($(window).scrollTop() >= getTitleTop(3) && $(window).scrollTop() < getTitleTop(4)) items = 3;
-				else if ($(window).scrollTop() >= getTitleTop(4) && $(window).scrollTop() < getTitleTop(5)) items = 4;
-				else if ($(window).scrollTop() >= getTitleTop(5) && $(window).scrollTop() < getTitleTop(6)) items = 5;
-				else if ($(window).scrollTop() >= getTitleTop(6) && scrollBottom > 10) items = 6;
-				else if (scrollBottom == 0) items = 7;
-				setTextColor(items);
-			}
-		});
-		// 畫面滾動特效
-		$(".sidenav a").on('click', function(event) {
-			if (this.hash != "") {
-				event.preventDefault();
-				
-				var hash = this.hash;
-				
-				$('html, body').animate({
-					scrollTop: $(hash).offset().top
-				}, 800, function() {
-					window.location.hash = hash;
-				});
-			}
-		});
+		sidecontent = document.getElementsByClassName("sidenav-content");
+		for (i = 0; i < sidecontent.length; i++) {
+			sidecontent[i].style.display = "none";
+		}
+		
+		document.getElementById("ToolPage").style.display = "block";
 	});
 	
 	</script>
@@ -157,7 +111,6 @@
 	}
 	
 	#Menu2 h4, li { line-height: 1; font-size: 16px; }
-	#Menu3 h3[id^="ItemPage"] { padding-top: 70px; }
 	
 	.title1 { margin-bottom: -10px; }
 	.content1 { text-align: justify; font-size: 16px; line-height: 2; }
@@ -176,7 +129,6 @@
 		top: 0;
 		width: 100%;
 		z-index: 3;
-		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 	}
 	
 	.tabs button {
@@ -212,7 +164,7 @@
 		font-weight: bold;
 	}
 	
-	.TabContent {
+	.tab-content {
 		display: none;
 		-webkit-animation: fadeEffect 1.5s;
 		animation: fadeEffect 1.5s;
@@ -247,13 +199,31 @@
 		z-index: 2;
 	}
 
-	.sidenav a {
+	.sidenav button {
+		width: 100%;
+		text-align: left;
+		background-color: inherit;
+		border: none;
+		outline: none;
+		cursor: pointer;
+		font-size: 17px;
+		font-family: 'Open Sans', 微軟正黑體;
 		padding: 5px 8px 5px 40px;
-		text-decoration: none;
 		font-size: 16px;
-		color: #0D47A1;
+		color: #818181;
 		display: block;
 		transition: 0.4s;
+	}
+	
+	.sidenav button:hover {
+		color: black;
+		background-color: #ddd;
+		font-weight: normal;
+	}
+	
+	.sidenav button.active {
+		color: #0D47A1;
+		font-weight: bold;
 	}
 	
 	</style>
@@ -263,20 +233,20 @@
 <div class="tabs">
 	<div style="padding-right: 44px; vertical-align: middle">
 		<span>大學時期作品</span>
-		<button class="TabLinks" onclick="openWeb(event, 'Menu4')">Holtek</button>
-		<button class="TabLinks" onclick="openWeb(event, 'Menu3')">8051</button>
-		<button class="TabLinks" onclick="openWeb(event, 'Menu2')">競賽作品</button>
-		<button class="TabLinks" onclick="openWeb(event, 'Menu1')">專題製作</button>
-		<button id="HomeTitle" class="TabLinks" onclick="openWeb(event, 'Home')">首頁</button>
+		<button class="tab-links" onclick="openWebtab(event, 'Menu4')">Holtek</button>
+		<button class="tab-links" onclick="openWebtab(event, 'Menu3')">8051</button>
+		<button class="tab-links" onclick="openWebtab(event, 'Menu2')">競賽作品</button>
+		<button class="tab-links" onclick="openWebtab(event, 'Menu1')">專題製作</button>
+		<button id="HomeTitle" class="tab-links" onclick="openWebtab(event, 'Home')">首頁</button>
 	</div>
 </div>
 
 <!--Home-->
-<div id="Home" class="TabContent">
+<div id="Home" class="tab-content">
 	<img src="HomeBg.jpg" style="position: fixed" width="100%" height="100%">
 </div>
 <!--專題製作頁面-->
-<div id="Menu1" class="TabContent">
+<div id="Menu1" class="tab-content">
 
 	<center><h2>智慧手機連網控制家電應用</h2></center>
 	<center><p>
@@ -339,7 +309,7 @@
 
 </div>
 <!--競賽作品頁面-->
-<div id="Menu2"  class="TabContent">
+<div id="Menu2"  class="tab-content">
 <center><h2>智慧電子朝拜系統一媽祖e起來</h2></center>
 	<center><p>
 		全國微電腦應用系統設計創作競賽</br>
@@ -399,80 +369,96 @@
 	<div id="player2"></div>
 </div>
 <!--8051 Page-->
-<div id="Menu3"  class="TabContent">
-<!--Side Nav-->
+<div id="Menu3"  class="tab-content">
+	<!--Side Nav-->
 	<div class="sidenav">
-		<a id="SideTitle1" href="#ItemPage1">開發環境</a>
-		<a id="SideTitle2" href="#ItemPage2">4x4鍵盤控制RGB顏色</a>
-		<a id="SideTitle3" href="#ItemPage3">上傳溫濕度到雲端</a>
-		<a id="SideTitle4" href="#ItemPage4">PWM調光</a>
-		<a id="SideTitle5" href="#ItemPage5">溫度警報器</a>
-		<a id="SideTitle6" href="#ItemPage6">讀取溫濕度值</a>
-		<a id="SideTitle7" href="#ItemPage7">3路PWM輸出</a>
-		<a id="SideTitle8" href="#ItemPage8">PID控制器</a>
+		<button id="SideTitle1" class="sidenav-links" onclick="openWebside(event, 'ToolPage')">開發環境</button>
+		<button id="SideTitle2" class="sidenav-links" onclick="openWebside(event, 'page1')">4x4鍵盤控制RGB顏色</button>
+		<button id="SideTitle3" class="sidenav-links" onclick="openWebside(event, 'page2')">上傳溫濕度到雲端</button>
+		<button id="SideTitle4" class="sidenav-links" onclick="openWebside(event, 'page3')">PWM調光</button>
+		<button id="SideTitle5" class="sidenav-links" onclick="openWebside(event, 'page4')">溫度警報器</button>
+		<button id="SideTitle6" class="sidenav-links" onclick="openWebside(event, 'page5')">讀取溫濕度值</button>
+		<button id="SideTitle7" class="sidenav-links" onclick="openWebside(event, 'page6')">3路PWM輸出</button>
+		<button id="SideTitle8" class="sidenav-links" onclick="openWebside(event, 'page7')">PID控制器</button>
 	</div>
-	<!--Content-->
-	<h3 id="ItemPage1">開發工具</h3>
-	<div>
-		<div style="float: right">
-			<img src="8051開發板實體圖.jpg" width="247px" height="185px" style="border-radius: 20px">
+	<!--Tools-->
+	<div id="ToolPage" class="sidenav-content">
+		<h3>開發工具</h3>
+		<div>
+			<div style="float: right">
+				<img src="8051開發板實體圖.jpg" width="247px" height="185px" style="border-radius: 20px">
+			</div>
+			<table class="tab2">
+				<tr class="tab-text"><td class="tab-text">程式語言</td> <td class="tab-text">C</td>
+				</tr>
+				<tr class="tab-text"><td class="tab-text">單晶片</td> <td class="tab-text">AT89S52</td></tr>
+				<tr class="tab-text"><td class="tab-text">IDE</td> <td class="tab-text">Keil C</td></tr>
+				<tr class="tab-text"><td class="tab-text">PCB繪圖軟體</td> <td class="tab-text">Altium Designer</td></tr>
+			</table>
 		</div>
-		<table class="tab2">
-			<tr class="tab-text"><td class="tab-text">程式語言</td> <td class="tab-text">C</td>
-			</tr>
-			<tr class="tab-text"><td class="tab-text">單晶片</td> <td class="tab-text">AT89S52</td></tr>
-			<tr class="tab-text"><td class="tab-text">IDE</td> <td class="tab-text">Keil C</td></tr>
-			<tr class="tab-text"><td class="tab-text">PCB繪圖軟體</td> <td class="tab-text">Altium Designer</td></tr>
-		</table>
+		<h4 style="padding-top: 10px">8051開發板電路圖</h4>
+		<img src="8051開發板電路圖.jpg" width="100%" height="100%">
+	</div>
+	<!--Project 4x4鍵盤控制RGB顏色-->
+	<div id="page1" class="sidenav-content">
+		<h3>4x4鍵盤控制RGB顏色</h3>
+		<hr style="border: 1px solid #757575"/>
+		<p></p>
+		<h4>電路圖</h4>
+		<img src="4x4鍵盤控制RGB顏色.jpg" width="100%" height="100%">
+		<h4>程式碼</h4>
+		<script src="https://gist.github.com/shenggui59/befa736ba35af532bfcea12ffaa74e72.js"></script>
+	</div>
+	<!--Project 上傳溫濕度到雲端-->
+	<div id="page2" class="sidenav-content">
+		<h3>上傳溫濕度到雲端</h3>
+		<hr style="border: 1px solid #757575"/>
+		<h4>電路圖</h4>
+		<img src="ESP8266.jpg" width="100%" height="100%">
+		<h4>程式碼</h4>
+		<script src="https://gist.github.com/shenggui59/0a88bb17d474a011cdf6f82937c51dcf.js"></script>
+	</div>
+	<!--Project PWM調光-->
+	<div id="page3" class="sidenav-content">
+		<h3>PWM調光</h3>
+		<hr style="border: 1px solid #757575"/>
+		<h4>電路圖</h4>
+		<img src="PWM.jpg" width="100%" height="100%">
+		<h4>程式碼</h4>
+		<script src="https://gist.github.com/shenggui59/5b28bc063e0c2ce91371eae7a8989b56.js"></script>
+	</div>
+	<!--Project 溫度警報器-->
+	<div id="page4" class="sidenav-content">
+		<h3>溫度警報器</h3>
+		<hr style="border: 1px solid #757575"/>
+		<h4>電路圖</h4>
+		<img src="Alarm.jpg" width="100%" height="100%">
+		<h4>程式碼</h4>
+		<script src="https://gist.github.com/shenggui59/a9c70f4bde16cbed7ac91e2a5775032c.js"></script>
+	</div>
+	<!--Project 讀取溫濕度值-->
+	<div id="page5" class="sidenav-content">
+		<h3>讀取溫濕度值</h3>
+		<hr style="border: 1px solid #757575"/>
+		<h4>程式碼</h4>
+		<script src="https://gist.github.com/shenggui59/d9ee42bd480ba0a233465757db1e5212.js"></script>
+	</div>
+	<!--Project 3路PWM輸出-->
+	<div id="page6" class="sidenav-content">
+		<h3>3路PWM輸出</h3>
+		<hr style="border: 1px solid #757575"/>
+		<h4>程式碼</h4>
+		<script src="https://gist.github.com/shenggui59/006357cf62e50c04359fffa96210fa98.js"></script>
+	</div>
+	<!--Project PID控制器-->
+	<div id="page7" class="sidenav-content">
+		<h3>PID控制器</h3>
+		<hr style="border: 1px solid #757575"/>
 	</div>
 
-	<h4 style="padding-top: 10px">8051開發板電路圖</h4>
-	<img src="8051開發板電路圖.jpg" width="100%" height="100%">
-	<!--8051 Project-->
-	<h3 id="ItemPage2">4x4鍵盤控制RGB顏色</h3>
-	<hr style="border: 1px solid #757575"/>
-	<p></p>
-	<h4>電路圖</h4>
-	<img src="4x4鍵盤控制RGB顏色.jpg" width="100%" height="100%">
-	<h4>程式碼</h4>
-	<script src="https://gist.github.com/shenggui59/befa736ba35af532bfcea12ffaa74e72.js"></script>
-	
-	<h3 id="ItemPage3">上傳溫濕度到雲端</h3>
-	<hr style="border: 1px solid #757575"/>
-	<h4>電路圖</h4>
-	<img src="ESP8266.jpg" width="100%" height="100%">
-	<h4>程式碼</h4>
-	<script src="https://gist.github.com/shenggui59/0a88bb17d474a011cdf6f82937c51dcf.js"></script>
-	
-	<h3 id="ItemPage4">PWM調光</h3>
-	<hr style="border: 1px solid #757575"/>
-	<h4>電路圖</h4>
-	<img src="PWM.jpg" width="100%" height="100%">
-	<h4>程式碼</h4>
-	<script src="https://gist.github.com/shenggui59/5b28bc063e0c2ce91371eae7a8989b56.js"></script>
-	
-	<h3 id="ItemPage5">溫度警報器</h3>
-	<hr style="border: 1px solid #757575"/>
-	<h4>電路圖</h4>
-	<img src="Alarm.jpg" width="100%" height="100%">
-	<h4>程式碼</h4>
-	<script src="https://gist.github.com/shenggui59/a9c70f4bde16cbed7ac91e2a5775032c.js"></script>
-	
-	<h3 id="ItemPage6">讀取溫濕度值</h3>
-	<hr style="border: 1px solid #757575"/>
-	<h4>程式碼</h4>
-	<script src="https://gist.github.com/shenggui59/d9ee42bd480ba0a233465757db1e5212.js"></script>
-	
-	<h3 id="ItemPage7">3路PWM輸出</h3>
-	<hr style="border: 1px solid #757575"/>
-	<h4>程式碼</h4>
-	<script src="https://gist.github.com/shenggui59/006357cf62e50c04359fffa96210fa98.js"></script>
-	
-	<h3 id="ItemPage8">PID控制器</h3>
-	<hr style="border: 1px solid #757575"/>
 </div>
 <!--Holtek Page-->
-<div id="Menu4"  class="TabContent">
+<div id="Menu4"  class="tab-content">
 	
 </div>
 
