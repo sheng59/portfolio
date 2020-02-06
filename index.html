@@ -252,6 +252,11 @@
 
 <!--Home-->
 <div id="Home" class="tab-content">
+	<div style="position: fixed; bottom: 60px; left: 150px">
+		<h3>聯絡資訊</h3>
+		<h4>信箱:sa654872000%gmail.com</h4>
+		<h4>手機:0978-851303</h4>
+	</div>
 </div>
 <!--專題製作頁面-->
 <div id="Menu1" class="tab-content">
@@ -389,7 +394,7 @@
 		<button id="SideTitle6" class="sidenav-links" onclick="openWebside(event, 'page5')"><span>&mdash;&nbsp;&nbsp;</span>讀取溫濕度值</button>
 		<button id="SideTitle7" class="sidenav-links" onclick="openWebside(event, 'page6')"><span>&mdash;&nbsp;&nbsp;</span>3路PWM輸出</button>
 		<button id="SideTitle8" class="sidenav-links" onclick="openWebside(event, 'page7')"><span>&mdash;&nbsp;&nbsp;</span>PID控制器</button>
-		<div style="padding-top: 20px;padding-left: 40px"><img src="logo2.jpg" width="90px" height="40px" style="float: left"><h2 style="float: left; margin: 0">Holtek</h2></div>
+		<div style="padding-top: 20px;padding-left: 40px"><img src="logo2.jpg" width="120px" height="40px"><h2 style="margin: 0">HT66F70A</h2></div>
 		<button id="SideTitle9" class="sidenav-links" onclick="openWebside(event, 'page8')"><span>&mdash;&nbsp;&nbsp;</span>使用7段顯示器與LCM顯示ADC值</button>
 		<button id="SideTitle10" class="sidenav-links" onclick="openWebside(event, 'page9')"><span>&mdash;&nbsp;&nbsp;</span>使用可變電阻控制PWM</button>
 		<button id="SideTitle11" class="sidenav-links" onclick="openWebside(event, 'page10')"><span>&mdash;&nbsp;&nbsp;</span>碼錶</button>
@@ -473,6 +478,8 @@
 		<hr style="border: 1px solid #757575"/>
 		<h4>介紹</h4>
 		<p>使用UART通訊將DHT11的溫濕度數據顯示出來。</p>
+		<h4>電路圖</h4>
+		<img src="dht11.jpg">
 		<h4>程式碼</h4>
 		<script src="https://gist.github.com/shenggui59/d9ee42bd480ba0a233465757db1e5212.js"></script>
 	</div>
@@ -489,6 +496,10 @@
 	<div id="page7" class="sidenav-content">
 		<h3>PID控制器</h3>
 		<hr style="border: 1px solid #757575"/>
+		<h4>介紹</h4>
+		<p>在AT89S52晶片中沒有內建PWM，所以使用Timer產生PWM來控制LED亮度。</p>
+		<h4>電路圖</h4>
+		<img src="pid.jpg" width="70%" height="70%">
 	</div>
 	<!--Holtek-->
 	<!--Project 1-->
