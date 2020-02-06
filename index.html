@@ -8,7 +8,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script>
 	var titles = ["SideTitle1", "SideTitle2", "SideTitle3", "SideTitle4",
-								"SideTitle5", "SideTitle6", "SideTitle7", "SideTitle8"];
+								"SideTitle5", "SideTitle6", "SideTitle7", "SideTitle8",
+								"SideTitle9", "SideTitle10","SideTitle11"];
 
 	// 頁面切換
 	function openWebtab(evt, webName) {
@@ -99,11 +100,22 @@
 	</script>
 	<style>
 	body {
-		margin: 0;
+		padding: 0;
 		font-family: 'Open Sans', 微軟正黑體;
-		background-color: white;
 		color: black;
 		scroll-behavior: smooth;
+		background-repeat: no-repeat;
+		background-image: url("HomeBg.jpg");
+		background-size: 100% 100%;
+		background-attachment: fixed;
+		padding: 0 260px 0 260px;
+	}
+	body div[id^="Menu"] {
+		display: none;
+		z-index: 1;
+		background-color: white;
+		padding: 70px 20px 20px 20px;
+		border: 1px solid #aaa;
 	}
 	h3 { 
 		font-weight: bold;
@@ -111,6 +123,7 @@
 	}
 	
 	#Menu2 h4, li { line-height: 1; font-size: 16px; }
+	#Menu3 div[id^="page"] li { line-height: 2; }
 	
 	.title1 { margin-bottom: -10px; }
 	.content1 { text-align: justify; font-size: 16px; line-height: 2; }
@@ -127,6 +140,7 @@
 		background-color: white;
 		position: fixed;
 		top: 0;
+		left: 0;
 		width: 100%;
 		z-index: 3;
 	}
@@ -147,7 +161,7 @@
 	.tabs span {
 		background-color: inherit;
 		float: left;
-		padding: 14px 40px;
+		padding: 14px 30px;
 		font-size: 24px;
 		color: black;
 		letter-spacing: 10px;
@@ -180,23 +194,18 @@
 		to {opacity: 1;}
 	}
 
-	body div[id^="Menu"] {
-		display: none;
-		padding: 70px 280px 0 280px;
-		z-index: 1;
-	}
-
 	.sidenav {
 		height: 100%;
-		width: 260px;
+		width: 240px;
 		position: fixed;
-		top: 50px;
+		top: 0;
 		left: 0;
 		background-color: white;
 		overflow-x: hidden;
-		padding-top: 150px;
 		border-right: 1px solid #aaa;
 		z-index: 2;
+		opacity: 0.9;
+		padding-top: 70px;
 	}
 
 	.sidenav button {
@@ -206,10 +215,9 @@
 		border: none;
 		outline: none;
 		cursor: pointer;
-		font-size: 17px;
+		font-size: 14px;
 		font-family: 'Open Sans', 微軟正黑體;
-		padding: 5px 8px 5px 40px;
-		font-size: 16px;
+		padding: 5px 8px 5px 30px;
 		color: #818181;
 		display: block;
 		transition: 0.4s;
@@ -226,6 +234,8 @@
 		font-weight: bold;
 	}
 	
+	.sidenav span { color: #0D47A1; font-size:12px; }
+	
 	</style>
 </head>
 <body>
@@ -233,8 +243,7 @@
 <div class="tabs">
 	<div style="padding-right: 44px; vertical-align: middle">
 		<span>大學時期作品</span>
-		<button class="tab-links" onclick="openWebtab(event, 'Menu4')">Holtek</button>
-		<button class="tab-links" onclick="openWebtab(event, 'Menu3')">8051</button>
+		<button class="tab-links" onclick="openWebtab(event, 'Menu3')">Microcontroller</button>
 		<button class="tab-links" onclick="openWebtab(event, 'Menu2')">競賽作品</button>
 		<button class="tab-links" onclick="openWebtab(event, 'Menu1')">專題製作</button>
 		<button id="HomeTitle" class="tab-links" onclick="openWebtab(event, 'Home')">首頁</button>
@@ -243,7 +252,6 @@
 
 <!--Home-->
 <div id="Home" class="tab-content">
-	<img src="HomeBg.jpg" style="position: fixed" width="100%" height="100%">
 </div>
 <!--專題製作頁面-->
 <div id="Menu1" class="tab-content">
@@ -372,14 +380,19 @@
 <div id="Menu3"  class="tab-content">
 	<!--Side Nav-->
 	<div class="sidenav">
-		<button id="SideTitle1" class="sidenav-links" onclick="openWebside(event, 'ToolPage')">開發環境</button>
-		<button id="SideTitle2" class="sidenav-links" onclick="openWebside(event, 'page1')">4x4鍵盤控制RGB顏色</button>
-		<button id="SideTitle3" class="sidenav-links" onclick="openWebside(event, 'page2')">上傳溫濕度到雲端</button>
-		<button id="SideTitle4" class="sidenav-links" onclick="openWebside(event, 'page3')">PWM調光</button>
-		<button id="SideTitle5" class="sidenav-links" onclick="openWebside(event, 'page4')">溫度警報器</button>
-		<button id="SideTitle6" class="sidenav-links" onclick="openWebside(event, 'page5')">讀取溫濕度值</button>
-		<button id="SideTitle7" class="sidenav-links" onclick="openWebside(event, 'page6')">3路PWM輸出</button>
-		<button id="SideTitle8" class="sidenav-links" onclick="openWebside(event, 'page7')">PID控制器</button>
+		<div style="padding-top: 20px;padding-left: 40px"><img src="logo1.jpg" width="70px" height="40px" style="float: left"><h2 style="float: left; margin: 0">8051</h2></div>
+		<button id="SideTitle1" class="sidenav-links" onclick="openWebside(event, 'ToolPage')"><span>&mdash;&nbsp;&nbsp;</span>開發環境</button>
+		<button id="SideTitle2" class="sidenav-links" onclick="openWebside(event, 'page1')"><span>&mdash;&nbsp;&nbsp;</span>4x4鍵盤控制RGB顏色</button>
+		<button id="SideTitle3" class="sidenav-links" onclick="openWebside(event, 'page2')"><span>&mdash;&nbsp;&nbsp;</span>上傳溫濕度到雲端</button>
+		<button id="SideTitle4" class="sidenav-links" onclick="openWebside(event, 'page3')"><span>&mdash;&nbsp;&nbsp;</span>PWM調光</button>
+		<button id="SideTitle5" class="sidenav-links" onclick="openWebside(event, 'page4')"><span>&mdash;&nbsp;&nbsp;</span>溫度警報器</button>
+		<button id="SideTitle6" class="sidenav-links" onclick="openWebside(event, 'page5')"><span>&mdash;&nbsp;&nbsp;</span>讀取溫濕度值</button>
+		<button id="SideTitle7" class="sidenav-links" onclick="openWebside(event, 'page6')"><span>&mdash;&nbsp;&nbsp;</span>3路PWM輸出</button>
+		<button id="SideTitle8" class="sidenav-links" onclick="openWebside(event, 'page7')"><span>&mdash;&nbsp;&nbsp;</span>PID控制器</button>
+		<div style="padding-top: 20px;padding-left: 40px"><img src="logo2.jpg" width="90px" height="40px" style="float: left"><h2 style="float: left; margin: 0">Holtek</h2></div>
+		<button id="SideTitle9" class="sidenav-links" onclick="openWebside(event, 'page8')"><span>&mdash;&nbsp;&nbsp;</span>使用7段顯示器與LCM顯示ADC值</button>
+		<button id="SideTitle10" class="sidenav-links" onclick="openWebside(event, 'page9')"><span>&mdash;&nbsp;&nbsp;</span>使用可變電阻控制PWM</button>
+		<button id="SideTitle11" class="sidenav-links" onclick="openWebside(event, 'page10')"><span>&mdash;&nbsp;&nbsp;</span>碼錶</button>
 	</div>
 	<!--Tools-->
 	<div id="ToolPage" class="sidenav-content">
@@ -399,11 +412,19 @@
 		<h4 style="padding-top: 10px">8051開發板電路圖</h4>
 		<img src="8051開發板電路圖.jpg" width="100%" height="100%">
 	</div>
+	<!--8051-->
 	<!--Project 4x4鍵盤控制RGB顏色-->
 	<div id="page1" class="sidenav-content">
 		<h3>4x4鍵盤控制RGB顏色</h3>
 		<hr style="border: 1px solid #757575"/>
-		<p></p>
+		<h4>介紹</h4>
+		<p>使用4x4鍵盤設定RGB燈的顏色及亮度，並加上LCM顯示目前的顏色及亮度。</p>
+		<li>當按鍵0~7被按下時更改RGB燈顏色</li>
+		<li>當按鍵A被按下時可輸入更改數值</li>
+		<li>當按鍵B被按下時確定更改RGB燈亮度</li>
+		<li>當按鍵C被按下時減少10%亮度</li>
+		<li>當按鍵D被按下時增加10%亮度</li>
+		<li>當按鍵F被按下時關閉RGB燈</li>
 		<h4>電路圖</h4>
 		<img src="4x4鍵盤控制RGB顏色.jpg" width="100%" height="100%">
 		<h4>程式碼</h4>
@@ -413,6 +434,8 @@
 	<div id="page2" class="sidenav-content">
 		<h3>上傳溫濕度到雲端</h3>
 		<hr style="border: 1px solid #757575"/>
+		<h4>介紹</h4>
+		<p>使用UART通訊下達At Command命令，並透過ESP8266(WiFi模組)將溫濕度數據存到雲端上。</p>
 		<h4>電路圖</h4>
 		<img src="ESP8266.jpg" width="100%" height="100%">
 		<h4>程式碼</h4>
@@ -422,6 +445,10 @@
 	<div id="page3" class="sidenav-content">
 		<h3>PWM調光</h3>
 		<hr style="border: 1px solid #757575"/>
+		<h4>介紹</h4>
+		<p>使用按鈕控制LED亮度，並加上7段顯示器顯示目前亮度。</p>
+		<li>當按鍵1被按下時減少10%亮度</li>
+		<li>當按鍵2被按下時增加10%亮度</li>
 		<h4>電路圖</h4>
 		<img src="PWM.jpg" width="100%" height="100%">
 		<h4>程式碼</h4>
@@ -431,6 +458,10 @@
 	<div id="page4" class="sidenav-content">
 		<h3>溫度警報器</h3>
 		<hr style="border: 1px solid #757575"/>
+		<h4>介紹</h4>
+		<p>使用4x4鍵盤設定溫度上限，並加上LCM顯示設上限與目前溫度，當溫度超過上限時則會觸發蜂鳴器。</p>
+		<li>當按鍵A被按下時可輸入更改數值</li>
+		<li>當按鍵B被按下時確定更改溫度上限</li>
 		<h4>電路圖</h4>
 		<img src="Alarm.jpg" width="100%" height="100%">
 		<h4>程式碼</h4>
@@ -440,6 +471,8 @@
 	<div id="page5" class="sidenav-content">
 		<h3>讀取溫濕度值</h3>
 		<hr style="border: 1px solid #757575"/>
+		<h4>介紹</h4>
+		<p>使用UART通訊將DHT11的溫濕度數據顯示出來。</p>
 		<h4>程式碼</h4>
 		<script src="https://gist.github.com/shenggui59/d9ee42bd480ba0a233465757db1e5212.js"></script>
 	</div>
@@ -447,6 +480,8 @@
 	<div id="page6" class="sidenav-content">
 		<h3>3路PWM輸出</h3>
 		<hr style="border: 1px solid #757575"/>
+		<h4>介紹</h4>
+		<p>在AT89S52晶片中沒有內建PWM，所以使用Timer產生PWM來控制LED亮度。</p>
 		<h4>程式碼</h4>
 		<script src="https://gist.github.com/shenggui59/006357cf62e50c04359fffa96210fa98.js"></script>
 	</div>
@@ -455,11 +490,34 @@
 		<h3>PID控制器</h3>
 		<hr style="border: 1px solid #757575"/>
 	</div>
+	<!--Holtek-->
+	<!--Project 1-->
+	<div id="page8" class="sidenav-content">
+		<h3>使用7段顯示器與LCM顯示ADC值</h3>
+		<hr style="border: 1px solid #757575"/>
+		<h4>介紹</h4>
+		<p>在AT89S52晶片中沒有內建PWM，所以使用Timer產生PWM來控制LED亮度。</p>
+		<h4>程式碼</h4>
+		<script src="https://gist.github.com/shenggui59/74d92854e43073f497ea1a8810c48b96.js"></script>
+	</div>
+	<!--Project 2-->
+	<div id="page9" class="sidenav-content">
+		<h3>使用可變電阻控制PWM</h3>
+		<hr style="border: 1px solid #757575"/>
+		<h4>介紹</h4>
+		<p>在AT89S52晶片中沒有內建PWM，所以使用Timer產生PWM來控制LED亮度。</p>
+		<h4>程式碼</h4>
+		<script src="https://gist.github.com/shenggui59/473e5bc98a54242e107fa58c762e1b6b.js"></script>
+	</div>
+	<!--Project 3-->
+	<div id="page10" class="sidenav-content">
+		<h3>碼錶</h3>
+		<hr style="border: 1px solid #757575"/>
+		<h4>介紹</h4>
+		<h4>程式碼</h4>
+		<script src="https://gist.github.com/shenggui59/dbbfb93e35ce675ad58fb50c3d3ff092.js"></script>
+	</div>
 
-</div>
-<!--Holtek Page-->
-<div id="Menu4"  class="tab-content">
-	
 </div>
 
 </body>
