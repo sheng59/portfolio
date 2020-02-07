@@ -236,7 +236,72 @@
 	
 	.sidenav span { color: #0D47A1; font-size:12px; }
 	
+	.btnMenu { display: none; }
+	
 	</style>
+	
+	<script>
+	function openNav() {
+		document.getElementById("mySideMenu").style.width = "240px";
+	}
+
+	function closeNav() {
+		document.getElementById("mySideMenu").style.width = "0";
+	}
+	</script>
+	<style>
+	@media screen and (max-width: 750px) {
+		body {
+			padding: 0;
+			font-family: 'Open Sans', 微軟正黑體;
+			color: black;
+		}
+		
+		.SideMenu {
+			height: 100%;
+			width: 0;
+			position: fixed;
+			z-index: 4;
+			top: 0;
+			right: 0;
+			background-color: white;
+			overflow-x: hidden;
+			transition: 0.5s;
+			padding-top: 60px;
+			opacity: 0.9;
+		}
+		
+		.SideMenu a {
+			padding: 8px 8px 8px 32px;
+			text-decoration: none;
+			font-size: 16px;
+			color: #818181;
+			display: block;
+			transition: 0.3s;
+		}
+		
+		.SideMenu a:hover {
+			color: #0D47A1;
+		}
+
+		.SideMenu .closebtn {
+			position: absolute;
+			top: 0;
+			right: 25px;
+			font-size: 36px;
+			margin-left: 50px;
+		}
+		
+		.sidenav { display: none; }
+		.tabs button { display: none; }
+		.btnMenu { 
+			display: block;
+			font-size:30px;
+			cursor: pointer;
+		}
+	}
+	</style>
+
 </head>
 <body>
 
@@ -247,12 +312,21 @@
 		<button class="tab-links" onclick="openWebtab(event, 'Menu2')">競賽作品</button>
 		<button class="tab-links" onclick="openWebtab(event, 'Menu1')">專題製作</button>
 		<button id="HomeTitle" class="tab-links" onclick="openWebtab(event, 'Home')">首頁</button>
+		<span class="btnMenu" onclick="openNav()">&#9776;</span>
 	</div>
+</div>
+
+<div id="mySideMenu" class="SideMenu">
+	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#" onclick="openWebtab(event, 'Home')">首頁</a>
+  <a href="#" onclick="openWebtab(event, 'Menu1')">專題製作</a>
+  <a href="#" onclick="openWebtab(event, 'Menu2')">競賽作品</a>
+  <a href="#" onclick="openWebtab(event, 'Menu3')">Microcontroller</a>
 </div>
 
 <!--Home-->
 <div id="Home" class="tab-content">
-	<div style="position: fixed; bottom: 60px; left: 150px">
+	<div style="position: fixed; bottom: 60px; right: 150px">
 		<h3>聯絡資訊</h3>
 		<h4>信箱:sa654872000%gmail.com</h4>
 		<h4>手機:0978-851303</h4>
@@ -282,7 +356,7 @@
 	<li class="content1">推播即時天氣預報至使用者手機</li>
 	
 	<h3>使用技術</h3>
-	<table width="500px" cellspacing="0" cellpadding="0" style="border-top: 1px solid #bbb; font-size:16px">
+	<table width="65%" cellspacing="0" cellpadding="0" style="border-top: 1px solid #bbb; font-size:16px">
 		<tr class="tab-text">
 			<td class="tab-text">App設計</td>
 			<td class="tab-text">App Inventor 2</td>
@@ -370,11 +444,11 @@
 	<center><div style="padding-top: 16px">
 		<table width="100%" height="100%" cellspacing="0" cellpadding="0">
 			<tr>
-				<td rowspan="2"><center><img src="p2-3.jpg" width="100%"></br>媽祖App主畫面</center></td>
-				<td><center><img src="p2-2.jpg" width="100%" height="270px"></br>遠端繞境畫面</center></td>
+				<td rowspan="2"><center><img src="p2-3.jpg" width="105%"></br>媽祖App主畫面</center></td>
+				<td><center><img src="p2-2.jpg" width="100%" height="100%"></br>遠端繞境畫面</center></td>
 			</tr>
 			<tr>
-				<td><center><img src="p2-1.jpg" width="100%" height="270px"></br>抬轎繞境畫面</center></td>
+				<td><center><img src="p2-1.jpg" width="100%" height="100%"></br>抬轎繞境畫面</center></td>
 			</tr>
 		</table>
 	</div></center>
@@ -387,7 +461,7 @@
 	<div class="sidenav">
 		<div style="padding-top: 20px;padding-left: 40px"><img src="logo1.jpg" width="70px" height="40px" style="float: left"><h2 style="float: left; margin: 0">8051</h2></div>
 		<button id="SideTitle1" class="sidenav-links" onclick="openWebside(event, 'ToolPage')"><span>&mdash;&nbsp;&nbsp;</span>開發環境</button>
-		<button id="SideTitle2" class="sidenav-links" onclick="openWebside(event, 'page1')"><span>&mdash;&nbsp;&nbsp;</span>4x4鍵盤控制RGB顏色</button>
+		<button id="SideTitle2" class="sidenav-links" onclick="openWebside(event, 'page1')"><span>&mdash;&nbsp;&nbsp;</span>4x4鍵盤控制RGB燈</button>
 		<button id="SideTitle3" class="sidenav-links" onclick="openWebside(event, 'page2')"><span>&mdash;&nbsp;&nbsp;</span>上傳溫濕度到雲端</button>
 		<button id="SideTitle4" class="sidenav-links" onclick="openWebside(event, 'page3')"><span>&mdash;&nbsp;&nbsp;</span>PWM調光</button>
 		<button id="SideTitle5" class="sidenav-links" onclick="openWebside(event, 'page4')"><span>&mdash;&nbsp;&nbsp;</span>溫度警報器</button>
@@ -418,9 +492,9 @@
 		<img src="8051開發板電路圖.jpg" width="100%" height="100%">
 	</div>
 	<!--8051-->
-	<!--Project 4x4鍵盤控制RGB顏色-->
+	<!--Project 4x4鍵盤控制RGB燈-->
 	<div id="page1" class="sidenav-content">
-		<h3>4x4鍵盤控制RGB顏色</h3>
+		<h3>4x4鍵盤控制RGB燈</h3>
 		<hr style="border: 1px solid #757575"/>
 		<h4>介紹</h4>
 		<p>使用4x4鍵盤設定RGB燈的顏色及亮度，並加上LCM顯示目前的顏色及亮度。</p>
