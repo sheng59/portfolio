@@ -253,24 +253,18 @@
 	}
 	
 	function openProject() {
-		var i, tabcontent, sidecontent;
+		document.getElementById("mySideProject").style.display = "block";
+	}
+	
+	function openWebProject(evt, webName) {
+		var i, tabcontent, sidecontent, sidelinks;
+		
 		// close tab content
 		tabcontent = document.getElementsByClassName("tab-content");
 		for (i = 0; i < tabcontent.length; i++) {
 			tabcontent[i].style.display = "none";
 		}
-		// close side content
-		sidecontent = document.getElementsByClassName("sidenav-content");
-		for (i = 0; i < sidecontent.length; i++) {
-			sidecontent[i].style.display = "none";
-		}
-
-		document.getElementById("mySideProject").style.display = "block";
-	}
-	
-	function openWebProject(evt, webName) {
-		var i, sidecontent, sidelinks;
-		
+		// open project menu
 		document.getElementById("Menu3").style.display = "block";
 		
 		sidecontent = document.getElementsByClassName("sidenav-content");
