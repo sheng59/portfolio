@@ -237,10 +237,12 @@
 	
 	.sidenav span { color: #0D47A1; font-size:12px; }
 	
+	.info { position: fixed; bottom: 60px; right: 150px; }
 	.btnMenu { display: none; }
 	.SideMenu { display: none; }
 	.SideProject { display: none; }
 	.imgln { float:right; }
+	.imgShow { display: none; }
 	
 	</style>
 	
@@ -296,10 +298,14 @@
 	<style>
 	@media screen and (max-width: 750px) {
 		body {
+			margin: 0;
 			padding: 0;
 			font-family: 'Open Sans', 微軟正黑體;
 			color: black;
+			background-image: none;
 		}
+		
+		body div[id^="Menu"] { border: 0; }
 			
 		.SideMenu {
 			display: block;
@@ -395,9 +401,12 @@
 	
 		.sidenav span { color: #0D47A1; font-size:12px; }
 		
+		.info { position: relative; top: 0; left: 0; padding-left: 30px; }
 		.imgln { float:none; }
+		.imgShow { display: block; padding-top: 70px; }
 		.sidenav { display: none; }
 		.tabs { position: absolute; }
+		.tabs span { padding: 18px 30px; }
 		.tabs button { display: none; }
 		.btnMenu { 
 			display: block;
@@ -448,10 +457,10 @@
 	<a onclick="openWebProject(event, 'page10')">碼錶</a>
 </div>
 
-
 <!--Home-->
 <div id="Home" class="tab-content">
-	<div style="position: fixed; bottom: 60px; right: 150px">
+	<img src="HomeBg.jpg" width="100%" height="100%" class="imgShow">
+	<div class="info">
 		<h3>聯絡資訊</h3>
 		<h4>信箱:sa654872000%gmail.com</h4>
 		<h4>手機:0978-851303</h4>
