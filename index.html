@@ -312,27 +312,34 @@
 			background-color: #111;
 			overflow-x: hidden;
 			transition: 0.5s;
-			padding-top: 60px;
 		}
 		
 		.SideMenu a {
-			padding: 8px 8px 8px 32px;
+			padding: 16px;
 			text-decoration: none;
 			font-size: 16px;
-			color: #818181;
+			color: #ddd;
 			display: block;
 			transition: 0.3s;
+			border-bottom: 1px solid #ddd;
+			cursor: pointer;
 		}
 		
 		.SideMenu a:hover {
 			color: white;
 		}
+		
+		.SideMenu .closebtn::before {
+			content: "Menu";
+			color: white;
+		}
 
 		.SideMenu .closebtn {
-			position: absolute;
-			top: 0;
-			right: 25px;
-			font-size: 36px;
+			color: white;
+			font-size: 18px;
+			font-weight: bold;
+			padding: 24px 18px;
+			background-color: #2196F3;
 		}
 		
 		.SideProject {
@@ -346,27 +353,34 @@
 			overflow-x: hidden;
 			z-index: 4;
 			transition: 0.5s;
-			padding-top: 60px;
 		}
 		
 		.SideProject a {
-			padding: 8px 8px 8px 32px;
+			padding: 16px;
 			text-decoration: none;
 			font-size: 16px;
-			color: #818181;
+			color: #ddd;
 			display: block;
 			transition: 0.3s;
+			border-bottom: 1px solid #ddd;
+			cursor: pointer;
 		}
 		
 		.SideProject a:hover {
 			color: white;;
 		}
 		
+		.SideProject .closebtn::before {
+			content: "Microcontroller";
+			color: white;
+		}
+		
 		.SideProject .closebtn {
-			position: absolute;
-			top: 0;
-			right: 25px;
-			font-size: 36px;
+			color: white;
+			font-size: 18px;
+			font-weight: bold;
+			padding: 24px 18px;
+			background-color: #2196F3;
 		}
 	
 		.sidenav span { color: #0D47A1; font-size:12px; }
@@ -401,7 +415,7 @@
 <!--Mobile sidenav 1-->
 <div id="mySideMenu" class="SideMenu">
 	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a onclick="openWebtab(event, 'Home')">首頁</a>
+	<a onclick="openWebtab(event, 'Home')">首頁</a>
   <a onclick="openWebtab(event, 'Menu1')">專題製作</a>
   <a onclick="openWebtab(event, 'Menu2')">競賽作品</a>
   <a onclick="openProject()">Microcontroller</a>
@@ -409,7 +423,7 @@
 <!--Mobile sidenav 2-->
 <div id="mySideProject" class="SideProject">
 	<a href="javascript:void(0)" class="closebtn" onclick="backNav()">&larr;</a>
-	<h2 style="padding-left: 32px; color: white">8051</h2>
+	<h2 style="padding: 16px; color: white; border-bottom: 1px solid #ddd; margin: 0">8051</h2>
 	<a onclick="openWebProject(event, 'ToolPage')">開發環境</a>
 	<a onclick="openWebProject(event, 'page1')">4x4鍵盤控制RGB燈</a>
 	<a onclick="openWebProject(event, 'page2')">上傳溫濕度到雲端</a>
@@ -418,7 +432,7 @@
 	<a onclick="openWebProject(event, 'page5')">讀取溫濕度值</a>
 	<a onclick="openWebProject(event, 'page6')">3路PWM輸出</a>
 	<a onclick="openWebProject(event, 'page7')">PID控制器</a>
-	<h2 style="padding-left: 32px; color: white">Holtek</h2>
+	<h2 style="padding: 16px; color: white; border-bottom: 1px solid #ddd; margin: 0">Holtek</h2>
 	<a onclick="openWebProject(event, 'page8')">使用7段顯示器與LCM顯示ADC值</a>
 	<a onclick="openWebProject(event, 'page9')">使用可變電阻控制PWM</a>
 	<a onclick="openWebProject(event, 'page10')">碼錶</a>
