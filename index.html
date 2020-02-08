@@ -330,16 +330,21 @@
 		}
 		
 		.SideMenu .closebtn::before {
+			font-weight: bold;
 			content: "Menu";
 			color: white;
+			position: absolute;
+			left: 16px;
 		}
 
 		.SideMenu .closebtn {
+			text-align: right;
 			color: white;
 			font-size: 18px;
 			font-weight: bold;
 			padding: 24px 18px;
 			background-color: #2196F3;
+			border: 0;
 		}
 		
 		.SideProject {
@@ -371,16 +376,21 @@
 		}
 		
 		.SideProject .closebtn::before {
+			font-weight: bold;
 			content: "Microcontroller";
 			color: white;
+			position: absolute;
+			left: 16px;
 		}
 		
 		.SideProject .closebtn {
+			text-align: right;
 			color: white;
 			font-size: 18px;
 			font-weight: bold;
 			padding: 24px 18px;
 			background-color: #2196F3;
+			border: 0;
 		}
 	
 		.sidenav span { color: #0D47A1; font-size:12px; }
@@ -423,7 +433,7 @@
 <!--Mobile sidenav 2-->
 <div id="mySideProject" class="SideProject">
 	<a href="javascript:void(0)" class="closebtn" onclick="backNav()">&larr;</a>
-	<h2 style="padding: 16px; color: white; border-bottom: 1px solid #ddd; margin: 0">8051</h2>
+	<h2 style="padding: 16px; color: white; margin: 0; background-color: #4CAF50">8051</h2>
 	<a onclick="openWebProject(event, 'ToolPage')">開發環境</a>
 	<a onclick="openWebProject(event, 'page1')">4x4鍵盤控制RGB燈</a>
 	<a onclick="openWebProject(event, 'page2')">上傳溫濕度到雲端</a>
@@ -432,7 +442,7 @@
 	<a onclick="openWebProject(event, 'page5')">讀取溫濕度值</a>
 	<a onclick="openWebProject(event, 'page6')">3路PWM輸出</a>
 	<a onclick="openWebProject(event, 'page7')">PID控制器</a>
-	<h2 style="padding: 16px; color: white; border-bottom: 1px solid #ddd; margin: 0">Holtek</h2>
+	<h2 style="padding: 16px; color: white; margin: 0; background-color: #4CAF50">Holtek</h2>
 	<a onclick="openWebProject(event, 'page8')">使用7段顯示器與LCM顯示ADC值</a>
 	<a onclick="openWebProject(event, 'page9')">使用可變電阻控制PWM</a>
 	<a onclick="openWebProject(event, 'page10')">碼錶</a>
