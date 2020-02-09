@@ -1,4 +1,82 @@
 <!DOCTYPE html>
+<div id="loading"></div>
+<script>
+	// 當頁面全部載入完成
+	window.addEventListener("load", function() {
+		var i, sidecontent;
+		var tabs, img;
+		
+		document.getElementById("loading").style.display = "none";
+		
+		tabs = $(".tabs");
+		tabs.css("display", "block");
+		
+		img = $(".imgShow");
+		if (img.css("display") === "block")
+			document.body.style.backgroundImage = "none";
+		else
+			document.body.style.backgroundImage = "url('HomeBg.jpg')";
+		
+		// tabnav
+		document.getElementById("Home").style.display = "block";
+		document.getElementById("HomeTitle").className += " active";
+		// sidenav
+		document.getElementById("ToolPage").style.display = "block";
+		document.getElementById("SideTitle1").className += " active";
+		
+		sidecontent = document.getElementsByClassName("sidenav-content");
+		for (i = 0; i < sidecontent.length; i++) {
+			sidecontent[i].style.display = "none";
+		}
+		document.getElementById("ToolPage").style.display = "block";
+	});
+</script>
+<style>
+#loading {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 5;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+</style>
 <html lang="zh-TW">
 <head>
 	<title>個人作品</title>
@@ -52,22 +130,6 @@
 		closeNav();
 	}
 	
-	$(document).ready(function() {
-		var i, sidecontent;
-		// tabnav
-		document.getElementById("Home").style.display = "block";
-		document.getElementById("HomeTitle").className += " active";
-		// sidenav
-		document.getElementById("ToolPage").style.display = "block";
-		document.getElementById("SideTitle1").className += " active";
-		
-		sidecontent = document.getElementsByClassName("sidenav-content");
-		for (i = 0; i < sidecontent.length; i++) {
-			sidecontent[i].style.display = "none";
-		}
-		document.getElementById("ToolPage").style.display = "block";
-	});
-	
 	</script>
 	<script>
 	// This code loads the IFrame Player API code asynchronously.
@@ -105,8 +167,7 @@
 		font-family: 'Open Sans', 微軟正黑體;
 		color: black;
 		scroll-behavior: smooth;
-		background-repeat: no-repeat;
-		background-image: url("HomeBg.jpg");
+		background-repeat: no-repeat;;
 		background-size: 100% 100%;
 		background-attachment: fixed;
 		padding: 0 260px 0 260px;
@@ -118,6 +179,7 @@
 		padding: 70px 20px 20px 20px;
 		border: 1px solid #aaa;
 	}
+	
 	h3 { 
 		font-weight: bold;
 		color: #0D47A1;
@@ -136,6 +198,7 @@
 	.image1 { width: 100%; }
 
 	.tabs {
+		display: none;
 		overflow: hidden;
 		border-bottom: 1px solid #ccc;
 		background-color: white;
@@ -318,6 +381,7 @@
 			background-color: #111;
 			overflow-x: hidden;
 			transition: 0.5s;
+			border-left: 1px solid #ddd;
 		}
 		
 		.SideMenu a {
@@ -364,6 +428,7 @@
 			overflow-x: hidden;
 			z-index: 4;
 			transition: 0.5s;
+			border-left: 1px solid #ddd;
 		}
 		
 		.SideProject a {
@@ -406,6 +471,7 @@
 		.imgShow { display: block; padding-top: 70px; }
 		.sidenav { display: none; }
 		.tabs { position: absolute; }
+		#tab-skill { width: 100%; }
 		.tabs span { padding: 18px 30px; }
 		.tabs button { display: none; }
 		.btnMenu { 
@@ -417,7 +483,6 @@
 		}
 	}
 	</style>
-
 </head>
 <body>
 <!--Topnav-->
@@ -459,7 +524,7 @@
 
 <!--Home-->
 <div id="Home" class="tab-content">
-	<img src="HomeBg.jpg" width="100%" height="100%" class="imgShow">
+	<img src="HomeBg.jpg" width="100%"class="imgShow">
 	<div class="info">
 		<h3>聯絡資訊</h3>
 		<h4>信箱:sa654872000%gmail.com</h4>
@@ -490,7 +555,7 @@
 	<li class="content1">推播即時天氣預報至使用者手機</li>
 	
 	<h3>使用技術</h3>
-	<table width="65%" cellspacing="0" cellpadding="0" style="border-top: 1px solid #bbb; font-size:16px">
+	<table id="tab-skill" width="65%" cellspacing="0" cellpadding="0" style="border-top: 1px solid #bbb; font-size:16px">
 		<tr class="tab-text">
 			<td class="tab-text">App設計</td>
 			<td class="tab-text">App Inventor 2</td>
@@ -510,10 +575,10 @@
 	</table>
 	
 	<h3>成品</h3>
-	<center><img src="house.jpg" height="100%" width="100%">整體系統架構圖</center>
+	<center><img src="house.jpg" width="100%">整體系統架構圖</center>
 
 	<h4 style="padding-top: 16px">App操作畫面:</h4>
-	<table class="tab1" width="100%" height="100%" cellspacing="0" cellpadding="0">
+	<table class="tab1" width="100%" cellspacing="0" cellpadding="0">
 		<tr>
 			<td><center><img class="image1" src="p1-1.jpg"></center></td>
 			<td><center><img class="image1" src="p1-2.jpg"></center></td>
@@ -574,15 +639,15 @@
 	<p class="content2">信徒可利用VR眼鏡來體驗遠端朝拜，亦可利用社工關懷之App問籤。</p>
 	
 	<h3>成品</h3>
-	<center><img src="mazu.jpg" width="100%" height="100%" >系統架構圖</center>
+	<center><img src="mazu.jpg" width="100%">系統架構圖</center>
 	<center><div style="padding-top: 16px">
-		<table width="100%" height="100%" cellspacing="0" cellpadding="0">
+		<table width="100%" cellspacing="0" cellpadding="0">
 			<tr>
 				<td rowspan="2"><center><img src="p2-3.jpg" width="105%"></br>媽祖App主畫面</center></td>
-				<td><center><img src="p2-2.jpg" width="100%" height="100%"></br>遠端繞境畫面</center></td>
+				<td><center><img src="p2-2.jpg" width="100%"></br>遠端繞境畫面</center></td>
 			</tr>
 			<tr>
-				<td><center><img src="p2-1.jpg" width="100%" height="100%"></br>抬轎繞境畫面</center></td>
+				<td><center><img src="p2-1.jpg" width="100%"></br>抬轎繞境畫面</center></td>
 			</tr>
 		</table>
 	</div></center>
@@ -623,7 +688,7 @@
 			</table>
 		</div>
 		<h4 style="padding-top: 10px">8051開發板電路圖</h4>
-		<img src="8051開發板電路圖.jpg" width="100%" height="100%">
+		<img src="8051開發板電路圖.jpg" width="100%">
 	</div>
 	<!--8051-->
 	<!--Project 4x4鍵盤控制RGB燈-->
@@ -639,7 +704,7 @@
 		<li>當按鍵D被按下時增加10%亮度</li>
 		<li>當按鍵F被按下時關閉RGB燈</li>
 		<h4>電路圖</h4>
-		<img src="4x4鍵盤控制RGB顏色.jpg" width="100%" height="100%">
+		<img src="4x4鍵盤控制RGB顏色.jpg" width="100%">
 		<h4>程式碼</h4>
 		<script src="https://gist.github.com/shenggui59/befa736ba35af532bfcea12ffaa74e72.js"></script>
 	</div>
@@ -650,7 +715,7 @@
 		<h4>介紹</h4>
 		<p>使用UART通訊下達At Command命令，並透過ESP8266(WiFi模組)將溫濕度數據存到雲端上。</p>
 		<h4>電路圖</h4>
-		<img src="ESP8266.jpg" width="100%" height="100%">
+		<img src="ESP8266.jpg" width="100%">
 		<h4>程式碼</h4>
 		<script src="https://gist.github.com/shenggui59/0a88bb17d474a011cdf6f82937c51dcf.js"></script>
 	</div>
@@ -663,7 +728,7 @@
 		<li>當按鍵1被按下時減少10%亮度</li>
 		<li>當按鍵2被按下時增加10%亮度</li>
 		<h4>電路圖</h4>
-		<img src="PWM.jpg" width="100%" height="100%">
+		<img src="PWM.jpg" width="100%">
 		<h4>程式碼</h4>
 		<script src="https://gist.github.com/shenggui59/5b28bc063e0c2ce91371eae7a8989b56.js"></script>
 	</div>
@@ -676,7 +741,7 @@
 		<li>當按鍵A被按下時可輸入更改數值</li>
 		<li>當按鍵B被按下時確定更改溫度上限</li>
 		<h4>電路圖</h4>
-		<img src="Alarm.jpg" width="100%" height="100%">
+		<img src="Alarm.jpg" width="100%">
 		<h4>程式碼</h4>
 		<script src="https://gist.github.com/shenggui59/a9c70f4bde16cbed7ac91e2a5775032c.js"></script>
 	</div>
@@ -687,7 +752,7 @@
 		<h4>介紹</h4>
 		<p>使用UART通訊將DHT11的溫濕度數據顯示出來。</p>
 		<h4>電路圖</h4>
-		<img src="dht11.jpg" width="70%" height="70%">
+		<img src="dht11.jpg" width="70%">
 		<h4>程式碼</h4>
 		<script src="https://gist.github.com/shenggui59/d9ee42bd480ba0a233465757db1e5212.js"></script>
 	</div>
@@ -707,7 +772,7 @@
 		<h4>介紹</h4>
 		<p>在AT89S52晶片中沒有內建PWM，所以使用Timer產生PWM來控制LED亮度。</p>
 		<h4>電路圖</h4>
-		<img src="pid.jpg" width="70%" height="70%">
+		<img src="pid.jpg" width="70%">
 	</div>
 	<!--Holtek-->
 	<!--Project 1-->
