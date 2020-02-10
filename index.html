@@ -299,6 +299,7 @@
 	.sidenav span { color: #0D47A1; font-size:12px; }
 	
 	.info { position: fixed; bottom: 60px; right: 150px; }
+	.info h4 { margin: 6px; }
 	.btnMenu { display: none; }
 	.SideMenu { display: none; }
 	.SideProject { display: none; }
@@ -464,7 +465,7 @@
 	
 		.sidenav span { color: #0D47A1; font-size:12px; }
 		
-		.info { position: relative; top: 0; left: 0; padding-left: 30px; }
+		.info { position: relative; top: 0; left: 0; padding: 30px 0 0 30px; }
 		.imgln { float:none; }
 		.imgShow { display: block; padding-top: 70px; }
 		.sidenav { display: none; }
@@ -513,7 +514,6 @@
 	<a onclick="openWebProject(event, 'page4')">溫度警報器</a>
 	<a onclick="openWebProject(event, 'page5')">讀取溫濕度值</a>
 	<a onclick="openWebProject(event, 'page6')">3路PWM輸出</a>
-	<a onclick="openWebProject(event, 'page7')">PID控制器</a>
 	<h2 style="padding: 16px; color: white; margin: 0; background-color: #4CAF50">Holtek</h2>
 	<a onclick="openWebProject(event, 'page8')">使用7段顯示器與LCM顯示ADC值</a>
 	<a onclick="openWebProject(event, 'page9')">使用可變電阻控制PWM</a>
@@ -524,7 +524,7 @@
 <div id="Home" class="tab-content">
 	<img src="HomeBg.jpg" width="100%"class="imgShow">
 	<div class="info">
-		<h3>聯絡資訊</h3>
+		<h4>聯絡資訊</h4>
 		<h4>信箱:sa654872000%gmail.com</h4>
 		<h4>手機:0978-851303</h4>
 	</div>
@@ -541,13 +541,14 @@
 	<h3>簡介</h3>
 	<p class="content1">
 	&emsp;&emsp;我們運用App Inventor 2自製一款手機App，搭配ATmega2560控制家電及感測器
-	，以及使用樹莓派裝載Motion來控制網路攝影機，同時串接雲端資料及使用雲端
+	，以及使用樹莓派裝載Motion來控制網路攝影機，同時串接雲端資料及雲端
 	服務平台上的社群連結功能，讓使用者可用App進行遠端監控居家、遠端控制家電
 	、查閱家人位置、限制行走範圍等功能，並且在當日早上或家人離家過遠時會立即
 	收到社群推播的訊息(如天氣預報、家人過遠警告等訊息)。</p>
 	
 	<h3>功能</h3>
-	<li class="content1">透過手機App進行遠端控制家電、遠端視訊</li>
+	<li class="content1">透過手機App進行遠端監控家電</li>
+	<li class="content1">透過手機App進行遠端視訊</li>
 	<li class="content1">透過手機App進行設定就可限制家人行走範圍，當家人脫離範圍時則會立即通知使用者</li>
 	<li class="content1">開啟App可隨時查閱家人位置及鄰近路況</li>
 	<li class="content1">推播即時天氣預報至使用者手機</li>
@@ -664,7 +665,6 @@
 		<button id="SideTitle5" class="sidenav-links" onclick="openWebside(event, 'page4')"><span>&mdash;&nbsp;&nbsp;</span>溫度警報器</button>
 		<button id="SideTitle6" class="sidenav-links" onclick="openWebside(event, 'page5')"><span>&mdash;&nbsp;&nbsp;</span>讀取溫濕度值</button>
 		<button id="SideTitle7" class="sidenav-links" onclick="openWebside(event, 'page6')"><span>&mdash;&nbsp;&nbsp;</span>3路PWM輸出</button>
-		<button id="SideTitle8" class="sidenav-links" onclick="openWebside(event, 'page7')"><span>&mdash;&nbsp;&nbsp;</span>PID控制器</button>
 		<div style="padding-top: 20px;padding-left: 40px"><img src="logo2.jpg" width="120px" height="40px"><h2 style="margin: 0">HT66F70A</h2></div>
 		<button id="SideTitle9" class="sidenav-links" onclick="openWebside(event, 'page8')"><span>&mdash;&nbsp;&nbsp;</span>使用7段顯示器與LCM顯示ADC值</button>
 		<button id="SideTitle10" class="sidenav-links" onclick="openWebside(event, 'page9')"><span>&mdash;&nbsp;&nbsp;</span>使用可變電阻控制PWM</button>
@@ -694,7 +694,7 @@
 		<h3>4x4鍵盤控制RGB燈</h3>
 		<hr style="border: 1px solid #757575"/>
 		<h4>介紹</h4>
-		<p>使用4x4鍵盤設定RGB燈的顏色及亮度，並加上LCM顯示目前的顏色及亮度。</p>
+		<p>使用鍵盤掃描方式讀取4x4鍵盤值來控制RGB燈的亮度及顏色，並加上LCM顯示目前的顏色及亮度。</p>
 		<li>當按鍵0~7被按下時更改RGB燈顏色</li>
 		<li>當按鍵A被按下時可輸入更改數值</li>
 		<li>當按鍵B被按下時確定更改RGB燈亮度</li>
@@ -711,7 +711,8 @@
 		<h3>上傳溫濕度到雲端</h3>
 		<hr style="border: 1px solid #757575"/>
 		<h4>介紹</h4>
-		<p>使用UART通訊下達At Command命令，並透過ESP8266(WiFi模組)將溫濕度數據存到雲端上。</p>
+		<p>使用8051的Uart功能對Esp8266(具有WiFI MCU)下At command命令讓8051能連上雲端(ThingSpeak)，
+		並且將讀取到的溫濕度數據以每隔20秒時間上傳至雲端。</p>
 		<h4>電路圖</h4>
 		<img src="ESP8266.jpg" width="100%">
 		<h4>程式碼</h4>
@@ -722,7 +723,8 @@
 		<h3>PWM調光</h3>
 		<hr style="border: 1px solid #757575"/>
 		<h4>介紹</h4>
-		<p>使用按鈕控制LED亮度，並加上7段顯示器顯示目前亮度。</p>
+		<p>利用51單晶片上的Timer產生PWM控制LED燈亮度，並且使用2顆按鈕控制Duty cycle，
+		使LED燈的亮度能增加或減少，再搭配7段顯示器顯示目前LED的亮度。</p>
 		<li>當按鍵1被按下時減少10%亮度</li>
 		<li>當按鍵2被按下時增加10%亮度</li>
 		<h4>電路圖</h4>
@@ -735,7 +737,7 @@
 		<h3>溫度警報器</h3>
 		<hr style="border: 1px solid #757575"/>
 		<h4>介紹</h4>
-		<p>使用4x4鍵盤設定溫度上限，並加上LCM顯示設上限與目前溫度，當溫度超過上限時則會觸發蜂鳴器。</p>
+		<p>使用4x4鍵盤設定溫度上限，並加上LCM顯示設定上限與目前溫度，當溫度超過上限時則會觸發蜂鳴器。</p>
 		<li>當按鍵A被按下時可輸入更改數值</li>
 		<li>當按鍵B被按下時確定更改溫度上限</li>
 		<h4>電路圖</h4>
@@ -748,7 +750,7 @@
 		<h3>讀取溫濕度值</h3>
 		<hr style="border: 1px solid #757575"/>
 		<h4>介紹</h4>
-		<p>使用UART通訊將DHT11的溫濕度數據顯示出來。</p>
+		<p>使用51單晶片上的Uart功能將讀取到的溫濕度數據print在電腦上。</p>
 		<h4>電路圖</h4>
 		<img src="dht11.jpg" width="70%">
 		<h4>程式碼</h4>
@@ -759,18 +761,9 @@
 		<h3>3路PWM輸出</h3>
 		<hr style="border: 1px solid #757575"/>
 		<h4>介紹</h4>
-		<p>在AT89S52晶片中沒有內建PWM，所以使用Timer產生PWM來控制LED亮度。</p>
+		<p>利用Timer0、Timer1、Timer2產生3路不同Duty cycle的PWM來控制LED亮度</p>
 		<h4>程式碼</h4>
 		<script src="https://gist.github.com/shenggui59/006357cf62e50c04359fffa96210fa98.js"></script>
-	</div>
-	<!--Project PID控制器-->
-	<div id="page7" class="sidenav-content">
-		<h3>PID控制器</h3>
-		<hr style="border: 1px solid #757575"/>
-		<h4>介紹</h4>
-		<p>在AT89S52晶片中沒有內建PWM，所以使用Timer產生PWM來控制LED亮度。</p>
-		<h4>電路圖</h4>
-		<img src="pid.jpg" width="70%">
 	</div>
 	<!--Holtek-->
 	<!--Project 1-->
@@ -778,7 +771,11 @@
 		<h3>使用7段顯示器與LCM顯示ADC值</h3>
 		<hr style="border: 1px solid #757575"/>
 		<h4>介紹</h4>
-		<p>在AT89S52晶片中沒有內建PWM，所以使用Timer產生PWM來控制LED亮度。</p>
+		<p>使用HT66F70A內建的ADC讀取可變電阻值，並加上7段顯示器、LCM來顯示可變電阻值，
+		並利用按鈕控制顯示的方式。</p>
+		<li>模式1:7段顯示器顯示，LCM不顯示</li>
+		<li>模式2:7段顯示器不顯示，LCM顯示</li>
+		<li>模式3:7段顯示器與LCM都顯示</li>
 		<h4>程式碼</h4>
 		<script src="https://gist.github.com/shenggui59/74d92854e43073f497ea1a8810c48b96.js"></script>
 	</div>
@@ -787,7 +784,7 @@
 		<h3>使用可變電阻控制PWM</h3>
 		<hr style="border: 1px solid #757575"/>
 		<h4>介紹</h4>
-		<p>在AT89S52晶片中沒有內建PWM，所以使用Timer產生PWM來控制LED亮度。</p>
+		<p>使用HT66F70A內建的ADC、PWM功能，將讀取到的可變電阻值控制LED燈亮度。</p>
 		<h4>程式碼</h4>
 		<script src="https://gist.github.com/shenggui59/473e5bc98a54242e107fa58c762e1b6b.js"></script>
 	</div>
@@ -796,6 +793,7 @@
 		<h3>碼錶</h3>
 		<hr style="border: 1px solid #757575"/>
 		<h4>介紹</h4>
+		使用2顆按鈕控制時間開始/停止/歸零等功能，並加上LCM顯示目前計時的時間。
 		<h4>程式碼</h4>
 		<script src="https://gist.github.com/shenggui59/dbbfb93e35ce675ad58fb50c3d3ff092.js"></script>
 	</div>
