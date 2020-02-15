@@ -11,15 +11,15 @@
 		tabs = $(".tabs");
 		tabs.css("display", "block");
 		
-		img = $(".imgShow");
+		img = $(".btnMenu");
 		if (img.css("display") === "block")
 			document.body.style.backgroundImage = "none";
 		else
 			document.body.style.backgroundImage = "url('HomeBg.jpg')";
 		
 		// tabnav
-		document.getElementById("Home").style.display = "block";
-		document.getElementById("HomeTitle").className += " active";
+		document.getElementById("Menu1").style.display = "block";
+		document.getElementById("StartPage").className += " active";
 		// sidenav
 		document.getElementById("ToolPage").style.display = "block";
 		document.getElementById("SideTitle1").className += " active";
@@ -298,13 +298,10 @@
 	
 	.sidenav span { color: #0D47A1; font-size:12px; }
 	
-	.info { position: fixed; bottom: 60px; right: 150px; }
-	.info h4 { margin: 6px; }
 	.btnMenu { display: none; }
 	.SideMenu { display: none; }
 	.SideProject { display: none; }
 	.imgln { float:right; }
-	.imgShow { display: none; }
 	
 	</style>
 	
@@ -465,9 +462,7 @@
 	
 		.sidenav span { color: #0D47A1; font-size:12px; }
 		
-		.info { position: relative; top: 0; left: 0; padding: 30px 0 0 30px; }
 		.imgln { float:none; }
-		.imgShow { display: block; padding-top: 70px; }
 		.sidenav { display: none; }
 		.tabs { position: absolute; }
 		#tab-skill { width: 100%; }
@@ -490,15 +485,13 @@
 		<span>大學時期作品</span>
 		<button class="tab-links" onclick="openWebtab(event, 'Menu3')">Microcontroller</button>
 		<button class="tab-links" onclick="openWebtab(event, 'Menu2')">競賽作品</button>
-		<button class="tab-links" onclick="openWebtab(event, 'Menu1')">專題製作</button>
-		<button id="HomeTitle" class="tab-links" onclick="openWebtab(event, 'Home')">首頁</button>
+		<button id="StartPage" class="tab-links" onclick="openWebtab(event, 'Menu1')">專題製作</button>
 		<a class="btnMenu" onclick="openNav()">&#9776;</a>
 	</div>
 </div>
 <!--Mobile sidenav 1-->
 <div id="mySideMenu" class="SideMenu">
 	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-	<a onclick="openWebtab(event, 'Home')">首頁</a>
   <a onclick="openWebtab(event, 'Menu1')">專題製作</a>
   <a onclick="openWebtab(event, 'Menu2')">競賽作品</a>
   <a onclick="openProject()">Microcontroller</a>
@@ -520,15 +513,6 @@
 	<a onclick="openWebProject(event, 'page10')">碼錶</a>
 </div>
 
-<!--Home-->
-<div id="Home" class="tab-content">
-	<img src="HomeBg.jpg" width="100%"class="imgShow">
-	<div class="info">
-		<h4>聯絡資訊</h4>
-		<h4>信箱:sa654872000@gmail.com</h4>
-		<h4>手機:0978-851303</h4>
-	</div>
-</div>
 <!--專題製作頁面-->
 <div id="Menu1" class="tab-content">
 
@@ -570,6 +554,10 @@
 		<tr class="tab-text">
 			<td class="tab-text">雲端服務平台</td>
 			<td class="tab-text">ThingSpeak、IFTTT、TinyDB</td>
+		</tr>
+		<tr class="tab-text">
+			<td class="tab-text">系統設計</td>
+			<td class="tab-text">遠端監控、電子柵欄</td>
 		</tr>
 	</table>
 	
