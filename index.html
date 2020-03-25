@@ -1,80 +1,7 @@
 <!DOCTYPE html>
-<div id="loading"></div>
-<script>
-	// 當頁面全部載入完成
-	window.addEventListener("load", function() {
-		var i, sidecontent;
-		var tabs, bg_img, btn;
-		
-		document.getElementById("loading").style.display = "none";
-		
-		tabs = $(".tabs");
-		tabs.css("display", "block");
-		bg_img = $(".bgImg");
-		btn = $(".btnMenu");
-		if (btn.css("display") === "block")
-			bg_img.css("display", "none");
-		else
-			bg_img.css("display", "block");
-		
-		// tabnav
-		document.getElementById("Menu1").style.display = "block";
-		document.getElementById("StartPage").className += " active";
-		// sidenav
-		document.getElementById("ToolPage").style.display = "block";
-		document.getElementById("SideTitle1").className += " active";
-		
-		sidecontent = document.getElementsByClassName("sidenav-content");
-		for (i = 0; i < sidecontent.length; i++) {
-			sidecontent[i].style.display = "none";
-		}
-		document.getElementById("ToolPage").style.display = "block";
-	});
-</script>
-<style>
-#loading {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 5;
-  margin: -20px 0 0 -30px;
-  border: 6px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 6px solid #3498db;
-  width: 40px;
-  height: 40px;
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
-}
-
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.animate-bottom {
-  position: relative;
-  -webkit-animation-name: animatebottom;
-  -webkit-animation-duration: 1s;
-  animation-name: animatebottom;
-  animation-duration: 1s
-}
-
-@-webkit-keyframes animatebottom {
-  from { bottom:-100px; opacity:0 } 
-  to { bottom:0px; opacity:1 }
-}
-
-@keyframes animatebottom { 
-  from{ bottom:-100px; opacity:0 } 
-  to{ bottom:0; opacity:1 }
-}
-</style>
+	<div id="loading"></div>
+	<script script type="text/javascript" src="load.js"></script>
+	<link rel="stylesheet" type="text/css" href="load.css"></script>
 <html lang="zh-TW">
 <head>
 	<title>個人作品</title>
@@ -82,424 +9,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--匯入jQuery-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script>
-	var titles = ["SideTitle1", "SideTitle2", "SideTitle3", "SideTitle4",
-								"SideTitle5", "SideTitle6", "SideTitle7", "SideTitle8",
-								"SideTitle9", "SideTitle10","SideTitle11"];
-
-	// Topnav頁面切換
-	function openWebtab(evt, webName) {
-		var i, tabcontent, tablinks;
-		
-		tabcontent = document.getElementsByClassName("tab-content");
-		for (i = 0; i < tabcontent.length; i++) {
-			tabcontent[i].style.display = "none";
-		}
-		tablinks = document.getElementsByClassName("tab-links");
-		for (i = 0; i < tablinks.length; i++) {
-			tablinks[i].className = tablinks[i].className.replace(" active", "");
-		}
-		document.getElementById(webName).style.display = "block";
-		evt.currentTarget.className += " active";
-		
-		// When the page refreshed, it reset variables.
-		scrollTo(0, 0);
-		// When the page refreshed, it stops playing. 
-		stopVideo();
-		closeNav();
-	}
-	// Sidenav頁面切換
-	function openWebside(evt, webName) {
-		var i, sidecontent, sidelinks;
-		
-		sidecontent = document.getElementsByClassName("sidenav-content");
-		for (i = 0; i < sidecontent.length; i++) {
-			sidecontent[i].style.display = "none";
-		}
-		sidelinks = document.getElementsByClassName("sidenav-links");
-		for (i = 0; i < sidelinks.length; i++) {
-			sidelinks[i].className = sidelinks[i].className.replace(" active", "");
-		}
-		document.getElementById(webName).style.display = "block";
-		evt.currentTarget.className += " active";
-		
-		// When the page refreshed, it reset variables.
-		scrollTo(0, 0);
-		closeNav();
-	}
 	
-	</script>
-	<script>
-	// This code loads the IFrame Player API code asynchronously.
-	var tag = document.createElement('script');
-
-	tag.src = "https://www.youtube.com/iframe_api";
-	var firstScriptTag = document.getElementsByTagName('script')[0];
-	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-	
-	// This function creates an <iframe> (and YouTube player)
-  // after the API code downloads.
-	var player1, player2;
-	
-	function onYouTubeIframeAPIReady() {
-		player1 = new YT.Player('player1', {
-			videoId: '3S2XnMDlqDQ'
-		});
-		
-		player2 = new YT.Player('player2', {
-			videoId: '5I1ZZScRLPg'
-		});
-	}
-	
-	function stopVideo() {
-		player1.stopVideo();
-		player2.stopVideo();
-	}
-	
-	</script>
-	<style>
-	button { background-color: white; }
-	.container {
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding-bottom: 56.25%;
-	}
-	
-	#player1, #player2 {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-	}
-	
-	body {
-		font-family: 'Open Sans', 微軟正黑體;
-		color: black;
-		scroll-behavior: smooth;
-		padding: 0 260px 0 260px;
-	}
-	
-	.bgImg {
-		display: none;
-		z-index: -1;
-		width: 100%;
-		height: 100%;
-		position: fixed;
-		top: 0;
-		left: 0;
-	}
-	
-	body div[id^="Menu"] {
-		display: none;
-		z-index: 2;
-		background-color: white;
-		padding: 70px 20px 20px 20px;
-		border: 1px solid #aaa;
-	}
-	
-	h3 { 
-		font-weight: bold;
-		color: #0D47A1;
-	}
-	
-	#Menu2 h4, li { line-height: 1; font-size: 16px; }
-	#Menu3 div[id^="page"] li { line-height: 2; }
-	
-	.title1 { margin-bottom: -10px; }
-	.content1 { text-align: justify; font-size: 16px; line-height: 2; }
-	.content2 { text-align: justify; font-size: 16px; line-height: 2; margin-left: 32px; }
-	.tab1 {  }
-	.tab1 tr,td { padding: 10px; }
-	.tab2 { padding-top: 16px; }
-	.tab2 tr,td { padding: 10px; }
-	.tab3 { border-top: 1px solid #bbb; font-size: 16px; }
-	.tab-text { border-bottom: 1px solid #bbb; width: 200px; padding: 10px 0; }
-	.image1 { width: 100%; }
-	.image2 { width: 100%; }
-
-	.tabs {
-		display: none;
-		overflow: hidden;
-		border-bottom: 1px solid #ccc;
-		background-color: white;
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		z-index: 3;
-	}
-	
-	.tabs button {
-		background-color: inherit;
-		float: right;
-		border: none;
-		outline: none;
-		cursor: pointer;
-		padding: 20px 16px;
-		transition: 0.4s;
-		font-size: 17px;
-		color: black;
-		font-family: 'Open Sans', 微軟正黑體;
-	}
-	
-	.tabs span {
-		background-color: inherit;
-		float: left;
-		padding: 14px 30px;
-		font-size: 24px;
-		color: black;
-		letter-spacing: 10px;
-	}
-	
-	.tabs button:hover {
-		color: #0D47A1;
-		font-size: 24px;
-		font-weight: bold;
-	}
-	
-	.tabs button.active {
-		color: #0D47A1;
-		font-weight: bold;
-	}
-	
-	.tab-content {
-		display: none;
-		-webkit-animation: fadeEffect 1.5s;
-		animation: fadeEffect 1.5s;
-	}
-	
-	@-webkit-keyframes fadeEffect {
-		from {opacity: 0;}
-		to {opacity: 1;}
-	}
-	
-	@keyframes fadeEffect {
-		from {opacity: 0;}
-		to {opacity: 1;}
-	}
-
-	.sidenav {
-		height: 100%;
-		width: 240px;
-		position: fixed;
-		top: 0;
-		left: 0;
-		background-color: white;
-		overflow-x: hidden;
-		border-right: 1px solid #aaa;
-		z-index: 2;
-		opacity: 0.9;
-		padding-top: 70px;
-	}
-
-	.sidenav button {
-		width: 100%;
-		text-align: left;
-		background-color: inherit;
-		border: none;
-		outline: none;
-		cursor: pointer;
-		font-size: 14px;
-		font-family: 'Open Sans', 微軟正黑體;
-		padding: 5px 8px 5px 30px;
-		color: #818181;
-		display: block;
-		transition: 0.4s;
-	}
-	
-	.sidenav button:hover {
-		color: black;
-		background-color: #ddd;
-		font-weight: normal;
-	}
-	
-	.sidenav button.active {
-		color: #0D47A1;
-		font-weight: bold;
-	}
-	
-	.sidenav span { color: #0D47A1; font-size:12px; }
-	
-	.btnMenu { display: none; }
-	.SideMenu { display: none; }
-	.SideProject { display: none; }
-	.imgln { float:right; }
-	
-	</style>
-	
-	<script>
-	function openNav() {
-		document.getElementById("mySideMenu").style.width = "240px";
-	}
-
-	function closeNav() {
-		document.getElementById("mySideMenu").style.width = "0";
-	}
-	
-	function backNav() {
-		document.getElementById("mySideProject").style.width = "0";
-		document.getElementById("mySideMenu").style.width = "240px";
-	}
-	
-	function openProject() {
-		closeNav();
-		document.getElementById("mySideProject").style.width = "240px";
-	}
-	
-	function openWebProject(evt, webName) {
-		var i, tabcontent, sidecontent, sidelinks;
-		
-		// close tab content
-		tabcontent = document.getElementsByClassName("tab-content");
-		for (i = 0; i < tabcontent.length; i++) {
-			tabcontent[i].style.display = "none";
-		}
-		// open project menu
-		document.getElementById("Menu3").style.display = "block";
-		
-		sidecontent = document.getElementsByClassName("sidenav-content");
-		for (i = 0; i < sidecontent.length; i++) {
-			sidecontent[i].style.display = "none";
-		}
-		sidelinks = document.getElementsByClassName("sidenav-links");
-		for (i = 0; i < sidelinks.length; i++) {
-			sidelinks[i].className = sidelinks[i].className.replace(" active", "");
-		}
-		document.getElementById(webName).style.display = "block";
-		evt.currentTarget.className += " active";
-		
-		// When the page refreshed, it reset variables.
-		scrollTo(0, 0);
-		closeNav();
-		// When press closeBtn close sidenav
-		document.getElementById("mySideProject").style.width = "0";
-	}
-	
-	</script>
-	<style>
-	@media screen and (max-width: 750px) {
-		body {
-			margin: 0;
-			padding: 0;
-			font-family: 'Open Sans', 微軟正黑體;
-			color: black;
-		}
-		
-		body div[id^="Menu"] { border: 0; }
-			
-		.SideMenu {
-			display: block;
-			height: 100%;
-			width: 0;
-			position: fixed;
-			z-index: 4;
-			top: 0;
-			right: 0;
-			background-color: #111;
-			overflow-x: hidden;
-			transition: 0.5s;
-			border-left: 1px solid #ddd;
-		}
-		
-		.SideMenu a {
-			padding: 16px;
-			text-decoration: none;
-			font-size: 16px;
-			color: #ddd;
-			display: block;
-			transition: 0.3s;
-			border-bottom: 1px solid #ddd;
-			cursor: pointer;
-		}
-		
-		.SideMenu a:hover {
-			color: white;
-		}
-		
-		.SideMenu .closebtn::before {
-			font-weight: bold;
-			content: "Menu";
-			color: white;
-			position: absolute;
-			left: 16px;
-		}
-
-		.SideMenu .closebtn {
-			text-align: right;
-			color: white;
-			font-size: 18px;
-			font-weight: bold;
-			padding: 24px 18px;
-			background-color: #2196F3;
-			border: 0;
-		}
-		
-		.SideProject {
-			display: block;
-			height: 100%;
-			width: 0;
-			position: fixed;
-			top: 0;
-			right: 0;
-			background-color: #111;
-			overflow-x: hidden;
-			z-index: 4;
-			transition: 0.5s;
-			border-left: 1px solid #ddd;
-		}
-		
-		.SideProject a {
-			padding: 16px;
-			text-decoration: none;
-			font-size: 16px;
-			color: #ddd;
-			display: block;
-			transition: 0.3s;
-			border-bottom: 1px solid #ddd;
-			cursor: pointer;
-		}
-		
-		.SideProject a:hover {
-			color: white;;
-		}
-		
-		.SideProject .closebtn::before {
-			font-weight: bold;
-			content: "Microcontroller";
-			color: white;
-			position: absolute;
-			left: 16px;
-		}
-		
-		.SideProject .closebtn {
-			text-align: right;
-			color: white;
-			font-size: 18px;
-			font-weight: bold;
-			padding: 24px 18px;
-			background-color: #2196F3;
-			border: 0;
-		}
-	
-		.sidenav span { color: #0D47A1; font-size:12px; }
-		
-		.imgln { float:none; }
-		.sidenav { display: none; }
-		.tabs { position: absolute; }
-		#tab-skill { width: 100%; }
-		.tabs span { padding: 18px 30px; }
-		.tabs button { display: none; }
-		.btnMenu { 
-			display: block;
-			font-size:30px;
-			cursor: pointer;
-			float: right;
-			padding: 14px 0;
-		}
-	}
-	</style>
+	<script script type="text/javascript" src="pc.js"></script>
+	<link rel="stylesheet" type="text/css" href="pc.css"></script>
+	<script script type="text/javascript" src="android.js"></script>
+	<link rel="stylesheet" type="text/css" href="android.css"></script>
 </head>
 <body>
 <!--Background image-->
@@ -558,35 +72,15 @@
 	收到社群推播的訊息(如天氣預報、家人過遠警告等訊息)。</p>
 	
 	<h3>功能</h3>
-	<h4 class="title1">(1)遠端監控</h4>
+	<h4 class="title1">1.遠端監控</h4>
 	<p class="content1">&emsp;&emsp;使用者可透過手機App上的功能對居家進行電器控制、監視及查詢使用記錄等。</p>
-	<h4 class="title1">(2)電子柵欄</h4>
+	<h4 class="title1">2.電子柵欄</h4>
 	<p class="content1">&emsp;&emsp;當使用者設定好限制的地點及距離後，只要追蹤的對象超出設定距離時，就會透過LINE方式通知使用者所追蹤對象已離開範圍內，也可利用App裡的查閱功能，查詢追蹤對象的所在位置。</p>
-	<h4 class="title1">(3)即時推播</h4>
+	<h4 class="title1">3.即時推播</h4>
 	<p class="content1">&emsp;&emsp;每日早上透過LINE方式發送當日天氣資訊至使用者手機裡。</p>
 	
-	<h3>開發資訊</h3>
-	<table id="tab-skill" width="65%" cellspacing="0" cellpadding="0" style="border-top: 1px solid #bbb; font-size:16px">
-		<tr class="tab-text">
-			<td class="tab-text">App設計</td>
-			<td class="tab-text">App Inventor 2</td>
-		</tr>
-		<tr class="tab-text">
-			<td class="tab-text">居家監控核心</td>
-			<td class="tab-text">Atmega2560</td>
-		</tr>
-		<tr class="tab-text">
-			<td class="tab-text">遠端視訊核心</td>
-			<td class="tab-text">樹莓派</td>
-		</tr>
-		<tr class="tab-text">
-			<td class="tab-text">雲端服務平台</td>
-			<td class="tab-text">ThingSpeak、IFTTT、TinyDB</td>
-		</tr>
-	</table>
-	
 	<h3>成品</h3>
-	<center><img src="house.jpg" width="100%">整體系統架構圖</center>
+	<center><img src="house.jpg" width="100%">系統架構圖</center>
 
 	<h4 style="padding-top: 16px">App操作畫面:</h4>
 	<table class="tab1" width="100%" cellspacing="0" cellpadding="0">
@@ -611,7 +105,7 @@
 <div id="Menu2"  class="tab-content">
 <center><h2>智慧電子朝拜系統一媽祖e起來</h2></center>
 	<center><p>
-		全國微電腦應用系統設計創作競賽</br>
+		106年全國微電腦應用系統設計創作競賽</br>
 		信號處理與通訊類  <span style="color: red; font-weight: bold">佳作</span></br>
 	</p></center>
 	
@@ -626,33 +120,33 @@
 	<h3>作品功能</h3>
 
 	<p class="content1">本次作品建置了一個「智慧電子朝拜系統」，共含四個場景。具有以下功能：</p>
-	<h4 class="title1">(1)出巡朝拜系統</h4>
-	<p class="content2">1.出巡朝拜系統</br>
+	<h4 class="title1">1.出巡朝拜系統</h4>
+	<p class="content2">(1).出巡朝拜系統</br>
 	&emsp;&emsp;透過神轎上的溫濕度感測器與GPS定位，
 	系統會提醒信徒神轎將抵達位置，此時可利
 	用App進行社工留言。若信徒留言情緒較為負
 	面，會給予適當的幫助，反之，會給予祝福的
 	話。在媽祖遶境中，系統會依據當地的溫濕度
 	通知遶境中的信徒要補充水分。</p>
-	<p class="content2">2.媽祖AR朝拜系統</br>
+	<p class="content2">(2).媽祖AR朝拜系統</br>
 	&emsp;&emsp;當神轎抵達定點後，可使用手機掃瞄神轎，
 	並在手機顯示出3D媽祖影像，在3D媽祖神像前可
 	進行擲筊、抽籤、解籤等動作，象徵信徒在神明
 	前進行祈福問卜，並且受到神明的指點迷津。</p>
 	
-	<h4 class="title1">(2)千里眼/順風耳系統</h4>
-	<p class="content2">1.千里眼</br>
+	<h4 class="title1">2.千里眼/順風耳系統</h4>
+	<p class="content2">(1).千里眼</br>
 	&emsp;&emsp;廟口螢幕上播放媽祖遶境的直播影片。</p>
-	<p class="content2">2.順風耳</br>
+	<p class="content2">(2).順風耳</br>
 	&emsp;&emsp;在廟口螢幕上播放媽祖FB粉絲頁的留言。</p>
 	
-	<h4 class="title1">(3)遠端繞境系統</h4>
+	<h4 class="title1">3.遠端繞境系統</h4>
 	<p class="content1">&emsp;&emsp;信徒可利用VR眼鏡、手機、腳踏車等物品來增加遠端繞境的臨場感。</p>
-	<h4 class="title1">(4)遠端朝拜系統</h4>
+	<h4 class="title1">4.遠端朝拜系統</h4>
 	<p class="content1">&emsp;&emsp;信徒可利用VR眼鏡來體驗遠端朝拜，亦可利用社工關懷之App問籤。</p>
 	
 	<h3>成品</h3>
-	<center><img src="mazu.jpg" width="100%">各場景系統架構圖</center>
+	<center><img src="mazu.jpg" width="100%">智慧電子朝拜系統架構圖</center>
 	<table class="tab2" width="100%" cellspacing="0" cellpadding="0">
 		<tr>
 			<td rowspan="2"><center><img src="p2-3.jpg" class="image2"></br>媽祖App主畫面</center></td>
@@ -692,11 +186,11 @@
 				<img src="8051開發板實體圖.jpg" width="247px" height="185px" style="border-radius: 20px">
 			</div>
 			<table class="tab3">
-				<tr class="tab-text"><td class="tab-text">程式語言</td> <td class="tab-text">C</td>
+				<tr><td class="tab-text" style="font-weight: bold;">程式語言:</td> <td class="tab-text">C</td>
 				</tr>
-				<tr class="tab-text"><td class="tab-text">單晶片</td> <td class="tab-text">AT89S52</td></tr>
-				<tr class="tab-text"><td class="tab-text">IDE</td> <td class="tab-text">Keil C</td></tr>
-				<tr class="tab-text"><td class="tab-text">PCB繪圖軟體</td> <td class="tab-text">Altium Designer</td></tr>
+				<tr><td class="tab-text" style="font-weight: bold;">單晶片:</td> <td class="tab-text">AT89S52</td></tr>
+				<tr><td class="tab-text" style="font-weight: bold;">IDE:</td> <td class="tab-text">Keil C</td></tr>
+				<tr><td class="tab-text" style="font-weight: bold;">PCB繪圖軟體:</td> <td class="tab-text">Altium Designer</td></tr>
 			</table>
 		</div>
 		<h4 style="padding-top: 10px">8051開發板電路圖</h4>
