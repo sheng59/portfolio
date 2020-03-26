@@ -104,11 +104,12 @@
 
 	.sidenav span { color: #0D47A1; font-size:12px; }
 	
-	.imgln { float:none; }
+	.imgln { display: block; }
 	.sidenav { display: none; }
 	.tabs { position: absolute; }
 	.tabs span { padding: 18px 30px; }
 	.tabs button { display: none; }
+	.tab3 { display: block; }
 	.btnMenu { 
 		display: block;
 		font-size:30px;
