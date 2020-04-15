@@ -154,6 +154,21 @@
 		player1.stopVideo();
 		player2.stopVideo();
 	}
+	
+	function Notify() {
+		$.ajax({
+				type: 'POST',
+				dataType: 'jsonp',
+				data: {},
+				url: 'https://maker.ifttt.com/trigger/View/with/key/bAZoWw1C2IjVWsO0CBNHUe',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				success: function(result){
+					console.log(result);
+				}
+		});
+	}
 	</script>
 	<style>
 	button { background-color: white; }
@@ -494,7 +509,7 @@
 	</style>
 	
 </head>
-<body>
+<body onload="Notify();">
 <!--Background image-->
 <img src="HomeBg.jpg" class="bgImg">
 </img>
