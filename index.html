@@ -18,7 +18,7 @@
 			bg_img.css("display", "block");
 		
 		// tabnav
-		document.getElementById("Menu1").style.display = "block";
+		document.getElementById("Menu0").style.display = "block";
 		document.getElementById("StartPage").className += " active";
 		// sidenav
 		document.getElementById("ToolPage").style.display = "block";
@@ -160,7 +160,7 @@
 				type: 'POST',
 				dataType: 'jsonp',
 				data: {},
-				url: 'https://maker.ifttt.com/trigger/View/with/key/bAZoWw1C2IjVWsO0CBNHUe',
+				url: 'https://maker.ifttt.com/trigger/VVView/with/key/bAZoWw1C2IjVWsO0CBNHUe',
 				headers: {
 					'Content-Type': 'application/json'
 				},
@@ -191,7 +191,8 @@
 		font-family: 'Open Sans', 微軟正黑體;
 		color: black;
 		scroll-behavior: smooth;
-		padding: 0 260px 0 260px;
+		padding: 0;
+		margin: 0;
 	}
 
 	.bgImg {
@@ -209,7 +210,12 @@
 		z-index: 2;
 		background-color: white;
 		padding: 70px 20px 20px 20px;
-		border: 1px solid #aaa;
+		border: 1px solid #ccc;
+		width: 60%;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		margin-left: -30%;
 	}
 
 	h3 { 
@@ -241,7 +247,7 @@
 		left: 0;
 		width: 100%;
 		z-index: 3;
-		border-bottom: 1px solid #ddd;
+		border-bottom: 3px solid #00809D;
 	}
 
 	.tabs button {
@@ -266,11 +272,13 @@
 	}
 
 	.tabs button:hover {
-		border-bottom: 5px solid #00809D;
+		font-weight: 600;
+		color: #00809D;
 	}
 
 	.tabs button.active {
-		border-bottom: 5px solid #00809D;
+		font-weight: 600;
+		color: #00809D;
 	}
 
 	.tab-content {
@@ -330,6 +338,10 @@
 	}
 
 	.sidenav span { color: #00809D; font-size:12px; }
+	
+	.table-title { color: #00809D; font-weight: bold; vertical-align: text-top; padding: 0; width: 106px; }
+	.table-content { line-height: 2.5; vertical-align: text-top; padding: 0 0 16px 24px; }
+	.resume { padding: 0 119px 20px 119px; }
 
 	.btnMenu { display: none; }
 	.SideMenu { display: none; }
@@ -394,7 +406,12 @@
 			color: black;
 		}
 		
-		body div[id^="Menu"] { border: 0; }
+		body div[id^="Menu"] {
+			width: auto;
+			margin: 0;
+			left: 0;
+			border: 0; 
+		}
 			
 		.SideMenu {
 			display: block;
@@ -474,7 +491,7 @@
 		
 		.SideProject .closebtn::before {
 			font-weight: bold;
-			content: "Microcontroller";
+			content: "其它小作品";
 			color: white;
 			position: absolute;
 			left: 16px;
@@ -491,6 +508,7 @@
 		}
 
 		.sidenav span { color: #0D47A1; font-size:12px; }
+		.resume { padding: 0; }
 		
 		.imgln { display: block; }
 		.sidenav { display: none; }
@@ -518,18 +536,20 @@
 <div class="tabs">
 	<div style="padding-right: 44px; vertical-align: middle">
 		<span>大學時期作品</span>
-		<button class="tab-links" onclick="openWebtab(event, 'Menu3')">Microcontroller</button>
+		<button class="tab-links" onclick="openWebtab(event, 'Menu3')">其它小作品</button>
 		<button class="tab-links" onclick="openWebtab(event, 'Menu2')">競賽作品</button>
-		<button id="StartPage" class="tab-links" onclick="openWebtab(event, 'Menu1')">專題製作</button>
+		<button class="tab-links" onclick="openWebtab(event, 'Menu1')">專題製作</button>
+		<button id="StartPage" class="tab-links" onclick="openWebtab(event, 'Menu0')">關於我</button>
 		<a class="btnMenu" onclick="openNav()">&#9776;</a>
 	</div>
 </div>
 <!--Mobile sidenav 1-->
 <div id="mySideMenu" class="SideMenu">
 	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	<a onclick="openWebtab(event, 'Menu0')">關於我</a>
   <a onclick="openWebtab(event, 'Menu1')">專題製作</a>
   <a onclick="openWebtab(event, 'Menu2')">競賽作品</a>
-  <a onclick="openProject()">Microcontroller</a>
+  <a onclick="openProject()">其它小作品</a>
 </div>
 <!--Mobile sidenav 2-->
 <div id="mySideProject" class="SideProject">
@@ -546,6 +566,82 @@
 	<a onclick="openWebProject(event, 'page8')">使用7段顯示器與LCM顯示ADC值</a>
 	<a onclick="openWebProject(event, 'page9')">使用可變電阻控制PWM</a>
 	<a onclick="openWebProject(event, 'page10')">碼錶</a>
+</div>
+
+<div id="Menu0" class="tab-content">
+	<div class="resume">
+		<div style="margin-top: 19.920px;">
+			<img src="Mugshot.jpg" width="106px" height="125px" style="vertical-align: bottom;"/>
+			<div style="display: inline-block; margin-left: 24px; line-height: 1.5; border-bottom: 1px solid black; width: 70%; padding-bottom: 12px;">
+				<h2 style="margin: 0">邱聖貴</h2>
+				<p style="margin: 0">
+				居住：彰化縣，彰化市<br/>
+				手機：0978-851303<br/>
+				信箱：sa6549872000@gmail.com<br/>
+				</p>
+			</div>
+		</div>
+		<div style="margin-top: 60px;">
+			<table width="100%">
+				<tr>
+					<td class="table-title">工作經驗</td>
+					<td class="table-content"><strong>實習生</strong><br/>
+					金雨企業股份有限公司<br/>
+					<I>2018.03 –  2018.06</I><br/>
+
+					1.測試自動販賣機的功能運作，並將測試結果回報給工程師<br/>
+					2.使用電烙鐵焊接電路板上的零件<br/>
+					3.使用工具測量電路板上的零件<br/>
+					4.使用Keil C撰寫治具程式<br/>
+					</td>
+				</tr>
+				<tr>
+					<td class="table-title">學歷</td>
+					<td  class="table-content"><strong>學士</strong><br/>
+					建國科技大學，電子工程系<br/>
+					<I>2014.09 –  2018.06</I><br/>
+					1.大學畢業成績全班第三名<br/>
+					2.參與「全國微電腦應用系統設計創作」競賽 – 佳作<br/>
+					&emsp;—	負責部分作品程式的撰寫<br/>
+					3.專題題目：智慧手機連網控制家電應用<br/>
+					&emsp;—	負責設計作品及作品程式撰寫<br/>
+					</td>
+				</tr>
+				<tr>
+					<td class="table-title">專長</td>
+					<td  class="table-content">
+					程式語言：C<br/>
+					微控制器：8051、esp8266、arduino<br/>
+					工具：Keil C、Altium Designer<br/>
+					</td>
+				</tr>
+				<tr>
+					<td class="table-title">專業證照</td>
+					<td class="table-content">
+					乙級數位電子技術士<br/>
+					丙級工業電子技術士<br/>
+					丙級電腦硬體裝修技術士<br/>
+					丙級電腦軟體應用技術士<br/>
+					</td>
+				</tr>
+				<tr><td class="table-title">自傳</td></tr>
+				<tr><td colspan="2" class="content1" style="padding: 10px 0 0 0;">
+				&emsp;&emsp;我是邱聖貴，今年23歲，畢業於建國科技大學電子工程系。在校期間，學期成績排名在班上前三名，
+				考取過各項專業證照，學到8051程式撰寫與硬體的相關知識，也曾向教授借過Holtek開發板來學習，
+				在大四的時候則開始參加業界實習，並在106年參與「全國微電腦應用系統設計創作」競賽獲得佳作
+				成績。<br/><br/>
+				&emsp;&emsp;在金雨企業實習期間，初期在機板組使用電烙鐵焊接電路板零件(如連接器、腳座、SD Card等)及替
+				換電路板上零件，同時也需要測試自動販賣機功能(如投幣、找零、出貨等)，並將測試結果交給工
+				程師改善產品。後期則在研展部工作，使用三用電表及示波器量測內閘門運作，之後依主管要求撰
+				寫一個能測試內閘門程式，我使用Keil C撰寫STM32程式，利用開關及LED監控內閘門的測試狀態，最
+				後在實習結束前完成這份事項。<br/><br/>
+				&emsp;&emsp;在待業的這段期間，我先去服4個月的兵役直到108年2月退伍，而退伍後就開始找工作，在找工作的
+				過程中並不順利，所以我利用這幾個月的時間充實自己，例如看論文、Youtube、討論區等，進而增
+				進自己專業能力。
+				</td></tr>
+			</table>
+		</div>
+	</div>
 </div>
 
 <!--專題製作頁面-->
