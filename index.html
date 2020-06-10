@@ -27,7 +27,7 @@
 			bg_img.css("display", "block");
 		
 		// tabnav
-		document.getElementById("Menu0").style.display = "block";
+		document.getElementById("Menu1").style.display = "block";
 		document.getElementById("StartPage").className += " active";
 		// sidenav
 		document.getElementById("ToolPage").style.display = "block";
@@ -300,7 +300,7 @@
 	}
 	
 	function Notify() {
-		$.ajax({
+		/*$.ajax({
 				type: 'POST',
 				dataType: 'jsonp',
 				data: {},
@@ -311,7 +311,8 @@
 				success: function(result){
 					console.log(result);
 				}
-		});
+		});*/
+		console.log("Load finish!");
 	}
 	</script>
 	<style>
@@ -701,15 +702,13 @@
 		<span>大學時期作品</span>
 		<button class="tab-links" onclick="openWebtab(event, 'Menu3')">其它小作品</button>
 		<button class="tab-links" onclick="openWebtab(event, 'Menu2')">競賽作品</button>
-		<button class="tab-links" onclick="openWebtab(event, 'Menu1')">專題製作</button>
-		<button id="StartPage" class="tab-links" onclick="openWebtab(event, 'Menu0')">履歷</button>
+		<button id="StartPage" class="tab-links" onclick="openWebtab(event, 'Menu1')">專題製作</button>
 		<a class="btnMenu" onclick="openNav()">&#9776;</a>
 	</div>
 </div>
 <!--Mobile sidenav 1-->
 <div id="mySideMenu" class="SideMenu">
 	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-	<a onclick="openWebtab(event, 'Menu0')">履歷</a>
   <a onclick="openWebtab(event, 'Menu1')">專題製作</a>
   <a onclick="openWebtab(event, 'Menu2')">競賽作品</a>
   <a onclick="openProject()">其它小作品</a>
@@ -729,81 +728,6 @@
 	<a onclick="openWebProject(event, 'page8')">使用7段顯示器與LCM顯示ADC值</a>
 	<a onclick="openWebProject(event, 'page9')">使用可變電阻控制PWM</a>
 	<a onclick="openWebProject(event, 'page10')">碼錶</a>
-</div>
-
-<div id="Menu0" class="tab-content">
-	<div class="resume">
-		<div style="margin-top: 19.920px;">
-			<img src="Mugshot.jpg" width="106px" height="125px" style="vertical-align: bottom;"/>
-			<div class="resume-info">
-				<h2 style="margin: 0">邱聖貴</h2>
-				<p style="margin: 0">
-				居住：彰化<br>
-				手機：0978-851303<br>
-				信箱：sa6549872000@gmail.com<br>
-				</p>
-			</div>
-		</div>
-		<div style="margin-top: 60px;">
-			<table width="100%">
-				<tr>
-					<td class="table-title">工作經驗</td>
-					<td class="table-content"><strong>實習生</strong><br>
-					金雨企業股份有限公司<br>
-					<I>2018.03 –  2018.06</I><br>
-
-					1.測試自動販賣機的功能運作，並將測試結果回報給工程師<br>
-					2.使用電烙鐵焊接電路板上的零件<br>
-					3.使用工具測量電路板上的零件<br>
-					4.使用Keil C撰寫治具程式<br>
-					</td>
-				</tr>
-				<tr>
-					<td class="table-title">學歷</td>
-					<td  class="table-content"><strong>學士</strong><br>
-					建國科技大學，電子工程系<br>
-					<I>2014.09 –  2018.06</I><br>
-					1.大學畢業成績全班第三名<br>
-					2.參與「全國微電腦應用系統設計創作」競賽 – 佳作<br>
-					&emsp;—	負責App、MCU、網頁程式的撰寫<br>
-					3.專題題目：智慧手機連網控制家電應用<br>
-					&emsp;—	負責設計作品及作品程式撰寫<br>
-					</td>
-				</tr>
-				<tr>
-					<td class="table-title">專長</td>
-					<td  class="table-content">
-					程式語言：C<br>
-					微控制器：8051、esp8266、arduino<br>
-					工具：Keil C、Altium Designer<br>
-					</td>
-				</tr>
-				<tr>
-					<td class="table-title">專業證照</td>
-					<td class="table-content">
-					乙級數位電子技術士<br>
-					丙級工業電子技術士<br>
-					丙級電腦硬體裝修技術士<br>
-					丙級電腦軟體應用技術士<br>
-					</td>
-				</tr>
-				<tr><td class="table-title">自傳</td></tr>
-				<tr><td colspan="2" class="content1" style="padding: 10px 0 0 0;">
-				&emsp;&emsp;我是邱聖貴，畢業於建國科技大學電子工程系，就讀期間，成績排名在班上前三名，學到C語言、MCU程式撰寫、電路圖繪製等技能，在大四的時候則開始參加業界實習，並且在106年參與全國微電腦應用競賽。在本次競賽作品中，我主要負責三個項目：<br>
-				1.腳踏車控制影片播放速度<br>
-        &emsp;&emsp;使用ESP8266(具有WiFi  MCU)讀取霍爾感測器(轉速值)，然後將感測值上傳至雲端，再由手機抓取雲端上的資料藉此控制影片的播放速度。<br>
-				2.媽祖App<br>
-        &emsp;&emsp;使用App  Inventor  2設計手機App，運用Iot相關技術及雲端資料，結合其它硬體設備，製作出一款能留言祝福、情緒分析、社工服務、求籤、神轎位置等功能的App。<br>
-				3.螢幕上顯示信眾留言<br>
-        &emsp;&emsp;在樹莓派上設計一個網頁，利用HTTP  GET功能連結Graph  API提供的URL，接著讀取回覆內容藉此取得FB粉絲頁上的留言。<br>
-				<br>
-				&emsp;&emsp;在金雨企業實習期間，初期在機板組使用電烙鐵焊接電路板零件(如連接器、腳座、SD  Card等)及替換電路板上零件，同時也需要測試自動販賣機功能(如投幣、找零、出貨等)，並將測試結果交給工程師改善產品。後期則在研展部工作，使用三用電表及示波器量測內閘門運作，之後依主管要求撰寫一個能測試內閘門程式，我使用Keil  C撰寫STM32程式，利用開關及LED監控內閘門的測試狀態，最後在實習結束後了解到8位元與32位元MCU的差距。<br>
-				<br>
-				&emsp;&emsp;在待業的這段期間，我透過網路上的資源充實自己，藉由Youtube、討論區平台從中學習相關知識(如:作品設計方式、文書軟體的操作等)，進而增進自己專業能力。
-				</td></tr>
-			</table>
-		</div>
-	</div>
 </div>
 
 <!--專題製作頁面-->
