@@ -365,7 +365,7 @@
 
 	h3 { 
 		font-weight: bold;
-		color: #00809D;
+		color: #0091af;
 	}
 
 	#Menu2 h4, li { line-height: 1; font-size: 16px; }
@@ -392,7 +392,7 @@
 		left: 0;
 		width: 100%;
 		z-index: 3;
-		border-bottom: 3px solid #00809D;
+		border-bottom: 1px solid #a7a7a7;
 	}
 
 	.tabs button {
@@ -402,6 +402,7 @@
 		outline: none;
 		cursor: pointer;
 		padding: 20px 16px;
+		margin: 5px 10px;
 		transition: 0.4s;
 		font-size: 17px;
 		font-family: 'Open Sans', 微軟正黑體;
@@ -414,16 +415,6 @@
 		font-size: 24px;
 		font-weight: 600;
 		letter-spacing: 10px;
-	}
-
-	.tabs button:hover {
-		font-weight: bold;
-		color: #00809D;
-	}
-
-	.tabs button.active {
-		font-weight: bold;
-		color: #00809D;
 	}
 
 	.tab-content {
@@ -444,7 +435,7 @@
 
 	.sidenav {
 		height: 100%;
-		width: 240px;
+		width: 20%;
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -463,7 +454,7 @@
 		border: none;
 		outline: none;
 		cursor: pointer;
-		font-size: 14px;
+		font-size: 15px;
 		font-family: 'Open Sans', 微軟正黑體;
 		padding: 5px 8px 5px 30px;
 		color: #818181;
@@ -478,13 +469,13 @@
 	}
 
 	.sidenav button.active {
-		color: #00809D;
+		color: #0091af;
 		font-weight: bold;
 	}
 
-	.sidenav span { color: #00809D; font-size:12px; }
+	.sidenav span { color: #0091af; font-size:12px; }
 	
-	.table-title { color: #00809D; font-weight: bold; vertical-align: text-top; padding: 0; width: 106px; }
+	.table-title { color: #0091af; font-weight: bold; vertical-align: text-top; padding: 0; width: 106px; }
 	.table-content { line-height: 2.5; vertical-align: text-top; padding: 0 0 16px 24px; }
 	.resume { padding: 0 119px 20px 119px; }
 	.resume-info { 
@@ -617,7 +608,7 @@
 			font-size: 18px;
 			font-weight: bold;
 			padding: 24px 18px;
-			background-color: #00809D;
+			background-color: #0091af;
 			border: 0;
 		}
 		
@@ -664,7 +655,7 @@
 			font-size: 18px;
 			font-weight: bold;
 			padding: 24px 18px;
-			background-color: #00809D;
+			background-color: #0091af;
 			border: 0;
 		}
 
@@ -912,18 +903,18 @@
 <div id="Menu3"  class="tab-content">
 	<!--Side Nav-->
 	<div class="sidenav">
-		<div style="padding-top: 20px;padding-left: 40px"><img src="logo1.jpg" width="70px" height="40px" style="float: left"><h2 style="float: left; margin: 0">8051</h2></div>
-		<button id="SideTitle1" class="sidenav-links" onclick="openWebside(event, 'ToolPage')"><span>&mdash;&nbsp;&nbsp;</span>開發環境</button>
-		<button id="SideTitle2" class="sidenav-links" onclick="openWebside(event, 'page1')"><span>&mdash;&nbsp;&nbsp;</span>4x4鍵盤控制RGB燈</button>
-		<button id="SideTitle3" class="sidenav-links" onclick="openWebside(event, 'page2')"><span>&mdash;&nbsp;&nbsp;</span>上傳溫濕度到雲端</button>
-		<button id="SideTitle4" class="sidenav-links" onclick="openWebside(event, 'page3')"><span>&mdash;&nbsp;&nbsp;</span>PWM調光</button>
-		<button id="SideTitle5" class="sidenav-links" onclick="openWebside(event, 'page4')"><span>&mdash;&nbsp;&nbsp;</span>溫度警報器</button>
-		<button id="SideTitle6" class="sidenav-links" onclick="openWebside(event, 'page5')"><span>&mdash;&nbsp;&nbsp;</span>讀取溫濕度值</button>
-		<button id="SideTitle7" class="sidenav-links" onclick="openWebside(event, 'page6')"><span>&mdash;&nbsp;&nbsp;</span>3路PWM輸出</button>
-		<div style="padding-top: 20px;padding-left: 40px"><img src="logo2.jpg" width="120px" height="40px"><h2 style="margin: 0">HT66F70A</h2></div>
-		<button id="SideTitle9" class="sidenav-links" onclick="openWebside(event, 'page8')"><span>&mdash;&nbsp;&nbsp;</span>使用7段顯示器與LCM顯示ADC值</button>
-		<button id="SideTitle10" class="sidenav-links" onclick="openWebside(event, 'page9')"><span>&mdash;&nbsp;&nbsp;</span>使用可變電阻控制PWM</button>
-		<button id="SideTitle11" class="sidenav-links" onclick="openWebside(event, 'page10')"><span>&mdash;&nbsp;&nbsp;</span>碼錶</button>
+		<div style="padding-top: 20px;padding-left: 30px"><h2 style="margin: 0">8051</h2></div>
+		<button id="SideTitle1" class="sidenav-links" onclick="openWebside(event, 'ToolPage')">開發環境</button>
+		<button id="SideTitle2" class="sidenav-links" onclick="openWebside(event, 'page1')">4x4鍵盤控制RGB燈</button>
+		<button id="SideTitle3" class="sidenav-links" onclick="openWebside(event, 'page2')">上傳溫濕度到雲端</button>
+		<button id="SideTitle4" class="sidenav-links" onclick="openWebside(event, 'page3')">PWM調光</button>
+		<button id="SideTitle5" class="sidenav-links" onclick="openWebside(event, 'page4')">溫度警報器</button>
+		<button id="SideTitle6" class="sidenav-links" onclick="openWebside(event, 'page5')">讀取溫濕度值</button>
+		<button id="SideTitle7" class="sidenav-links" onclick="openWebside(event, 'page6')">3路PWM輸出</button>
+		<div style="padding-top: 20px;padding-left: 30px"><h2 style="margin: 0">HT66F70A</h2></div>
+		<button id="SideTitle9" class="sidenav-links" onclick="openWebside(event, 'page8')">使用7段顯示器與LCM顯示ADC值</button>
+		<button id="SideTitle10" class="sidenav-links" onclick="openWebside(event, 'page9')">使用可變電阻控制PWM</button>
+		<button id="SideTitle11" class="sidenav-links" onclick="openWebside(event, 'page10')">碼錶</button>
 	</div>
 	<!--Tools-->
 	<div id="ToolPage" class="sidenav-content">
