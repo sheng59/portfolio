@@ -376,7 +376,8 @@
 	}
 
 	#Menu2 h4, li { line-height: 1; font-size: 16px; }
-	#Menu3 div[id^="page"] li { line-height: 2; }
+	#Menu3 div[id^="page"] li { line-height: 1.8; font-size: 18px; }
+    #Menu3 div[id^="page"] h4 { font-size: 20px; margin-bottom: 16px; }
 
 	.title1 { margin-top: 0; margin-bottom: 16px; font-size: 18px; }
 	.content1 { text-align: justify; font-size: 18px; line-height: 1.8; margin-top: 0; margin-bottom: 16px; color: rgba(0,0,0,.87);}
@@ -498,7 +499,7 @@
 	
 	.table-title { color: #0091af; font-weight: bold; vertical-align: text-top; padding: 0; width: 106px; }
 	.table-content { line-height: 2.5; vertical-align: text-top; padding: 0 0 16px 24px; }
-	.resume { padding: 0 0 20px 0; }
+	.resume { padding: 0 0 20px 0; font-size: 18px; }
 	.resume-info { 
 		display: inline-block;
 		margin-left: 24px;
@@ -683,7 +684,7 @@
 
 		.sidenav span { color: #0D47A1; font-size:12px; }
 		.table-content { padding-left: 0; }
-		.resume { padding: 0; }
+		.resume { padding: 0; font-size: 16px; }
 		.resume-info { margin-left: 0; }
 		
 		.imgln { display: block; }
@@ -886,8 +887,8 @@
 	
 	<h3>簡介</h3>
 	<p class="content1">
-	&emsp;&emsp;本作品設計一個智慧電子朝拜系統，共有四個場景，主要應用於媽祖繞境、居家、廟宇拜拜等環境，輔助信徒與神明的互動及增加繞境的便利性
-    ，同時加深神明與信徒之間關係。 在媽祖出巡時本系統可以用來尋找神轎位置、求籤、情緒分析與擲筊等，並且會依據當地溫度提醒繞境的信徒補充水分， 在家裡的信徒可利用VR眼鏡、手機、腳踏車等物品來增加遠端遶境的臨場感， 
+	&emsp;&emsp;本作品設計一個智慧電子朝拜系統，共有四個場景，主要應用於媽祖繞境、居家、廟宇拜拜等環境，輔助無法遶境的信徒能有遶境時的氛圍，而在繞境信徒也能有全新的體驗，同時加深神明與信徒之間關係。
+    在媽祖出巡時本系統可以用來尋找神轎位置、求籤、情緒分析與擲筊等，並且會依據當地溫度提醒繞境的信徒補充水分， 在家裡的信徒可利用VR眼鏡、手機、腳踏車等物品來增加遠端遶境的臨場感， 
     而在廟裡拜拜的信徒還可以利用手機來送出留言，並觀看廟口外的電視牆體驗遶境時的氛圍。
 	</p>
 	
@@ -895,7 +896,7 @@
     <p class="content1">本作品有四個場景，主要應用於媽祖繞境、居家、廟宇拜拜等環境，其功能如下：</p>
     <p class="content1"><strong>1.&nbsp;&nbsp;&nbsp;&nbsp;出巡朝拜系統</strong><br></p>
     <p class="content2">
-    (1).&nbsp;&nbsp;&nbsp;&nbsp;透過神轎上的溫濕度感測器與GPS定位，會依據神轎位置提醒信徒將抵達位置，同時依據當地的溫度通知信徒要補充水分，此外，也可利用App進行社工留言，若信徒留言情緒較為負面，會給予適當的幫助，反之，會給予祝福的話。<br>
+    (1).&nbsp;&nbsp;&nbsp;&nbsp;透過神轎上的溫濕度感測器與GPS定位，會依據神轎位置提醒信徒將抵達位置，同時依據當地的溫度通知信徒要補充水分。此外，也可藉由App進行社工留言，若信徒留言情緒較為負面，會給予適當的幫助，反之，會給予祝福的話。<br>
     (2).&nbsp;&nbsp;&nbsp;&nbsp;當神轎抵達定點後，可使用手機掃瞄神轎，並在手機顯示出3D媽祖影像，在3D媽祖神像前可進行擲筊、抽籤、解籤等動作。
     </p>
     <p class="content1"><strong>2.&nbsp;&nbsp;&nbsp;&nbsp;千里眼/順風耳系統</strong><br></p>
@@ -943,8 +944,8 @@
 		<button id="SideTitle6" class="sidenav-links" onclick="openWebside(event, 'page5')">•&nbsp;&nbsp;讀取溫濕度值 (UART)</button>
 		<button id="SideTitle7" class="sidenav-links" onclick="openWebside(event, 'page6')">•&nbsp;&nbsp;3路PWM輸出 (PWM)</button>
 		<div style="padding-top: 20px;padding-left: 30px"><h2 style="margin: 0; font-size: 36px;">HT66F70A</h2></div>
-		<button id="SideTitle9" class="sidenav-links" onclick="openWebside(event, 'page8')">•&nbsp;&nbsp;使用7段顯示器與LCM顯示ADC值 (ADC)</button>
-		<button id="SideTitle10" class="sidenav-links" onclick="openWebside(event, 'page9')">•&nbsp;&nbsp;使用可變電阻控制PWM (ADC,PWM)</button>
+		<button id="SideTitle9" class="sidenav-links" onclick="openWebside(event, 'page8')">•&nbsp;&nbsp;使用7段顯示器與LCM顯示ADC值(ADC)</button>
+		<button id="SideTitle10" class="sidenav-links" onclick="openWebside(event, 'page9')">•&nbsp;&nbsp;使用可變電阻控制PWM (ADC, PWM)</button>
 		<button id="SideTitle11" class="sidenav-links" onclick="openWebside(event, 'page10')">•&nbsp;&nbsp;碼錶 (TIMER)</button>
 	</div>
 	<!--Tools-->
@@ -971,7 +972,7 @@
 		<h3>4x4鍵盤控制RGB燈</h3>
 		<hr style="border: 1px solid #757575"/>
 		<h4>介紹</h4>
-		<p>使用鍵盤掃描方式讀取4x4鍵盤值來控制RGB燈的亮度及顏色，並加上LCM顯示目前的顏色及亮度。</p>
+		<p class="content1">使用鍵盤掃描方式讀取4x4鍵盤值來控制RGB燈的亮度及顏色，並加上LCM顯示目前的顏色及亮度。</p>
 		<li>當按鍵0~7被按下時更改RGB燈顏色</li>
 		<li>當按鍵A被按下時可輸入更改數值</li>
 		<li>當按鍵B被按下時確定更改RGB燈亮度</li>
@@ -988,7 +989,7 @@
 		<h3>上傳溫濕度到雲端</h3>
 		<hr style="border: 1px solid #757575"/>
 		<h4>介紹</h4>
-		<p>使用8051的Uart功能對Esp8266(具有WiFI MCU)下At command命令讓8051能連上雲端(ThingSpeak)，
+		<p class="content1">使用8051的Uart功能對Esp8266(具有WiFI MCU)下At command命令讓8051能連上雲端(ThingSpeak)，
 		並且將讀取到的溫濕度數據以每隔20秒時間上傳至雲端。</p>
 		<h4>電路圖</h4>
 		<img src="https://i.imgur.com/u9MUzuG.jpg" width="100%">
@@ -1000,7 +1001,7 @@
 		<h3>PWM調光</h3>
 		<hr style="border: 1px solid #757575"/>
 		<h4>介紹</h4>
-		<p>利用51單晶片上的Timer產生PWM控制LED燈亮度，並且使用2顆按鈕控制Duty cycle，
+		<p class="content1">利用51單晶片上的Timer產生PWM控制LED燈亮度，並且使用2顆按鈕控制Duty cycle，
 		使LED燈的亮度能增加或減少，再搭配7段顯示器顯示目前LED的亮度。</p>
 		<li>當按鍵1被按下時減少10%亮度</li>
 		<li>當按鍵2被按下時增加10%亮度</li>
@@ -1014,7 +1015,7 @@
 		<h3>溫度警報器</h3>
 		<hr style="border: 1px solid #757575"/>
 		<h4>介紹</h4>
-		<p>使用4x4鍵盤設定溫度上限，並加上LCM顯示設定上限與目前溫度，當溫度超過上限時則會觸發蜂鳴器。</p>
+		<p class="content1">使用4x4鍵盤設定溫度上限，並加上LCM顯示設定上限與目前溫度，當溫度超過上限時則會觸發蜂鳴器。</p>
 		<li>當按鍵A被按下時可輸入更改數值</li>
 		<li>當按鍵B被按下時確定更改溫度上限</li>
 		<h4>電路圖</h4>
@@ -1027,7 +1028,7 @@
 		<h3>讀取溫濕度值</h3>
 		<hr style="border: 1px solid #757575"/>
 		<h4>介紹</h4>
-		<p>使用51單晶片上的Uart功能將讀取到的溫濕度數據print在電腦上。</p>
+		<p class="content1">使用51單晶片上的Uart功能將讀取到的溫濕度數據顯示於電腦的終端機上。</p>
 		<h4>電路圖</h4>
 		<img src="https://i.imgur.com/8mOxKWp.jpg" width="70%">
 		<h4>程式碼</h4>
@@ -1038,7 +1039,7 @@
 		<h3>3路PWM輸出</h3>
 		<hr style="border: 1px solid #757575"/>
 		<h4>介紹</h4>
-		<p>利用Timer0、Timer1、Timer2產生3路不同Duty cycle的PWM來控制LED亮度</p>
+		<p class="content1">利用Timer0、Timer1、Timer2產生3路不同Duty cycle的PWM來控制LED亮度</p>
 		<h4>程式碼</h4>
 		<script src="https://gist.github.com/sheng59/006357cf62e50c04359fffa96210fa98.js"></script>
 	</div>
@@ -1048,7 +1049,7 @@
 		<h3>使用7段顯示器與LCM顯示ADC值</h3>
 		<hr style="border: 1px solid #757575"/>
 		<h4>介紹</h4>
-		<p>使用HT66F70A內建的ADC讀取可變電阻值，並加上7段顯示器、LCM來顯示可變電阻值，
+		<p class="content1">使用HT66F70A內建的ADC讀取可變電阻值，並加上7段顯示器、LCM來顯示可變電阻值，
 		並利用按鈕控制顯示的方式。</p>
 		<li>模式1:7段顯示器顯示，LCM不顯示</li>
 		<li>模式2:7段顯示器不顯示，LCM顯示</li>
@@ -1061,7 +1062,7 @@
 		<h3>使用可變電阻控制PWM</h3>
 		<hr style="border: 1px solid #757575"/>
 		<h4>介紹</h4>
-		<p>使用HT66F70A內建的ADC、PWM功能，將讀取到的可變電阻值控制LED燈亮度。</p>
+		<p class="content1">使用HT66F70A內建的ADC、PWM功能，將讀取到的可變電阻值控制LED燈亮度。</p>
 		<h4>程式碼</h4>
 		<script src="https://gist.github.com/sheng59/473e5bc98a54242e107fa58c762e1b6b.js"></script>
 	</div>
@@ -1070,7 +1071,7 @@
 		<h3>碼錶</h3>
 		<hr style="border: 1px solid #757575"/>
 		<h4>介紹</h4>
-		使用2顆按鈕控制時間開始/停止/歸零等功能，並加上LCM顯示目前計時的時間。
+		<p class="content1">使用2顆按鈕控制時間開始/停止/歸零等功能，並加上LCM顯示目前計時的時間。</p>
 		<h4>程式碼</h4>
 		<script src="https://gist.github.com/sheng59/dbbfb93e35ce675ad58fb50c3d3ff092.js"></script>
 	</div>
