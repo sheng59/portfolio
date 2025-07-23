@@ -1,1088 +1,1014 @@
 <!DOCTYPE html>
-	<div id="floatingCirclesG">
-		<div class="f_circleG" id="frotateG_01"></div>
-		<div class="f_circleG" id="frotateG_02"></div>
-		<div class="f_circleG" id="frotateG_03"></div>
-		<div class="f_circleG" id="frotateG_04"></div>
-		<div class="f_circleG" id="frotateG_05"></div>
-		<div class="f_circleG" id="frotateG_06"></div>
-		<div class="f_circleG" id="frotateG_07"></div>
-		<div class="f_circleG" id="frotateG_08"></div>
-	</div>
-	<script type="text/javascript">
-	// 當頁面全部載入完成
-	window.addEventListener("load", function() {
-		var i, sidecontent;
-		var tabs, bg_img, btn;
-		
-		document.getElementById("floatingCirclesG").style.display = "none";
-		
-		tabs = $(".tabs");
-		tabs.css("display", "block");
-		bg_img = $(".bgImg");
-		btn = $(".btnMenu");
-		if (btn.css("display") === "block")
-			bg_img.css("display", "none");
-		else
-			bg_img.css("display", "block");
-		
-		// tabnav
-		document.getElementById("Menu0").style.display = "block";
-		document.getElementById("StartPage").className += " active";
-		// sidenav
-		document.getElementById("ToolPage").style.display = "block";
-		document.getElementById("SideTitle1").className += " active";
-		
-		sidecontent = document.getElementsByClassName("sidenav-content");
-		for (i = 0; i < sidecontent.length; i++) {
-			sidecontent[i].style.display = "none";
-		}
-		document.getElementById("ToolPage").style.display = "block";
-	});
-	</script>
-	<style>
-	#floatingCirclesG{
-		position:absolute;
-		top: 50%;
-		left: 50%;
-		width:61px;
-		height:61px;
-		margin: -25.5px 0 0 -25.5px;
-		transform:scale(0.6);
-			-o-transform:scale(0.6);
-			-ms-transform:scale(0.6);
-			-webkit-transform:scale(0.6);
-			-moz-transform:scale(0.6);
-	}
-
-	.f_circleG{
-		position:absolute;
-		background-color:rgb(255,255,255);
-		height:11px;
-		width:11px;
-		border-radius:6px;
-			-o-border-radius:6px;
-			-ms-border-radius:6px;
-			-webkit-border-radius:6px;
-			-moz-border-radius:6px;
-		animation-name:f_fadeG;
-			-o-animation-name:f_fadeG;
-			-ms-animation-name:f_fadeG;
-			-webkit-animation-name:f_fadeG;
-			-moz-animation-name:f_fadeG;
-		animation-duration:1.2s;
-			-o-animation-duration:1.2s;
-			-ms-animation-duration:1.2s;
-			-webkit-animation-duration:1.2s;
-			-moz-animation-duration:1.2s;
-		animation-iteration-count:infinite;
-			-o-animation-iteration-count:infinite;
-			-ms-animation-iteration-count:infinite;
-			-webkit-animation-iteration-count:infinite;
-			-moz-animation-iteration-count:infinite;
-		animation-direction:normal;
-			-o-animation-direction:normal;
-			-ms-animation-direction:normal;
-			-webkit-animation-direction:normal;
-			-moz-animation-direction:normal;
-	}
-
-	#frotateG_01{
-		left:0;
-		top:25px;
-		animation-delay:0.45s;
-			-o-animation-delay:0.45s;
-			-ms-animation-delay:0.45s;
-			-webkit-animation-delay:0.45s;
-			-moz-animation-delay:0.45s;
-	}
-
-	#frotateG_02{
-		left:7px;
-		top:7px;
-		animation-delay:0.6s;
-			-o-animation-delay:0.6s;
-			-ms-animation-delay:0.6s;
-			-webkit-animation-delay:0.6s;
-			-moz-animation-delay:0.6s;
-	}
-
-	#frotateG_03{
-		left:25px;
-		top:0;
-		animation-delay:0.75s;
-			-o-animation-delay:0.75s;
-			-ms-animation-delay:0.75s;
-			-webkit-animation-delay:0.75s;
-			-moz-animation-delay:0.75s;
-	}
-
-	#frotateG_04{
-		right:7px;
-		top:7px;
-		animation-delay:0.9s;
-			-o-animation-delay:0.9s;
-			-ms-animation-delay:0.9s;
-			-webkit-animation-delay:0.9s;
-			-moz-animation-delay:0.9s;
-	}
-
-	#frotateG_05{
-		right:0;
-		top:25px;
-		animation-delay:1.05s;
-			-o-animation-delay:1.05s;
-			-ms-animation-delay:1.05s;
-			-webkit-animation-delay:1.05s;
-			-moz-animation-delay:1.05s;
-	}
-
-	#frotateG_06{
-		right:7px;
-		bottom:7px;
-		animation-delay:1.2s;
-			-o-animation-delay:1.2s;
-			-ms-animation-delay:1.2s;
-			-webkit-animation-delay:1.2s;
-			-moz-animation-delay:1.2s;
-	}
-
-	#frotateG_07{
-		left:25px;
-		bottom:0;
-		animation-delay:1.35s;
-			-o-animation-delay:1.35s;
-			-ms-animation-delay:1.35s;
-			-webkit-animation-delay:1.35s;
-			-moz-animation-delay:1.35s;
-	}
-
-	#frotateG_08{
-		left:7px;
-		bottom:7px;
-		animation-delay:1.5s;
-			-o-animation-delay:1.5s;
-			-ms-animation-delay:1.5s;
-			-webkit-animation-delay:1.5s;
-			-moz-animation-delay:1.5s;
-	}
-
-
-
-	@keyframes f_fadeG{
-		0%{
-			background-color: #424242;
-		}
-
-		100%{
-			background-color:rgb(255,255,255);
-		}
-	}
-
-	@-o-keyframes f_fadeG{
-		0%{
-			background-color: #424242;
-		}
-
-		100%{
-			background-color:rgb(255,255,255);
-		}
-	}
-
-	@-ms-keyframes f_fadeG{
-		0%{
-			background-color: #424242;
-		}
-
-		100%{
-			background-color:rgb(255,255,255);
-		}
-	}
-
-	@-webkit-keyframes f_fadeG{
-		0%{
-			background-color: #424242;
-		}
-
-		100%{
-			background-color:rgb(255,255,255);
-		}
-	}
-
-	@-moz-keyframes f_fadeG{
-		0%{
-			background-color: #424242;
-		}
-
-		100%{
-			background-color:rgb(255,255,255);
-		}
-	}
-	</style>
-<html lang="zh-TW">
-<head>
-	<title>個人作品</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!--匯入jQuery-->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	
-	<script type="text/javascript">
-	var titles = ["SideTitle1", "SideTitle2", "SideTitle3", "SideTitle4",
-						"SideTitle5", "SideTitle6", "SideTitle7", "SideTitle8",
-						"SideTitle9", "SideTitle10","SideTitle11"];
-
-	// Topnav頁面切換
-	function openWebtab(evt, webName) {
-		var i, tabcontent, tablinks;
-
-		tabcontent = document.getElementsByClassName("tab-content");
-		for (i = 0; i < tabcontent.length; i++) {
-			tabcontent[i].style.display = "none";
-		}
-		tablinks = document.getElementsByClassName("tab-links");
-		for (i = 0; i < tablinks.length; i++) {
-			tablinks[i].className = tablinks[i].className.replace(" active", "");
-		}
-		document.getElementById(webName).style.display = "block";
-		evt.currentTarget.className += " active";
-
-		// When the page refreshed, it reset variables.
-		scrollTo(0, 0);
-		// When the page refreshed, it stops playing. 
-		stopVideo();
-		closeNav();
-	}
-	// Sidenav頁面切換
-	function openWebside(evt, webName) {
-		var i, sidecontent, sidelinks;
-
-		sidecontent = document.getElementsByClassName("sidenav-content");
-		for (i = 0; i < sidecontent.length; i++) {
-			sidecontent[i].style.display = "none";
-		}
-		sidelinks = document.getElementsByClassName("sidenav-links");
-		for (i = 0; i < sidelinks.length; i++) {
-			sidelinks[i].className = sidelinks[i].className.replace(" active", "");
-		}
-		document.getElementById(webName).style.display = "block";
-		evt.currentTarget.className += " active";
-
-		// When the page refreshed, it reset variables.
-		scrollTo(0, 0);
-		closeNav();
-	}
-
-	// This code loads the IFrame Player API code asynchronously.
-	var tag = document.createElement('script');
-
-	tag.src = "https://www.youtube.com/player_api";
-	var firstScriptTag = document.getElementsByTagName('script')[0];
-	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-	// This function creates an <iframe> (and YouTube player)
-	// after the API code downloads.
-	var player1, player2;
-
-	function onYouTubeIframeAPIReady() {
-		player1 = new YT.Player('player1', {
-			videoId: '3S2XnMDlqDQ'
-		});
-		
-		player2 = new YT.Player('player2', {
-			videoId: '5I1ZZScRLPg'
-		});
-	}
-
-	function stopVideo() {
-		player1.stopVideo();
-		player2.stopVideo();
-	}
-	
-	function Notify() {
-		$.ajax({
-				type: 'GET',
-				dataType: 'jsonp',
-				data: {},
-				url: 'https://push2line.herokuapp.com/',
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				success: function(result){
-					console.log("success!");
-				}
-		});
-	}
-	</script>
-	<style>
-	button { background-color: white; }
-	.container {
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding-bottom: 56.25%;
-	}
-
-	#player1, #player2 {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-	}
-
-	body {
-		font-family: Arial, 微軟正黑體;
-		color: rgba(0,0,0,.87);
-		scroll-behavior: smooth;
-		padding: 0;
-		margin: 0;
-
-	}
-
-	.bgImg {
-		display: none;
-		z-index: -1;
-		width: 100%;
-		height: 100%;
-		position: fixed;
-		top: 0;
-		left: 0;
-	}
-
-	body div[id^="Menu"] {
-		display: none;
-		z-index: 2;
-		background-color: white;
-		padding: 70px 200px 20px 200px;
-		border: 1px solid #ccc;
-		width: 40%;
-		position: absolute;
-		top: 0;
-		left: 50%;
-		margin-left: -30%;
-        box-shadow:
-            rgba(0,0,0,0.4)
-            3px 3px 15px 0px; 
-	}
-
-	h3 { 
-		font-weight: bold;
-		color: #0091af;
-        font-size: 24px;
-        line-height: 1.2;
-        margin-bottom: 16px;
-        margin-top: 32px;
-	}
-
-	#Menu2 h4, li { line-height: 1; font-size: 16px; }
-	#Menu3 div[id^="page"] li { line-height: 1.8; font-size: 18px; }
-    #Menu3 div[id^="page"] h4 { font-size: 20px; margin-bottom: 16px; }
-
-	.title1 { margin-top: 0; margin-bottom: 16px; font-size: 18px; }
-	.content1 { text-align: justify; font-size: 18px; line-height: 1.8; margin-top: 0; margin-bottom: 16px; color: rgba(0,0,0,.87);}
-	.content2 { text-align: justify; font-size: 18px; line-height: 1.8; margin-top: -16px; margin-bottom: 16px; margin-left: 32px; }
-	.tab1 {  }
-	.tab1 tr,td { padding: 10px; }
-	.tab2 { padding-top: 16px; }
-	.tab2 tr,td { padding: 10px; }
-	.tab3 { font-size: 16px; display: inline-block; vertical-align: top; }
-	.tab-text { width: 200px; padding: 0; line-height: 2; }
-	.image1 { width: 100%; }
-	.image2 { width: 100%; }
-
-	.tabs {
-		display: none;
-		overflow: hidden;
-		background-color: white;
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		z-index: 3;
-		border-bottom: 1px solid #a7a7a7;
-        box-shadow:
-            rgba(0,0,0,0.1)
-            3px 3px 4px 0px; 
-	}
-
-	.tabs button {
-		background-color: inherit;
-		float: right;
-		border: none;
-		outline: none;
-		cursor: pointer;
-		padding: 20px 16px;
-		margin: 5px 10px;
-		transition: 0.4s;
-		font-size: 17px;
-		font-family: 'Open Sans', 微軟正黑體;
-	}
-    
-    .tabs button:hover {
-        color: black;
-        font-size: 24px;
-        font-weight: bold;
-    }
-    
-    .tabs button.active {
-        color: #0091af;
-        font-weight: bold;
-    }
-
-	.tabs span {
-		background-color: inherit;
-		float: left;
-		padding: 14px 30px;
-		font-size: 24px;
-		font-weight: 600;
-		letter-spacing: 10px;
-	}
-
-	.tab-content {
-		display: none;
-		-webkit-animation: fadeEffect 1.5s;
-		animation: fadeEffect 1.5s;
-	}
-
-	@-webkit-keyframes fadeEffect {
-		from {opacity: 0;}
-		to {opacity: 1;}
-	}
-
-	@keyframes fadeEffect {
-		from {opacity: 0;}
-		to {opacity: 1;}
-	}
-
-	.sidenav {
-		height: 100%;
-		width: 20%;
-		position: fixed;
-		top: 0;
-		left: 0;
-		background-color: white;
-		overflow-x: hidden;
-		border-right: 1px solid #aaa;
-		z-index: 2;
-		opacity: 0.9;
-		padding-top: 70px;
-	}
-
-	.sidenav button {
-		width: 100%;
-		text-align: left;
-		background-color: inherit;
-		border: none;
-		outline: none;
-		cursor: pointer;
-		font-size: 18px;
-		font-family: 'Open Sans', 微軟正黑體;
-		padding: 5px 8px 5px 30px;
-		color: #818181;
-		display: block;
-		transition: 0.4s;
-	}
-
-	.sidenav button:hover {
-		color: black;
-		background-color: #ddd;
-		font-weight: normal;
-	}
-
-	.sidenav button.active {
-		color: #0091af;
-		font-weight: bold;
-	}
-
-	.sidenav span { color: #0091af; font-size:12px; }
-	
-	.table-title { color: #0091af; font-weight: bold; vertical-align: text-top; padding: 0; width: 106px; }
-	.table-content { line-height: 2.5; vertical-align: text-top; padding: 0 0 16px 24px; }
-	.resume { padding: 0 0 20px 0; font-size: 18px; }
-	.resume-info { 
-		display: inline-block;
-		margin-left: 24px;
-		line-height: 1.5;
-		border-bottom: 1px solid black;
-		width: 70%;
-		padding-bottom: 12px; 
-	}
-
-	.btnMenu { display: none; }
-	.SideMenu { display: none; }
-	.SideProject { display: none; }
-	.imgln { display: inline-block; }
-	</style>
-	
-	<script type="text/javascript">
-	function openNav() {
-		document.getElementById("mySideMenu").style.width = "240px";
-	}
-
-	function closeNav() {
-		document.getElementById("mySideMenu").style.width = "0";
-	}
-
-	function backNav() {
-		document.getElementById("mySideProject").style.width = "0";
-		document.getElementById("mySideMenu").style.width = "240px";
-	}
-
-	function openProject() {
-		closeNav();
-		document.getElementById("mySideProject").style.width = "240px";
-	}
-
-	function openWebProject(evt, webName) {
-		var i, tabcontent, sidecontent, sidelinks;
-		
-		// close tab content
-		tabcontent = document.getElementsByClassName("tab-content");
-		for (i = 0; i < tabcontent.length; i++) {
-			tabcontent[i].style.display = "none";
-		}
-		// open project menu
-		document.getElementById("Menu3").style.display = "block";
-		
-		sidecontent = document.getElementsByClassName("sidenav-content");
-		for (i = 0; i < sidecontent.length; i++) {
-			sidecontent[i].style.display = "none";
-		}
-		sidelinks = document.getElementsByClassName("sidenav-links");
-		for (i = 0; i < sidelinks.length; i++) {
-			sidelinks[i].className = sidelinks[i].className.replace(" active", "");
-		}
-		document.getElementById(webName).style.display = "block";
-		evt.currentTarget.className += " active";
-		
-		// When the page refreshed, it reset variables.
-		scrollTo(0, 0);
-		closeNav();
-		// When press closeBtn close sidenav
-		document.getElementById("mySideProject").style.width = "0";
-	}
-	</script>
-	<style>
-	@media screen and (max-width: 1150px) {
-		.resume { padding: 0 48px 20px 48px; }
-	}
-	
-	@media screen and (max-width: 920px) {
-		.resume { padding: 0 0 20px 0; }
-	}
-	
-	@media screen and (max-width: 750px) {
-		body {
-			margin: 0;
-			padding: 0;
-			font-family: 'Open Sans', 微軟正黑體;
-			color: black;
-		}
-		
-		body div[id^="Menu"] {
-			width: auto;
-			margin: 0;
-			left: 0;
-			border: 0; 
-            padding: 70px 20px 20px 20px;
-		}
-			
-		.SideMenu {
-			display: block;
-			height: 100%;
-			width: 0;
-			position: fixed;
-			z-index: 4;
-			top: 0;
-			right: 0;
-			background-color: #111;
-			overflow-x: hidden;
-			transition: 0.5s;
-			border-left: 1px solid #ddd;
-		}
-		
-		.SideMenu a {
-			padding: 16px;
-			text-decoration: none;
-			font-size: 16px;
-			color: #ddd;
-			display: block;
-			transition: 0.3s;
-			border-bottom: 1px solid #ddd;
-			cursor: pointer;
-		}
-		
-		.SideMenu a:hover {
-			color: white;
-		}
-		
-		.SideMenu .closebtn::before {
-			font-weight: bold;
-			content: "Menu";
-			color: white;
-			position: absolute;
-			left: 16px;
-		}
-
-		.SideMenu .closebtn {
-			text-align: right;
-			color: white;
-			font-size: 18px;
-			font-weight: bold;
-			padding: 24px 18px;
-			background-color: #0091af;
-			border: 0;
-		}
-		
-		.SideProject {
-			display: block;
-			height: 100%;
-			width: 0;
-			position: fixed;
-			top: 0;
-			right: 0;
-			background-color: #111;
-			overflow-x: hidden;
-			z-index: 4;
-			transition: 0.5s;
-			border-left: 1px solid #ddd;
-		}
-		
-		.SideProject a {
-			padding: 16px;
-			text-decoration: none;
-			font-size: 16px;
-			color: #ddd;
-			display: block;
-			transition: 0.3s;
-			border-bottom: 1px solid #ddd;
-			cursor: pointer;
-		}
-		
-		.SideProject a:hover {
-			color: white;;
-		}
-		
-		.SideProject .closebtn::before {
-			font-weight: bold;
-			content: "其它小作品";
-			color: white;
-			position: absolute;
-			left: 16px;
-		}
-		
-		.SideProject .closebtn {
-			text-align: right;
-			color: white;
-			font-size: 18px;
-			font-weight: bold;
-			padding: 24px 18px;
-			background-color: #0091af;
-			border: 0;
-		}
-
-		.sidenav span { color: #0D47A1; font-size:12px; }
-		.table-content { padding-left: 0; }
-		.resume { padding: 0; font-size: 16px; }
-		.resume-info { margin-left: 0; }
-		
-		.imgln { display: block; }
-		.sidenav { display: none; }
-		.tabs { 
-            <!--position: absolute;-->
-            position: fixed;           <!-- 滑動後浮動式選單 -->
-        }
-		.tabs span { padding: 18px 30px; }
-		.tabs button { display: none; }
-		.tab3 { display: block; }
-		.btnMenu { 
-			display: block;
-			font-size:30px;
-			cursor: pointer;
-			float: right;
-			padding: 14px 0;
-		}
-        
-        .gist {
-            max-width: 350px;
-            overflow: auto;
-        }
-        
-        .gist .blob-wrapper.data {
-            <!--max-height: 100%;-->
-            overflow: auto;
-        }
-	}
-	</style>
-	
-</head>
-<body onload="Notify();">
-<!--Background image-->
-<img src="https://i.imgur.com/uGggbuT.jpg" class="bgImg">
-</img>
-
-<!--Topnav-->
-<div class="tabs">
-	<div style="padding-right: 44px; vertical-align: middle">
-		<span>大學時期作品</span>
-		<button class="tab-links" onclick="openWebtab(event, 'Menu3')">MCU作品</button>
-		<button class="tab-links" onclick="openWebtab(event, 'Menu2')">競賽作品</button>
-		<button class="tab-links" onclick="openWebtab(event, 'Menu1')">專題製作</button>
-		<button id="StartPage" class="tab-links" onclick="openWebtab(event, 'Menu0')">履歷</button>
-		<a class="btnMenu" onclick="openNav()">&#9776;</a>
-	</div>
-</div>
-<!--Mobile sidenav 1-->
-<div id="mySideMenu" class="SideMenu">
-	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-	<a onclick="openWebtab(event, 'Menu0')">履歷</a>
-  <a onclick="openWebtab(event, 'Menu1')">專題製作</a>
-  <a onclick="openWebtab(event, 'Menu2')">競賽作品</a>
-  <a onclick="openProject()">MCU作品</a>
-</div>
-<!--Mobile sidenav 2-->
-<div id="mySideProject" class="SideProject">
-	<a href="javascript:void(0)" class="closebtn" onclick="backNav()">&larr;</a>
-	<h2 style="padding: 16px; color: white; margin: 0; color: #FFEB3B; border-bottom: 1px solid #ddd;">8051</h2>
-	<a onclick="openWebProject(event, 'ToolPage')">開發環境</a>
-	<a onclick="openWebProject(event, 'page1')">4x4鍵盤控制RGB燈</a>
-	<a onclick="openWebProject(event, 'page2')">上傳溫濕度到雲端</a>
-	<a onclick="openWebProject(event, 'page3')">PWM調光</a>
-	<a onclick="openWebProject(event, 'page4')">溫度警報器</a>
-	<a onclick="openWebProject(event, 'page5')">讀取溫濕度值</a>
-	<a onclick="openWebProject(event, 'page6')">3路PWM輸出</a>
-	<h2 style="padding: 16px; color: white; margin: 0; color: #FFEB3B; border-bottom: 1px solid #ddd;">Holtek</h2>
-	<a onclick="openWebProject(event, 'page8')">使用7段顯示器與LCM顯示ADC值</a>
-	<a onclick="openWebProject(event, 'page9')">使用可變電阻控制PWM</a>
-	<a onclick="openWebProject(event, 'page10')">碼錶</a>
-</div>
-
-<div id="Menu0" class="tab-content">
-	<div class="resume">
-		<div style="margin-top: 19.920px;">
-			<img src="https://i.imgur.com/gDCrNvM.jpg" width="106px" height="125px" style="vertical-align: bottom;"/>
-			<div class="resume-info">
-				<h2 style="margin: 0">邱聖貴</h2>
-				<p style="margin: 0">
-				居住：彰化縣彰化市<br>
-				手機：0978-851303<br>
-				信箱：sa6549872000@gmail.com<br>
-				</p>
-			</div>
-		</div>
-		<div style="margin-top: 60px;">
-			<table width="100%">
-				<tr>
-					<td class="table-title">工作經驗</td>
-					<td class="table-content"><strong>實習生</strong><br>
-					金雨企業股份有限公司<br>
-					<I>2018.03 –  2018.06</I><br>
-
-					1.測試自動販賣機的功能運作，並將測試結果回報給工程師<br>
-					2.使用電烙鐵焊接電路板上的零件<br>
-					3.使用工具測量電路板上的零件<br>
-					4.使用Keil C撰寫治具程式<br>
-					</td>
-				</tr>
-				<tr>
-					<td class="table-title">學歷</td>
-					<td  class="table-content"><strong>學士</strong><br>
-					建國科技大學，電子工程系<br>
-					<I>2014.09 –  2018.06</I><br>
-					1.大學畢業成績全班第三名<br>
-					2.參與「全國微電腦應用系統設計創作」競賽 – 佳作<br>
-					&emsp;—	負責App、MCU、網頁程式的撰寫<br>
-					3.專題題目：智慧手機連網控制家電應用<br>
-					&emsp;—	負責設計作品及作品程式撰寫<br>
-					</td>
-				</tr>
-				<tr>
-					<td class="table-title">專長</td>
-					<td  class="table-content">
-					工具：電烙鐵<br>
-					設備：三用電表、示波器、電源供應器<br>
-                    電路繪製：Altium Designer<br>
-					</td>
-				</tr>
-				<tr>
-					<td class="table-title">專業證照</td>
-					<td class="table-content">
-					乙級數位電子技術士<br>
-					丙級工業電子技術士<br>
-					丙級電腦硬體裝修技術士<br>
-					丙級電腦軟體應用技術士<br>
-					</td>
-				</tr>
-				<tr><td class="table-title">自傳</td></tr>
-				<tr><td colspan="2" class="content1" style="padding: 10px 0 0 0;">
-				&emsp;&emsp;我叫邱聖貴，今年25歲，彰化人，畢業於建國科技大學電子工程系。在學期間，成績排名在班上前三名，學到C語言、MCU程式撰寫、電路圖繪製等技能，在大四的時候則開始參加業界實習，並且在106年參與全國微電腦應用競賽。在本次競賽作品中，我主要負責三個項目：<br>
-				&emsp;&emsp;1. MCU<br>
-        <blockquote style="margin: 0 0 0 32px;">&emsp;&emsp;使用ESP8266(具有WiFi MCU)讀取霍爾感測器(轉速值)，然後將感測值上傳至雲端，再由手機抓取雲端上的資料藉此控制影片的播放速度，完成騎乘腳踏車控制影片播放速度的功能。<br></blockquote>
-				&emsp;&emsp;2. App<br>
-        <blockquote style="margin: 0 0 0 32px;">&emsp;&emsp;使用App  Inventor  2設計手機App，運用Iot相關技術及雲端資料，結合其它硬體設備，製作出一款能留言祝福、情緒分析、社工服務、求籤、神轎位置等功能的App。<br></blockquote>
-				&emsp;&emsp;3. 樹莓派<br>
-        <blockquote style="margin: 0 0 0 32px;">&emsp;&emsp;使用樹莓派做為螢幕的搭載裝置，並在裝置上撰寫一個網頁，利用HTTP GET功能連結Graph API提供的URL，讀取FB粉絲頁上的留言，並將結果顯示於網頁上。<br></blockquote>
-				<br>
-				&emsp;&emsp;在金雨企業實習期間，初期在機板組使用電烙鐵焊接電路板零件(如連接器、腳座、SD  Card等)及替換電路板上零件，同時也需要測試自動販賣機功能(如投幣、找零、出貨等)，並將測試結果交給工程師改善產品。後期則在研展部工作，使用三用電表及示波器量測內閘門運作，之後依主管要求撰寫一個能測試內閘門程式，我使用Keil  C撰寫STM32程式，利用開關及LED監控內閘門的測試狀態，最後在實習結束後了解到8位元與32位元MCU的差距。<br>
-				</td></tr>
-			</table>
-		</div>
-	</div>
-</div>
-
-<!--專題製作頁面-->
-<div id="Menu1" class="tab-content">
-
-	<center><h2>智慧手機連網控制家電應用</h2></center>
-	<center><p>
-		指導老師：馬立山 老師</br>
-		建國科技大學  電子工程系</br>
-	</p></center>
-	
-	<h3>簡介</h3>
-	<p class="content1">
-	&emsp;&emsp;本作品設計一個智慧家庭監控系統，主要以Arduino為家電控制核心，整合手機App、物聯網雲端平台及家電設備，透過網際網路連線到雲端，使行動裝置與家電設備能相互通訊，
-    配合攝影機傳回的即時影像，讓使用者可利用App進行遠端控制家電設備，也能即時監控家庭的狀態。此外，本作品利用手機GPS定位資料，結合大圓距離公式的計算，判斷家人是否超出設定的距離，當家人超出距離時，系統會即時通知使用者手機，以達到警示的作用，
-    另外在當日早上會立即收到天氣預報的訊息。
-	</p>
-	
-	<h3>功能</h3>
-	<p class="content1">
-    <strong>1.&nbsp;&nbsp;&nbsp;&nbsp;遠端控制：</strong>透過手機App可以直接遠程控制居家的家電設備。<br>
-    <strong>2.&nbsp;&nbsp;&nbsp;&nbsp;遠端監視：</strong>透過手機App可以直接遠程監視居家的情況。<br>
-	<strong>3.&nbsp;&nbsp;&nbsp;&nbsp;電子柵欄：</strong>透過手機App設定家人行走距離，當家人超出距離時，會即時發送LINE訊息至使用者手機，並且可查詢家人的所在位置。<br>
-	<strong>4.&nbsp;&nbsp;&nbsp;&nbsp;社群推播：</strong>固定時間發送天氣預報至使用者手機。
-    </p>
-	
-	<h3>成品</h3>
-	<center><img src="https://i.imgur.com/6BFusFt.jpg" width="100%">系統架構圖</center>
-
-	<h4 style="padding-top: 16px">App操作畫面:</h4>
-	<table class="tab1" width="100%" cellspacing="0" cellpadding="0">
-		<tr>
-			<td><center><img class="image1" src="https://i.imgur.com/JOxBv7p.png"></center></td>
-			<td><center><img class="image1" src="https://i.imgur.com/DNhKohg.png"></center></td>
-			<td><center><img class="image1" src="https://i.imgur.com/knegw7S.png"></center></td>
-		</tr>
-		<tr>
-			<td><center><img class="image1" src="https://i.imgur.com/4hFhNxO.png"></center></td>
-			<td><center><img class="image1" src="https://i.imgur.com/1E9oQ8h.png"></center></td>
-			<td><center><img class="image1" src="https://i.imgur.com/U9vrc65.jpg"></center></td>
-		</tr>
-	</table>
-	<h4 style="padding-top: 16px">遠端監控操作影片:</h4>
-	<div class="container">
-		<div id="player1"></div>
-	</div>
-
-</div>
-<!--競賽作品頁面-->
-<div id="Menu2"  class="tab-content">
-<center><h2>智慧電子朝拜系統一媽祖e起來</h2></center>
-	<center><p>
-		106年全國微電腦應用系統設計創作競賽</br>
-		信號處理與通訊類  <span style="color: red; font-weight: bold">佳作</span></br>
-	</p></center>
-	
-	<h3>簡介</h3>
-	<p class="content1">
-	&emsp;&emsp;本作品設計一個智慧電子朝拜系統，共有四個場景，主要應用於媽祖繞境、居家、廟宇拜拜等環境，輔助無法遶境的信徒能有遶境時的氛圍，而在繞境信徒也能有全新的體驗，同時加深神明與信徒之間關係。
-    在媽祖出巡時本系統可以用來尋找神轎位置、求籤、情緒分析與擲筊等，並且會依據當地溫度提醒繞境的信徒補充水分， 在家裡的信徒可利用VR眼鏡、手機、腳踏車等物品來增加遠端遶境的臨場感， 
-    而在廟裡拜拜的信徒還可以利用手機來送出留言，並觀看廟口外的電視牆體驗遶境時的氛圍。
-	</p>
-	
-	<h3>功能</h3>
-    <p class="content1">本作品有四個場景，主要應用於媽祖繞境、居家、廟宇拜拜等環境，其功能如下：</p>
-    <p class="content1"><strong>1.&nbsp;&nbsp;&nbsp;&nbsp;出巡朝拜系統</strong><br></p>
-    <p class="content2">
-    (1).&nbsp;&nbsp;&nbsp;&nbsp;透過神轎上的溫濕度感測器與GPS定位，會依據神轎位置提醒信徒將抵達位置，同時依據當地的溫度通知信徒要補充水分。此外，也可藉由App進行社工留言，若信徒留言情緒較為負面，會給予適當的幫助，反之，會給予祝福的話。<br>
-    (2).&nbsp;&nbsp;&nbsp;&nbsp;當神轎抵達定點後，可使用手機掃瞄神轎，並在手機顯示出3D媽祖影像，在3D媽祖神像前可進行擲筊、抽籤、解籤等動作。
-    </p>
-    <p class="content1"><strong>2.&nbsp;&nbsp;&nbsp;&nbsp;千里眼/順風耳系統</strong><br></p>
-    <p class="content2">
-    (1).&nbsp;&nbsp;&nbsp;&nbsp;廟口電視上播放媽祖遶境的直播影片。<br>
-    (2).&nbsp;&nbsp;&nbsp;&nbsp;廟口電視上播放媽祖FB粉絲頁的留言。<br>
-    </p>
-    <p class="content1"><strong>3.&nbsp;&nbsp;&nbsp;&nbsp;遠端遶境系統</strong><br></p>
-    <p class="content2">
-    本作品於手機上提供媽祖繞境影片，可藉由腳踏車轉速控制播放速度，同時可配戴VR眼鏡來增加遠端遶境的臨場感。
-    <br>
-    </p>
-    <p class="content1"><strong>4.&nbsp;&nbsp;&nbsp;&nbsp;遠端朝拜系統</strong><br></p>
-    <p class="content2">
-    本作品於手機上提供媽祖繞境影片，可配戴VR眼鏡來體驗遠端朝拜，亦可利用社工關懷之App問籤。<br>
-    </p>
-    </p>
-	
-	<h3>成品</h3>
-	<center><img src="https://i.imgur.com/hzOF2Tk.jpg" width="100%">智慧電子朝拜系統架構圖</center>
-	<table class="tab2" width="100%" cellspacing="0" cellpadding="0">
-		<tr>
-			<td rowspan="2"><center><img src="https://i.imgur.com/bXACYoj.jpg" class="image2"></br>媽祖App主畫面</center></td>
-			<td><center><img src="https://i.imgur.com/apYHgT0.jpg" class="image2"></br>遠端遶境畫面</center></td>
-		</tr>
-		<tr>
-			<td><center><img src="https://i.imgur.com/RAwWuOz.jpg" class="image2"></br>抬轎遶境畫面</center></td>
-		</tr>
-	</table>
-	<h4 style="padding-top: 16px">作品操作影片:</h4>
-	<div class="container">
-		<div id="player2"></div>
-	</div>
-</div>
-<!--8051 Page-->
-<div id="Menu3"  class="tab-content">
-	<!--Side Nav-->
-	<div class="sidenav">
-		<div style="padding-top: 20px;padding-left: 30px"><h2 style="margin: 0; font-size: 36px;">8051</h2></div>
-		<button id="SideTitle1" class="sidenav-links" onclick="openWebside(event, 'ToolPage')">•&nbsp;&nbsp;開發環境</button>
-		<button id="SideTitle2" class="sidenav-links" onclick="openWebside(event, 'page1')">•&nbsp;&nbsp;4x4鍵盤控制RGB燈</button>
-		<button id="SideTitle3" class="sidenav-links" onclick="openWebside(event, 'page2')">•&nbsp;&nbsp;上傳溫濕度到雲端</button>
-		<button id="SideTitle4" class="sidenav-links" onclick="openWebside(event, 'page3')">•&nbsp;&nbsp;PWM調光</button>
-		<button id="SideTitle5" class="sidenav-links" onclick="openWebside(event, 'page4')">•&nbsp;&nbsp;溫度警報器</button>
-		<button id="SideTitle6" class="sidenav-links" onclick="openWebside(event, 'page5')">•&nbsp;&nbsp;讀取溫濕度值</button>
-		<button id="SideTitle7" class="sidenav-links" onclick="openWebside(event, 'page6')">•&nbsp;&nbsp;3路PWM輸出</button>
-		<div style="padding-top: 20px;padding-left: 30px"><h2 style="margin: 0; font-size: 36px;">HT66F70A</h2></div>
-		<button id="SideTitle9" class="sidenav-links" onclick="openWebside(event, 'page8')">•&nbsp;&nbsp;使用7段顯示器與LCM顯示ADC值</button>
-		<button id="SideTitle10" class="sidenav-links" onclick="openWebside(event, 'page9')">•&nbsp;&nbsp;使用可變電阻控制PWM</button>
-		<button id="SideTitle11" class="sidenav-links" onclick="openWebside(event, 'page10')">•&nbsp;&nbsp;碼錶</button>
-	</div>
-	<!--Tools-->
-	<div id="ToolPage" class="sidenav-content">
-		<h3>開發工具</h3>
-		<div>
-			<table class="tab3">
-				<tr><td class="tab-text" style="font-weight: bold;">程式語言:</td> <td class="tab-text">C</td>
-				</tr>
-				<tr><td class="tab-text" style="font-weight: bold;">單晶片:</td> <td class="tab-text">AT89S52</td></tr>
-				<tr><td class="tab-text" style="font-weight: bold;">IDE:</td> <td class="tab-text">Keil C</td></tr>
-				<tr><td class="tab-text" style="font-weight: bold;">PCB繪圖軟體:</td> <td class="tab-text">Altium Designer</td></tr>
-			</table>
-			<div class="imgln">
-				<img src="https://i.imgur.com/oz0szj4.jpg" width="247px" height="185px" style="border-radius: 20px">
-			</div>
-		</div>
-		<h4 style="padding-top: 10px">8051開發板電路圖</h4>
-		<img src="https://i.imgur.com/Z3xnGIZ.jpg" width="100%">
-	</div>
-	<!--8051-->
-	<!--Project 4x4鍵盤控制RGB燈-->
-	<div id="page1" class="sidenav-content">
-		<h3>4x4鍵盤控制RGB燈</h3>
-		<hr style="border: 1px solid #757575"/>
-		<h4>介紹</h4>
-		<p class="content1">使用鍵盤掃描方式讀取4x4鍵盤值來控制RGB燈的亮度及顏色，並加上LCM顯示目前的顏色及亮度。</p>
-		<li>當按鍵0~7被按下時更改RGB燈顏色</li>
-		<li>當按鍵A被按下時可輸入更改數值</li>
-		<li>當按鍵B被按下時確定更改RGB燈亮度</li>
-		<li>當按鍵C被按下時減少10%亮度</li>
-		<li>當按鍵D被按下時增加10%亮度</li>
-		<li>當按鍵F被按下時關閉RGB燈</li>
-		<h4>電路圖</h4>
-		<img src="https://i.imgur.com/D4kSE4U.jpg" width="100%">
-		<h4>程式碼</h4>
-		<script src="https://gist.github.com/sheng59/befa736ba35af532bfcea12ffaa74e72.js"></script>
-	</div>
-	<!--Project 上傳溫濕度到雲端-->
-	<div id="page2" class="sidenav-content">
-		<h3>上傳溫濕度到雲端</h3>
-		<hr style="border: 1px solid #757575"/>
-		<h4>介紹</h4>
-		<p class="content1">使用8051的Uart功能對Esp8266(具有WiFI MCU)下At command命令讓8051能連上雲端(ThingSpeak)，
-		並且將讀取到的溫濕度數據以每隔20秒時間上傳至雲端。</p>
-		<h4>電路圖</h4>
-		<img src="https://i.imgur.com/u9MUzuG.jpg" width="100%">
-		<h4>程式碼</h4>
-		<script src="https://gist.github.com/sheng59/0a88bb17d474a011cdf6f82937c51dcf.js"></script>
-	</div>
-	<!--Project PWM調光-->
-	<div id="page3" class="sidenav-content">
-		<h3>PWM調光</h3>
-		<hr style="border: 1px solid #757575"/>
-		<h4>介紹</h4>
-		<p class="content1">利用51單晶片上的Timer產生PWM控制LED燈亮度，並且使用2顆按鈕控制Duty cycle，
-		使LED燈的亮度能增加或減少，再搭配7段顯示器顯示目前LED的亮度。</p>
-		<li>當按鍵1被按下時減少10%亮度</li>
-		<li>當按鍵2被按下時增加10%亮度</li>
-		<h4>電路圖</h4>
-		<img src="https://i.imgur.com/1KawUpT.jpg" width="100%">
-		<h4>程式碼</h4>
-		<script src="https://gist.github.com/sheng59/5b28bc063e0c2ce91371eae7a8989b56.js"></script>
-	</div>
-	<!--Project 溫度警報器-->
-	<div id="page4" class="sidenav-content">
-		<h3>溫度警報器</h3>
-		<hr style="border: 1px solid #757575"/>
-		<h4>介紹</h4>
-		<p class="content1">使用4x4鍵盤設定溫度上限，並加上LCM顯示設定上限與目前溫度，當溫度超過上限時則會觸發蜂鳴器。</p>
-		<li>當按鍵A被按下時可輸入更改數值</li>
-		<li>當按鍵B被按下時確定更改溫度上限</li>
-		<h4>電路圖</h4>
-		<img src="https://i.imgur.com/9eqtDOE.jpg" width="100%">
-		<h4>程式碼</h4>
-		<script src="https://gist.github.com/sheng59/a9c70f4bde16cbed7ac91e2a5775032c.js"></script>
-	</div>
-	<!--Project 讀取溫濕度值-->
-	<div id="page5" class="sidenav-content">
-		<h3>讀取溫濕度值</h3>
-		<hr style="border: 1px solid #757575"/>
-		<h4>介紹</h4>
-		<p class="content1">使用51單晶片上的Uart功能將讀取到的溫濕度數據顯示於電腦的終端機上。</p>
-		<h4>電路圖</h4>
-		<img src="https://i.imgur.com/8mOxKWp.jpg" width="70%">
-		<h4>程式碼</h4>
-		<script src="https://gist.github.com/sheng59/d9ee42bd480ba0a233465757db1e5212.js"></script>
-	</div>
-	<!--Project 3路PWM輸出-->
-	<div id="page6" class="sidenav-content">
-		<h3>3路PWM輸出</h3>
-		<hr style="border: 1px solid #757575"/>
-		<h4>介紹</h4>
-		<p class="content1">利用Timer0、Timer1、Timer2產生3路不同Duty cycle的PWM來控制LED亮度</p>
-		<h4>程式碼</h4>
-		<script src="https://gist.github.com/sheng59/006357cf62e50c04359fffa96210fa98.js"></script>
-	</div>
-	<!--Holtek-->
-	<!--Project 1-->
-	<div id="page8" class="sidenav-content">
-		<h3>使用7段顯示器與LCM顯示ADC值</h3>
-		<hr style="border: 1px solid #757575"/>
-		<h4>介紹</h4>
-		<p class="content1">使用HT66F70A內建的ADC讀取可變電阻值，並加上7段顯示器、LCM來顯示可變電阻值，
-		並利用按鈕控制顯示的方式。</p>
-		<li>模式1:7段顯示器顯示，LCM不顯示</li>
-		<li>模式2:7段顯示器不顯示，LCM顯示</li>
-		<li>模式3:7段顯示器與LCM都顯示</li>
-        <h4>電路圖</h4>
-		<img src="https://i.imgur.com/ojbJQVe.jpg" width="100%">
-		<h4>程式碼</h4>
-		<script src="https://gist.github.com/sheng59/74d92854e43073f497ea1a8810c48b96.js"></script>
-	</div>
-	<!--Project 2-->
-	<div id="page9" class="sidenav-content">
-		<h3>使用可變電阻控制PWM</h3>
-		<hr style="border: 1px solid #757575"/>
-		<h4>介紹</h4>
-		<p class="content1">使用HT66F70A內建的ADC、PWM功能，將讀取到的可變電阻值控制LED燈亮度。</p>
-        <h4>電路圖</h4>
-		<img src="https://i.imgur.com/tHhagEL.jpg" width="100%">
-		<h4>程式碼</h4>
-		<script src="https://gist.github.com/sheng59/473e5bc98a54242e107fa58c762e1b6b.js"></script>
-	</div>
-	<!--Project 3-->
-	<div id="page10" class="sidenav-content">
-		<h3>碼錶</h3>
-		<hr style="border: 1px solid #757575"/>
-		<h4>介紹</h4>
-		<p class="content1">使用2顆按鈕控制時間開始/停止/歸零等功能，並加上LCM顯示目前計時的時間。</p>
-        <h4>電路圖</h4>
-		<img src="https://i.imgur.com/GBLJOEU.png" width="100%">
-		<h4>程式碼</h4>
-		<script src="https://gist.github.com/sheng59/dbbfb93e35ce675ad58fb50c3d3ff092.js"></script>
-	</div>
-
-</div>
-
-</body>
+<html>
+   <head>
+      <!-- Basic -->
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <!-- Mobile Metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <!-- Site Metas -->
+      <meta name="keywords" content="" />
+      <meta name="description" content="" />
+      <meta name="author" content="" />
+      <link rel="shortcut icon" href="images/favicon.png" type="">
+      <title>Famms - Fashion HTML Template</title>
+      <!-- bootstrap core css -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+      <!-- font awesome style -->
+      <link href="css/font-awesome.min.css" rel="stylesheet" />
+      <!-- Custom styles for this template -->
+      <link href="css/style.css" rel="stylesheet" />
+      <!-- responsive style -->
+      <link href="css/responsive.css" rel="stylesheet" />
+   </head>
+   <body>
+      <div class="hero_area">
+         <!-- header section strats -->
+         <header class="header_section">
+            <div class="container">
+               <nav class="navbar navbar-expand-lg custom_nav-container ">
+                  <a class="navbar-brand" href="index.html"><img width="250" src="images/logo.png" alt="#" /></a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class=""> </span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                     <ul class="navbar-nav">
+                        <li class="nav-item active">
+                           <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                       <li class="nav-item dropdown">
+                           <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span class="nav-label">Pages <span class="caret"></span></a>
+                           <ul class="dropdown-menu">
+                              <li><a href="about.html">About</a></li>
+                              <li><a href="testimonial.html">Testimonial</a></li>
+                           </ul>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="product.html">Products</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="blog_list.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="#">
+                              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+                                 <g>
+                                    <g>
+                                       <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
+                                          c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
+                                    </g>
+                                 </g>
+                                 <g>
+                                    <g>
+                                       <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
+                                          C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
+                                          c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
+                                          C457.728,97.71,450.56,86.958,439.296,84.91z" />
+                                    </g>
+                                 </g>
+                                 <g>
+                                    <g>
+                                       <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
+                                          c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
+                                    </g>
+                                 </g>
+                                 <g>
+                                 </g>
+                                 <g>
+                                 </g>
+                                 <g>
+                                 </g>
+                                 <g>
+                                 </g>
+                                 <g>
+                                 </g>
+                                 <g>
+                                 </g>
+                                 <g>
+                                 </g>
+                                 <g>
+                                 </g>
+                                 <g>
+                                 </g>
+                                 <g>
+                                 </g>
+                                 <g>
+                                 </g>
+                                 <g>
+                                 </g>
+                                 <g>
+                                 </g>
+                                 <g>
+                                 </g>
+                                 <g>
+                                 </g>
+                              </svg>
+                           </a>
+                        </li>
+                        <form class="form-inline">
+                           <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                           <i class="fa fa-search" aria-hidden="true"></i>
+                           </button>
+                        </form>
+                     </ul>
+                  </div>
+               </nav>
+            </div>
+         </header>
+         <!-- end header section -->
+         <!-- slider section -->
+         <section class="slider_section ">
+            <div class="slider_bg_box">
+               <img src="images/slider-bg.jpg" alt="">
+            </div>
+            <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+               <div class="carousel-inner">
+                  <div class="carousel-item active">
+                     <div class="container ">
+                        <div class="row">
+                           <div class="col-md-7 col-lg-6 ">
+                              <div class="detail-box">
+                                 <h1>
+                                    <span>
+                                    Sale 20% Off
+                                    </span>
+                                    <br>
+                                    On Everything
+                                 </h1>
+                                 <p>
+                                    Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
+                                 </p>
+                                 <div class="btn-box">
+                                    <a href="" class="btn1">
+                                    Shop Now
+                                    </a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="carousel-item ">
+                     <div class="container ">
+                        <div class="row">
+                           <div class="col-md-7 col-lg-6 ">
+                              <div class="detail-box">
+                                 <h1>
+                                    <span>
+                                    Sale 20% Off
+                                    </span>
+                                    <br>
+                                    On Everything
+                                 </h1>
+                                 <p>
+                                    Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
+                                 </p>
+                                 <div class="btn-box">
+                                    <a href="" class="btn1">
+                                    Shop Now
+                                    </a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="carousel-item">
+                     <div class="container ">
+                        <div class="row">
+                           <div class="col-md-7 col-lg-6 ">
+                              <div class="detail-box">
+                                 <h1>
+                                    <span>
+                                    Sale 20% Off
+                                    </span>
+                                    <br>
+                                    On Everything
+                                 </h1>
+                                 <p>
+                                    Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
+                                 </p>
+                                 <div class="btn-box">
+                                    <a href="" class="btn1">
+                                    Shop Now
+                                    </a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="container">
+                  <ol class="carousel-indicators">
+                     <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+                     <li data-target="#customCarousel1" data-slide-to="1"></li>
+                     <li data-target="#customCarousel1" data-slide-to="2"></li>
+                  </ol>
+               </div>
+            </div>
+         </section>
+         <!-- end slider section -->
+      </div>
+      <!-- why section -->
+      <section class="why_section layout_padding">
+         <div class="container">
+            <div class="heading_container heading_center">
+               <h2>
+                  Why Shop With Us
+               </h2>
+            </div>
+            <div class="row">
+               <div class="col-md-4">
+                  <div class="box ">
+                     <div class="img-box">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                           <g>
+                              <g>
+                                 <path d="M476.158,231.363l-13.259-53.035c3.625-0.77,6.345-3.986,6.345-7.839v-8.551c0-18.566-15.105-33.67-33.67-33.67h-60.392
+                                    V110.63c0-9.136-7.432-16.568-16.568-16.568H50.772c-9.136,0-16.568,7.432-16.568,16.568V256c0,4.427,3.589,8.017,8.017,8.017
+                                    c4.427,0,8.017-3.589,8.017-8.017V110.63c0-0.295,0.239-0.534,0.534-0.534h307.841c0.295,0,0.534,0.239,0.534,0.534v145.372
+                                    c0,4.427,3.589,8.017,8.017,8.017c4.427,0,8.017-3.589,8.017-8.017v-9.088h94.569c0.008,0,0.014,0.002,0.021,0.002
+                                    c0.008,0,0.015-0.001,0.022-0.001c11.637,0.008,21.518,7.646,24.912,18.171h-24.928c-4.427,0-8.017,3.589-8.017,8.017v17.102
+                                    c0,13.851,11.268,25.119,25.119,25.119h9.086v35.273h-20.962c-6.886-19.883-25.787-34.205-47.982-34.205
+                                    s-41.097,14.322-47.982,34.205h-3.86v-60.393c0-4.427-3.589-8.017-8.017-8.017c-4.427,0-8.017,3.589-8.017,8.017v60.391H192.817
+                                    c-6.886-19.883-25.787-34.205-47.982-34.205s-41.097,14.322-47.982,34.205H50.772c-0.295,0-0.534-0.239-0.534-0.534v-17.637
+                                    h34.739c4.427,0,8.017-3.589,8.017-8.017s-3.589-8.017-8.017-8.017H8.017c-4.427,0-8.017,3.589-8.017,8.017
+                                    s3.589,8.017,8.017,8.017h26.188v17.637c0,9.136,7.432,16.568,16.568,16.568h43.304c-0.002,0.178-0.014,0.355-0.014,0.534
+                                    c0,27.996,22.777,50.772,50.772,50.772s50.772-22.776,50.772-50.772c0-0.18-0.012-0.356-0.014-0.534h180.67
+                                    c-0.002,0.178-0.014,0.355-0.014,0.534c0,27.996,22.777,50.772,50.772,50.772c27.995,0,50.772-22.776,50.772-50.772
+                                    c0-0.18-0.012-0.356-0.014-0.534h26.203c4.427,0,8.017-3.589,8.017-8.017v-85.511C512,251.989,496.423,234.448,476.158,231.363z
+                                    M375.182,144.301h60.392c9.725,0,17.637,7.912,17.637,17.637v0.534h-78.029V144.301z M375.182,230.881v-52.376h71.235
+                                    l13.094,52.376H375.182z M144.835,401.904c-19.155,0-34.739-15.583-34.739-34.739s15.584-34.739,34.739-34.739
+                                    c19.155,0,34.739,15.583,34.739,34.739S163.99,401.904,144.835,401.904z M427.023,401.904c-19.155,0-34.739-15.583-34.739-34.739
+                                    s15.584-34.739,34.739-34.739c19.155,0,34.739,15.583,34.739,34.739S446.178,401.904,427.023,401.904z M495.967,299.29h-9.086
+                                    c-5.01,0-9.086-4.076-9.086-9.086v-9.086h18.171V299.29z" />
+                              </g>
+                           </g>
+                           <g>
+                              <g>
+                                 <path d="M144.835,350.597c-9.136,0-16.568,7.432-16.568,16.568c0,9.136,7.432,16.568,16.568,16.568
+                                    c9.136,0,16.568-7.432,16.568-16.568C161.403,358.029,153.971,350.597,144.835,350.597z" />
+                              </g>
+                           </g>
+                           <g>
+                              <g>
+                                 <path d="M427.023,350.597c-9.136,0-16.568,7.432-16.568,16.568c0,9.136,7.432,16.568,16.568,16.568
+                                    c9.136,0,16.568-7.432,16.568-16.568C443.591,358.029,436.159,350.597,427.023,350.597z" />
+                              </g>
+                           </g>
+                           <g>
+                              <g>
+                                 <path d="M332.96,316.393H213.244c-4.427,0-8.017,3.589-8.017,8.017s3.589,8.017,8.017,8.017H332.96
+                                    c4.427,0,8.017-3.589,8.017-8.017S337.388,316.393,332.96,316.393z" />
+                              </g>
+                           </g>
+                           <g>
+                              <g>
+                                 <path d="M127.733,282.188H25.119c-4.427,0-8.017,3.589-8.017,8.017s3.589,8.017,8.017,8.017h102.614
+                                    c4.427,0,8.017-3.589,8.017-8.017S132.16,282.188,127.733,282.188z" />
+                              </g>
+                           </g>
+                           <g>
+                              <g>
+                                 <path d="M278.771,173.37c-3.13-3.13-8.207-3.13-11.337,0.001l-71.292,71.291l-37.087-37.087c-3.131-3.131-8.207-3.131-11.337,0
+                                    c-3.131,3.131-3.131,8.206,0,11.337l42.756,42.756c1.565,1.566,3.617,2.348,5.668,2.348s4.104-0.782,5.668-2.348l76.96-76.96
+                                    C281.901,181.576,281.901,176.501,278.771,173.37z" />
+                              </g>
+                           </g>
+                           <g>
+                           </g>
+                           <g>
+                           </g>
+                           <g>
+                           </g>
+                           <g>
+                           </g>
+                           <g>
+                           </g>
+                           <g>
+                           </g>
+                           <g>
+                           </g>
+                           <g>
+                           </g>
+                           <g>
+                           </g>
+                           <g>
+                           </g>
+                           <g>
+                           </g>
+                           <g>
+                           </g>
+                           <g>
+                           </g>
+                           <g>
+                           </g>
+                           <g>
+                           </g>
+                        </svg>
+                     </div>
+                     <div class="detail-box">
+                        <h5>
+                           Fast Delivery
+                        </h5>
+                        <p>
+                           variations of passages of Lorem Ipsum available
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="box ">
+                     <div class="img-box">
+                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 490.667 490.667" style="enable-background:new 0 0 490.667 490.667;" xml:space="preserve">
+                           <g>
+                              <g>
+                                 <path d="M138.667,192H96c-5.888,0-10.667,4.779-10.667,10.667V288c0,5.888,4.779,10.667,10.667,10.667s10.667-4.779,10.667-10.667
+                                    v-74.667h32c5.888,0,10.667-4.779,10.667-10.667S144.555,192,138.667,192z" />
+                              </g>
+                           </g>
+                           <g>
+                              <g>
+                                 <path d="M117.333,234.667H96c-5.888,0-10.667,4.779-10.667,10.667S90.112,256,96,256h21.333c5.888,0,10.667-4.779,10.667-10.667
+                                    S123.221,234.667,117.333,234.667z" />
+                              </g>
+                           </g>
+                           <g>
+                              <g>
+                                 <path d="M245.333,0C110.059,0,0,110.059,0,245.333s110.059,245.333,245.333,245.333s245.333-110.059,245.333-245.333
+                                    S380.608,0,245.333,0z M245.333,469.333c-123.52,0-224-100.48-224-224s100.48-224,224-224s224,100.48,224,224
+                                    S368.853,469.333,245.333,469.333z" />
+                              </g>
+                           </g>
+                           <g>
+                              <g>
+                                 <path d="M386.752,131.989C352.085,88.789,300.544,64,245.333,64s-106.752,24.789-141.419,67.989
+                                    c-3.691,4.587-2.965,11.307,1.643,14.997c4.587,3.691,11.307,2.965,14.976-1.643c30.613-38.144,76.096-60.011,124.8-60.011
+                                    s94.187,21.867,124.779,60.011c2.112,2.624,5.205,3.989,8.32,3.989c2.368,0,4.715-0.768,6.677-2.347
+                                    C389.717,143.296,390.443,136.576,386.752,131.989z" />
+                              </g>
+                           </g>
+                           <g>
+                              <g>
+                                 <path d="M376.405,354.923c-4.224-4.032-11.008-3.861-15.061,0.405c-30.613,32.235-71.808,50.005-116.011,50.005
+                                    s-85.397-17.771-115.989-50.005c-4.032-4.309-10.816-4.437-15.061-0.405c-4.309,4.053-4.459,10.816-0.405,15.083
+                                    c34.667,36.544,81.344,56.661,131.456,56.661s96.789-20.117,131.477-56.661C380.864,365.739,380.693,358.976,376.405,354.923z" />
+                              </g>
+                           </g>
+                           <g>
+                              <g>
+                                 <path d="M206.805,255.723c15.701-2.027,27.861-15.488,27.861-31.723c0-17.643-14.357-32-32-32h-21.333
+                                    c-5.888,0-10.667,4.779-10.667,10.667v42.581c0,0.043,0,0.107,0,0.149V288c0,5.888,4.779,10.667,10.667,10.667
+                                    S192,293.888,192,288v-16.917l24.448,24.469c2.091,2.069,4.821,3.115,7.552,3.115c2.731,0,5.461-1.045,7.531-3.136
+                                    c4.16-4.16,4.16-10.923,0-15.083L206.805,255.723z M192,234.667v-21.333h10.667c5.867,0,10.667,4.779,10.667,10.667
+                                    s-4.8,10.667-10.667,10.667H192z" />
+                              </g>
+                           </g>
+                           <g>
+                              <g>
+                                 <path d="M309.333,277.333h-32v-64h32c5.888,0,10.667-4.779,10.667-10.667S315.221,192,309.333,192h-42.667
+                                    c-5.888,0-10.667,4.779-10.667,10.667V288c0,5.888,4.779,10.667,10.667,10.667h42.667c5.888,0,10.667-4.779,10.667-10.667
+                                    S315.221,277.333,309.333,277.333z" />
+                              </g>
+                           </g>
+                           <g>
+                              <g>
+                                 <path d="M288,234.667h-21.333c-5.888,0-10.667,4.779-10.667,10.667S260.779,256,266.667,256H288
+                                    c5.888,0,10.667-4.779,10.667-10.667S293.888,234.667,288,234.667z" />
+                              </g>
+                           </g>
+                           <g>
+                              <g>
+                                 <path d="M394.667,277.333h-32v-64h32c5.888,0,10.667-4.779,10.667-10.667S400.555,192,394.667,192H352
+                                    c-5.888,0-10.667,4.779-10.667,10.667V288c0,5.888,4.779,10.667,10.667,10.667h42.667c5.888,0,10.667-4.779,10.667-10.667
+                                    S400.555,277.333,394.667,277.333z" />
+                              </g>
+                           </g>
+                           <g>
+                              <g>
+                                 <path d="M373.333,234.667H352c-5.888,0-10.667,4.779-10.667,10.667S346.112,256,352,256h21.333
+                                    c5.888,0,10.667-4.779,10.667-10.667S379.221,234.667,373.333,234.667z" />
+                              </g>
+                           </g>
+                           <g>
+                           </g>
+                           <g>
+                           </g>
+                           <g>
+                           </g>
+                           <g>
+                           </g>
+                           <g>
+                           </g>
+                           <g>
+                           </g>
+                           <g>
+                           </g>
+                           <g>
+                           </g>
+                           <g>
+                           </g>
+                           <g>
+                           </g>
+                           <g>
+                           </g>
+                           <g>
+                           </g>
+                           <g>
+                           </g>
+                           <g>
+                           </g>
+                           <g>
+                           </g>
+                        </svg>
+                     </div>
+                     <div class="detail-box">
+                        <h5>
+                           Free Shiping
+                        </h5>
+                        <p>
+                           variations of passages of Lorem Ipsum available
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="box ">
+                     <div class="img-box">
+                        <svg id="_30_Premium" height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg" data-name="30_Premium">
+                           <g id="filled">
+                              <path d="m252.92 300h3.08a124.245 124.245 0 1 0 -4.49-.09c.075.009.15.023.226.03.394.039.789.06 1.184.06zm-96.92-124a100 100 0 1 1 100 100 100.113 100.113 0 0 1 -100-100z" />
+                              <path d="m447.445 387.635-80.4-80.4a171.682 171.682 0 0 0 60.955-131.235c0-94.841-77.159-172-172-172s-172 77.159-172 172c0 73.747 46.657 136.794 112 161.2v158.8c-.3 9.289 11.094 15.384 18.656 9.984l41.344-27.562 41.344 27.562c7.574 5.4 18.949-.7 18.656-9.984v-70.109l46.6 46.594c6.395 6.789 18.712 3.025 20.253-6.132l9.74-48.724 48.725-9.742c9.163-1.531 12.904-13.893 6.127-20.252zm-339.445-211.635c0-81.607 66.393-148 148-148s148 66.393 148 148-66.393 148-148 148-148-66.393-148-148zm154.656 278.016a12 12 0 0 0 -13.312 0l-29.344 19.562v-129.378a172.338 172.338 0 0 0 72 0v129.38zm117.381-58.353a12 12 0 0 0 -9.415 9.415l-6.913 34.58-47.709-47.709v-54.749a171.469 171.469 0 0 0 31.467-15.6l67.151 67.152z" />
+                              <path d="m287.62 236.985c8.349 4.694 19.251-3.212 17.367-12.618l-5.841-35.145 25.384-25c7.049-6.5 2.89-19.3-6.634-20.415l-35.23-5.306-15.933-31.867c-4.009-8.713-17.457-8.711-21.466 0l-15.933 31.866-35.23 5.306c-9.526 1.119-13.681 13.911-6.634 20.415l25.384 25-5.841 35.145c-1.879 9.406 9 17.31 17.367 12.618l31.62-16.414zm-53-32.359 2.928-17.615a12 12 0 0 0 -3.417-10.516l-12.721-12.531 17.658-2.66a12 12 0 0 0 8.947-6.5l7.985-15.971 7.985 15.972a12 12 0 0 0 8.947 6.5l17.658 2.66-12.723 12.535a12 12 0 0 0 -3.417 10.516l2.928 17.615-15.849-8.231a12 12 0 0 0 -11.058 0z" />
+                           </g>
+                        </svg>
+                     </div>
+                     <div class="detail-box">
+                        <h5>
+                           Best Quality
+                        </h5>
+                        <p>
+                           variations of passages of Lorem Ipsum available
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- end why section -->
+      
+      <!-- arrival section -->
+      <section class="arrival_section">
+         <div class="container">
+            <div class="box">
+               <div class="arrival_bg_box">
+                  <img src="images/arrival-bg.png" alt="">
+               </div>
+               <div class="row">
+                  <div class="col-md-6 ml-auto">
+                     <div class="heading_container remove_line_bt">
+                        <h2>
+                           #NewArrivals
+                        </h2>
+                     </div>
+                     <p style="margin-top: 20px;margin-bottom: 30px;">
+                        Vitae fugiat laboriosam officia perferendis provident aliquid voluptatibus dolorem, fugit ullam sit earum id eaque nisi hic? Tenetur commodi, nisi rem vel, ea eaque ab ipsa, autem similique ex unde!
+                     </p>
+                     <a href="">
+                     Shop Now
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- end arrival section -->
+      
+      <!-- product section -->
+      <section class="product_section layout_padding">
+         <div class="container">
+            <div class="heading_container heading_center">
+               <h2>
+                  Our <span>products</span>
+               </h2>
+            </div>
+            <div class="row">
+               <div class="col-sm-6 col-md-4 col-lg-4">
+                  <div class="box">
+                     <div class="option_container">
+                        <div class="options">
+                           <a href="" class="option1">
+                           Men's Shirt
+                           </a>
+                           <a href="" class="option2">
+                           Buy Now
+                           </a>
+                        </div>
+                     </div>
+                     <div class="img-box">
+                        <img src="images/p1.png" alt="">
+                     </div>
+                     <div class="detail-box">
+                        <h5>
+                           Men's Shirt
+                        </h5>
+                        <h6>
+                           $75
+                        </h6>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-sm-6 col-md-4 col-lg-4">
+                  <div class="box">
+                     <div class="option_container">
+                        <div class="options">
+                           <a href="" class="option1">
+                           Add To Cart
+                           </a>
+                           <a href="" class="option2">
+                           Buy Now
+                           </a>
+                        </div>
+                     </div>
+                     <div class="img-box">
+                        <img src="images/p2.png" alt="">
+                     </div>
+                     <div class="detail-box">
+                        <h5>
+                           Men's Shirt
+                        </h5>
+                        <h6>
+                           $80
+                        </h6>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-sm-6 col-md-4 col-lg-4">
+                  <div class="box">
+                     <div class="option_container">
+                        <div class="options">
+                           <a href="" class="option1">
+                           Add To Cart
+                           </a>
+                           <a href="" class="option2">
+                           Buy Now
+                           </a>
+                        </div>
+                     </div>
+                     <div class="img-box">
+                        <img src="images/p3.png" alt="">
+                     </div>
+                     <div class="detail-box">
+                        <h5>
+                           Women's Dress
+                        </h5>
+                        <h6>
+                           $68
+                        </h6>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-sm-6 col-md-4 col-lg-4">
+                  <div class="box">
+                     <div class="option_container">
+                        <div class="options">
+                           <a href="" class="option1">
+                           Add To Cart
+                           </a>
+                           <a href="" class="option2">
+                           Buy Now
+                           </a>
+                        </div>
+                     </div>
+                     <div class="img-box">
+                        <img src="images/p4.png" alt="">
+                     </div>
+                     <div class="detail-box">
+                        <h5>
+                           Women's Dress
+                        </h5>
+                        <h6>
+                           $70
+                        </h6>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-sm-6 col-md-4 col-lg-4">
+                  <div class="box">
+                     <div class="option_container">
+                        <div class="options">
+                           <a href="" class="option1">
+                           Add To Cart
+                           </a>
+                           <a href="" class="option2">
+                           Buy Now
+                           </a>
+                        </div>
+                     </div>
+                     <div class="img-box">
+                        <img src="images/p5.png" alt="">
+                     </div>
+                     <div class="detail-box">
+                        <h5>
+                           Women's Dress
+                        </h5>
+                        <h6>
+                           $75
+                        </h6>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-sm-6 col-md-4 col-lg-4">
+                  <div class="box">
+                     <div class="option_container">
+                        <div class="options">
+                           <a href="" class="option1">
+                           Add To Cart
+                           </a>
+                           <a href="" class="option2">
+                           Buy Now
+                           </a>
+                        </div>
+                     </div>
+                     <div class="img-box">
+                        <img src="images/p6.png" alt="">
+                     </div>
+                     <div class="detail-box">
+                        <h5>
+                           Women's Dress
+                        </h5>
+                        <h6>
+                           $58
+                        </h6>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-sm-6 col-md-4 col-lg-4">
+                  <div class="box">
+                     <div class="option_container">
+                        <div class="options">
+                           <a href="" class="option1">
+                           Add To Cart
+                           </a>
+                           <a href="" class="option2">
+                           Buy Now
+                           </a>
+                        </div>
+                     </div>
+                     <div class="img-box">
+                        <img src="images/p7.png" alt="">
+                     </div>
+                     <div class="detail-box">
+                        <h5>
+                           Women's Dress
+                        </h5>
+                        <h6>
+                           $80
+                        </h6>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-sm-6 col-md-4 col-lg-4">
+                  <div class="box">
+                     <div class="option_container">
+                        <div class="options">
+                           <a href="" class="option1">
+                           Add To Cart
+                           </a>
+                           <a href="" class="option2">
+                           Buy Now
+                           </a>
+                        </div>
+                     </div>
+                     <div class="img-box">
+                        <img src="images/p8.png" alt="">
+                     </div>
+                     <div class="detail-box">
+                        <h5>
+                           Men's Shirt
+                        </h5>
+                        <h6>
+                           $65
+                        </h6>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-sm-6 col-md-4 col-lg-4">
+                  <div class="box">
+                     <div class="option_container">
+                        <div class="options">
+                           <a href="" class="option1">
+                           Add To Cart
+                           </a>
+                           <a href="" class="option2">
+                           Buy Now
+                           </a>
+                        </div>
+                     </div>
+                     <div class="img-box">
+                        <img src="images/p9.png" alt="">
+                     </div>
+                     <div class="detail-box">
+                        <h5>
+                           Men's Shirt
+                        </h5>
+                        <h6>
+                           $65
+                        </h6>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-sm-6 col-md-4 col-lg-4">
+                  <div class="box">
+                     <div class="option_container">
+                        <div class="options">
+                           <a href="" class="option1">
+                           Add To Cart
+                           </a>
+                           <a href="" class="option2">
+                           Buy Now
+                           </a>
+                        </div>
+                     </div>
+                     <div class="img-box">
+                        <img src="images/p10.png" alt="">
+                     </div>
+                     <div class="detail-box">
+                        <h5>
+                           Men's Shirt
+                        </h5>
+                        <h6>
+                           $65
+                        </h6>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-sm-6 col-md-4 col-lg-4">
+                  <div class="box">
+                     <div class="option_container">
+                        <div class="options">
+                           <a href="" class="option1">
+                           Add To Cart
+                           </a>
+                           <a href="" class="option2">
+                           Buy Now
+                           </a>
+                        </div>
+                     </div>
+                     <div class="img-box">
+                        <img src="images/p11.png" alt="">
+                     </div>
+                     <div class="detail-box">
+                        <h5>
+                           Men's Shirt
+                        </h5>
+                        <h6>
+                           $65
+                        </h6>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-sm-6 col-md-4 col-lg-4">
+                  <div class="box">
+                     <div class="option_container">
+                        <div class="options">
+                           <a href="" class="option1">
+                           Add To Cart
+                           </a>
+                           <a href="" class="option2">
+                           Buy Now
+                           </a>
+                        </div>
+                     </div>
+                     <div class="img-box">
+                        <img src="images/p12.png" alt="">
+                     </div>
+                     <div class="detail-box">
+                        <h5>
+                           Women's Dress
+                        </h5>
+                        <h6>
+                           $65
+                        </h6>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="btn-box">
+               <a href="">
+               View All products
+               </a>
+            </div>
+         </div>
+      </section>
+      <!-- end product section -->
+
+      <!-- subscribe section -->
+      <section class="subscribe_section">
+         <div class="container-fuild">
+            <div class="box">
+               <div class="row">
+                  <div class="col-md-6 offset-md-3">
+                     <div class="subscribe_form ">
+                        <div class="heading_container heading_center">
+                           <h3>Subscribe To Get Discount Offers</h3>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                        <form action="">
+                           <input type="email" placeholder="Enter your email">
+                           <button>
+                           subscribe
+                           </button>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- end subscribe section -->
+      <!-- client section -->
+      <section class="client_section layout_padding">
+         <div class="container">
+            <div class="heading_container heading_center">
+               <h2>
+                  Customer's Testimonial
+               </h2>
+            </div>
+            <div id="carouselExample3Controls" class="carousel slide" data-ride="carousel">
+               <div class="carousel-inner">
+                  <div class="carousel-item active">
+                     <div class="box col-lg-10 mx-auto">
+                        <div class="img_container">
+                           <div class="img-box">
+                              <div class="img_box-inner">
+                                 <img src="images/client.jpg" alt="">
+                              </div>
+                           </div>
+                        </div>
+                        <div class="detail-box">
+                           <h5>
+                              Anna Trevor
+                           </h5>
+                           <h6>
+                              Customer
+                           </h6>
+                           <p>
+                              Dignissimos reprehenderit repellendus nobis error quibusdam? Atque animi sint unde quis reprehenderit, et, perspiciatis, debitis totam est deserunt eius officiis ipsum ducimus ad labore modi voluptatibus accusantium sapiente nam! Quaerat.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="carousel-item">
+                     <div class="box col-lg-10 mx-auto">
+                        <div class="img_container">
+                           <div class="img-box">
+                              <div class="img_box-inner">
+                                 <img src="images/client.jpg" alt="">
+                              </div>
+                           </div>
+                        </div>
+                        <div class="detail-box">
+                           <h5>
+                              Anna Trevor
+                           </h5>
+                           <h6>
+                              Customer
+                           </h6>
+                           <p>
+                              Dignissimos reprehenderit repellendus nobis error quibusdam? Atque animi sint unde quis reprehenderit, et, perspiciatis, debitis totam est deserunt eius officiis ipsum ducimus ad labore modi voluptatibus accusantium sapiente nam! Quaerat.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="carousel-item">
+                     <div class="box col-lg-10 mx-auto">
+                        <div class="img_container">
+                           <div class="img-box">
+                              <div class="img_box-inner">
+                                 <img src="images/client.jpg" alt="">
+                              </div>
+                           </div>
+                        </div>
+                        <div class="detail-box">
+                           <h5>
+                              Anna Trevor
+                           </h5>
+                           <h6>
+                              Customer
+                           </h6>
+                           <p>
+                              Dignissimos reprehenderit repellendus nobis error quibusdam? Atque animi sint unde quis reprehenderit, et, perspiciatis, debitis totam est deserunt eius officiis ipsum ducimus ad labore modi voluptatibus accusantium sapiente nam! Quaerat.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="carousel_btn_box">
+                  <a class="carousel-control-prev" href="#carouselExample3Controls" role="button" data-slide="prev">
+                  <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+                  <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carouselExample3Controls" role="button" data-slide="next">
+                  <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                  <span class="sr-only">Next</span>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- end client section -->
+      <!-- footer start -->
+      <footer>
+         <div class="container">
+            <div class="row">
+               <div class="col-md-4">
+                   <div class="full">
+                      <div class="logo_footer">
+                        <a href="#"><img width="210" src="images/logo.png" alt="#" /></a>
+                      </div>
+                      <div class="information_f">
+                        <p><strong>ADDRESS:</strong> 28 White tower, Street Name New York City, USA</p>
+                        <p><strong>TELEPHONE:</strong> +91 987 654 3210</p>
+                        <p><strong>EMAIL:</strong> yourmain@gmail.com</p>
+                      </div>
+                   </div>
+               </div>
+               <div class="col-md-8">
+                  <div class="row">
+                  <div class="col-md-7">
+                     <div class="row">
+                        <div class="col-md-6">
+                     <div class="widget_menu">
+                        <h3>Menu</h3>
+                        <ul>
+                           <li><a href="#">Home</a></li>
+                           <li><a href="#">About</a></li>
+                           <li><a href="#">Services</a></li>
+                           <li><a href="#">Testimonial</a></li>
+                           <li><a href="#">Blog</a></li>
+                           <li><a href="#">Contact</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="widget_menu">
+                        <h3>Account</h3>
+                        <ul>
+                           <li><a href="#">Account</a></li>
+                           <li><a href="#">Checkout</a></li>
+                           <li><a href="#">Login</a></li>
+                           <li><a href="#">Register</a></li>
+                           <li><a href="#">Shopping</a></li>
+                           <li><a href="#">Widget</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                     </div>
+                  </div>     
+                  <div class="col-md-5">
+                     <div class="widget_menu">
+                        <h3>Newsletter</h3>
+                        <div class="information_f">
+                          <p>Subscribe by our newsletter and get update protidin.</p>
+                        </div>
+                        <div class="form_sub">
+                           <form>
+                              <fieldset>
+                                 <div class="field">
+                                    <input type="email" placeholder="Enter Your Mail" name="email" />
+                                    <input type="submit" value="Subscribe" />
+                                 </div>
+                              </fieldset>
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- footer end -->
+      <div class="cpy_">
+         <p class="mx-auto">© 2021 All Rights Reserved By <a href="https://html.design/">Free Html Templates</a><br>
+         
+            Distributed By <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
+         
+         </p>
+      </div>
+      <!-- jQery -->
+      <script src="js/jquery-3.4.1.min.js"></script>
+      <!-- popper js -->
+      <script src="js/popper.min.js"></script>
+      <!-- bootstrap js -->
+      <script src="js/bootstrap.js"></script>
+      <!-- custom js -->
+      <script src="js/custom.js"></script>
+   </body>
 </html>
