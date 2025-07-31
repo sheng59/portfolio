@@ -1038,6 +1038,13 @@ section,
 /*--------------------------------------------------------------
 # Resume Section
 --------------------------------------------------------------*/
+
+@media (max-width: 992px) {
+  .resume .img-w {
+    width: 90%;
+  }
+}
+
 .resume .resume-title {
   color: var(--heading-color);
   font-size: 26px;
@@ -1047,7 +1054,7 @@ section,
 }
 
 .resume .resume-item {
-  padding: 0 0 0 20px;
+  padding: 0 0 20px 20px;
   margin-top: -2px;
   border-left: 2px solid var(--accent-color);
   position: relative;
