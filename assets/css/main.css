@@ -1049,8 +1049,16 @@ section,
   text-align: center;
 }
 
-.resume .portfolio-details-slider img {
-  width: 60%;
+@media (min-width: 1200px) {
+  .resume .portfolio-details-slider img {
+    width: 80%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .resume .portfolio-details-slider img {
+    width: 100%;
+  }
 }
 
 .resume .portfolio-details-slider .swiper-pagination {
