@@ -1045,6 +1045,31 @@ section,
   }
 }
 
+.resume .portfolio-details-slider {
+  text-align: center;
+}
+
+.resume .portfolio-details-slider img {
+  width: 60%;
+}
+
+.resume .portfolio-details-slider .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
+.resume .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: color-mix(in srgb, var(--default-color), transparent 85%);
+  opacity: 1;
+}
+
+.resume .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--accent-color);
+}
+
+
 .resume .resume-title {
   color: var(--heading-color);
   font-size: 26px;
@@ -1238,6 +1263,11 @@ section,
   box-shadow: 0px 5px 90px 0px rgba(0, 0, 0, 0.1);
   height: 100%;
   transition: 0.3s;
+}
+
+.portfolio .card-body {
+  max-height: 160px;
+  overflow-y: auto;
 }
 
 .portfolio .card-text {
