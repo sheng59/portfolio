@@ -141,11 +141,11 @@ h6 {
     order: 1;
   }
 
-  .header .header-social-links {
+  .header .navmenu {
     order: 2;
   }
 
-  .header .navmenu {
+  .header .header-social-links {
     order: 3;
   }
 }
@@ -154,7 +154,7 @@ h6 {
 # Navigation Menu
 --------------------------------------------------------------*/
 /* Desktop Navigation */
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
   .navmenu {
     padding: 0;
   }
@@ -286,7 +286,7 @@ h6 {
 }
 
 /* Mobile Navigation */
-@media (max-width: 1199px) {
+@media (max-width: 991px) {
   .mobile-nav-toggle {
     color: var(--nav-color);
     font-size: 28px;
@@ -593,6 +593,29 @@ section,
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
+/* 預設情況：intro1 顯示，intro2 隱藏 */
+.intro1 {
+  display: block;
+}
+.intro2 {
+  display: none;
+}
+
+/* 螢幕在 996px ~ 1200px 之間 */
+@media screen and (min-width: 996px) and (max-width: 1200px) {
+  .intro1 {
+    display: none;
+  }
+  .intro2 {
+    display: block;
+  }
+
+  .about .content h2 {
+    margin-bottom: 36px;
+  }
+}
+
+
 .about .content h2 {
   font-weight: 700;
   font-size: 24px;
